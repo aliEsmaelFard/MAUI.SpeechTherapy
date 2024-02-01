@@ -2,11 +2,41 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.SpeechTherapy.MainPage"
-             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components">
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components"
 
-    <Grid RowDefinitions="*, *, *"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+        
+            >
+
+    <!--necessary Code  for any page and Dont forget  xmlns:mct  line in top of page-->
+    <!--change status bar color-->
+    <ContentPage.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="{StaticResource  White}" />
+    </ContentPage.Behaviors>
+
+
+    <!--toolbar section-->
+    <Shell.TitleView >
+        <HorizontalStackLayout VerticalOptions="Fill"
+                               FlowDirection="RightToLeft"
+                               Margin="50, 0"
+                               >
+            <Label
+                   Text="نام اپ "
+                   TextColor="White"
+                   VerticalTextAlignment="Center"
+                   VerticalOptions="CenterAndExpand"
+                   HeightRequest="50"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   FontFamily="NotoKufiArabic-VariableFont_wght"/>
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+    
+    
+    <Grid RowDefinitions="*, *, *, *"
           ColumnDefinitions="*,*"
-          Margin="20">
+          Margin="16,8,16,16">
 
         <local:HomeCard  Grid.Column="0" Grid.Row="0"
                          ImageSource="mafahim.svg"
@@ -25,6 +55,7 @@
         <local:HomeCard  Grid.Column="1"
                          Grid.Row="1"
                          ImageSource="jomle.png"
+                         
                          Text="صیاغة الجملة" />
 
         <local:HomeCard  Grid.Column="0"

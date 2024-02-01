@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MAUI.SpeechTherapy"
     Shell.FlyoutBehavior="Disabled"
-    Title="MAUI.SpeechTherapy">
+    Title="MAUI.SpeechTherapy"
+    Shell.BackgroundColor="{StaticResource xPrimry}">
 
     <ShellContent
         Title="Home"

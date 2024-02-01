@@ -42,4 +42,24 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+    
+    
+    <!--App Color-->
+    <Color x:Key="xPrimry">#FF5714</Color>
+    <Color x:Key="xClickPressed">#E8FDFF</Color>
+    <Color x:Key="xClick">#0F7F8C</Color>
+    <Color x:Key="xNextPage">#FF5714</Color>
+    <Color x:Key="xCurrctAnswer">#3D8148</Color>
+    <Color x:Key="xWrongAnswer">#B3261E</Color>
+    <Color x:Key="xVerb">#EAEF00</Color>
+    <Color x:Key="xObject">#B3261E</Color>
+    <Color x:Key="xTransfer">#919191</Color>
+    <Color x:Key="xAnimal">#805E0B</Color>
+    <Color x:Key="xVegtebel">##3D8148</Color>
+    <Color x:Key="xFood">#64D677</Color>
+    <Color x:Key="xCloth">#13A4B5</Color>
+    <Color x:Key="xFruit">#A2B512</Color>
+    <Color x:Key="xNuts">#E8AA14</Color>
+
+
 </ResourceDictionary>

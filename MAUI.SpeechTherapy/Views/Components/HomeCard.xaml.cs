@@ -27,6 +27,16 @@
             set => SetValue(TextProperty, value);
         }
 
-       
+        private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+        {
+            try
+            {
+
+                myLayout.BackgroundColor = Color.FromHex("#E8FDFF");
+                await Task.Delay(100);
+                myLayout.BackgroundColor = Colors.White;
+            } catch(Exception ex) { string message = ex.Message; }
+           
+        }
     }
 }
