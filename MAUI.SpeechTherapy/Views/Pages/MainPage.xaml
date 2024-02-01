@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.SpeechTherapy.MainPage"
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components">
+
+    <Grid RowDefinitions="*, *, *"
+          ColumnDefinitions="*,*"
+          Margin="20">
+
+        <local:HomeCard  Grid.Column="0" Grid.Row="0"
+                         ImageSource="mafahim.svg"
+                         Text="تعلیم المفاهیم" />
+
+        <local:HomeCard  Grid.Column="1"
+                         Grid.Row="0"
+                         ImageSource="asvat.png"
+                         Text="تعليم الاصوات" />
+
+        <local:HomeCard  Grid.Column="0"
+                         Grid.Row="1"
+                         ImageSource="soalst.png"
+                         Text="تعلیم افعال الامر و الهی " />
+
+        <local:HomeCard  Grid.Column="1"
+                         Grid.Row="1"
+                         ImageSource="jomle.png"
+                         Text="صیاغة الجملة" />
+
+        <local:HomeCard  Grid.Column="0"
+                         Grid.Row="2"
+                         ImageSource="darksoal.png"
+                         Text=" فهم الاسئلة و الإجابة على الأسئلة" />
+
+        <local:HomeCard  Grid.Column="1"
+                         Grid.Row="2"
+                         ImageSource="aboutus.png"
+                         Text="معلومات عنا" />
+    </Grid>
+
+
+
+</ContentPage>

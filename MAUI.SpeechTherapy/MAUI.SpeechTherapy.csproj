@@ -57,6 +57,32 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\NotoKufiArabic-VariableFont_wght.ttf" />
+	  <None Remove="Resources\Images\HomeIcon\aboutus.png" />
+	  <None Remove="Resources\Images\HomeIcon\aboutus.svg" />
+	  <None Remove="Resources\Images\HomeIcon\asvat.png" />
+	  <None Remove="Resources\Images\HomeIcon\asvat.svg" />
+	  <None Remove="Resources\Images\HomeIcon\asvat2.svg" />
+	  <None Remove="Resources\Images\HomeIcon\darksoal.png" />
+	  <None Remove="Resources\Images\HomeIcon\darksoal.svg" />
+	  <None Remove="Resources\Images\HomeIcon\jomle.png" />
+	  <None Remove="Resources\Images\HomeIcon\jomle.svg" />
+	  <None Remove="Resources\Images\HomeIcon\mafahim.png" />
+	  <None Remove="Resources\Images\HomeIcon\mafahim.svg" />
+	  <None Remove="Resources\Images\HomeIcon\soalst.png" />
+	  <None Remove="Resources\Images\HomeIcon\soalst.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\HomeIcon\aboutus.svg" />
+	  <MauiImage Include="Resources\Images\HomeIcon\asvat.svg" />
+	  <MauiImage Include="Resources\Images\HomeIcon\darksoal.svg" />
+	  <MauiImage Include="Resources\Images\HomeIcon\jomle.svg" />
+	  <MauiImage Include="Resources\Images\HomeIcon\mafahim.svg" />
+	  <MauiImage Include="Resources\Images\HomeIcon\soalst.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.0.1" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
@@ -64,6 +90,12 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.7" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Components\HomeCard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
