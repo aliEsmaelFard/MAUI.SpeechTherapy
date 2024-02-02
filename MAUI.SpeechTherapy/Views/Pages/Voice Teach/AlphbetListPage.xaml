@@ -4,6 +4,25 @@
              x:Class="MAUI.SpeechTherapy.Views.Pages.Voice_Teach.AlphbetListPage"
              xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components">
+
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="Transparent" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    
     <!--toolbar section-->
     <Shell.TitleView>
         <local:ToolBarContent tTittle="تعليم الاصوات" />
@@ -25,7 +44,7 @@
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-
+                        
                         <local:ListItem Text="{Binding . }">
                             <local:ListItem.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="ListItemGestureRecognizer_Tapped"

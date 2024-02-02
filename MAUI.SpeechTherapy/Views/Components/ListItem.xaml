@@ -4,7 +4,9 @@
              x:Class="MAUI.SpeechTherapy.Views.Components.ListItem"
              x:Name="MyView">
 
-    <Border Margin="16, 0"
+    <Grid >
+        
+        <Border Margin="16, 0"
             HeightRequest="56"
             Style="{StaticResource border-shadow-light}"
             StrokeShape="RoundRectangle 8"
@@ -23,4 +25,6 @@
         </HorizontalStackLayout>
 
     </Border>
+    </Grid>
+    
 </ContentView>

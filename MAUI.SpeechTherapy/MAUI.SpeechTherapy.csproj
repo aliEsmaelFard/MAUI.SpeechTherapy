@@ -93,6 +93,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\Pages\Voice Teach\AlphbetOptionsPage.xaml.cs">
+	    <DependentUpon>AlphbetOptionsPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\Components\HomeCard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -103,6 +109,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\Voice Teach\AlphbetListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Voice Teach\AlphbetOptionsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
