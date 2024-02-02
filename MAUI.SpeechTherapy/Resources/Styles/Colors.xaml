@@ -46,6 +46,7 @@
     
     <!--App Color-->
     <Color x:Key="xPrimry">#FF5714</Color>
+    <Color x:Key="xTextPrimry">#000000</Color>
     <Color x:Key="xClickPressed">#E8FDFF</Color>
     <Color x:Key="xClick">#0F7F8C</Color>
     <Color x:Key="xNextPage">#FF5714</Color>

@@ -3,9 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.SpeechTherapy.MainPage"
              xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components"
-
              xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
-        
             >
 
     <!--necessary Code  for any page and Dont forget  xmlns:mct  line in top of page-->
@@ -17,6 +15,8 @@
 
     <!--toolbar section-->
     <Shell.TitleView >
+
+   
         <HorizontalStackLayout VerticalOptions="Fill"
                                FlowDirection="RightToLeft"
                                Margin="50, 0"
@@ -29,7 +29,7 @@
                    HeightRequest="50"
                    FontSize="Title"
                    FontAttributes="Bold"
-                   FontFamily="NotoKufiArabic-VariableFont_wght"/>
+                   FontFamily="Noto"/>
         </HorizontalStackLayout>
     </Shell.TitleView>
     
@@ -45,8 +45,14 @@
         <local:HomeCard  Grid.Column="1"
                          Grid.Row="0"
                          ImageSource="asvat.png"
-                         Text="تعليم الاصوات" />
+                         Text="تعليم الاصوات"
+                         x:Name="VoiceTeach"
+                         PageRoute="AlphbetListPage"
+                         >
+           
+        </local:HomeCard>
 
+        
         <local:HomeCard  Grid.Column="0"
                          Grid.Row="1"
                          ImageSource="soalst.png"
@@ -67,6 +73,8 @@
                          Grid.Row="2"
                          ImageSource="aboutus.png"
                          Text="معلومات عنا" />
+
+        
     </Grid>
 
 

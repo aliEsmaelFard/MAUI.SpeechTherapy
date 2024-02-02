@@ -16,7 +16,7 @@ namespace MAUI.SpeechTherapy
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                    fonts.AddFont("NotoKufiArabic-VariableFont_wght.ttf", "NotoKufiArabic-VariableFont_wght");
+                    fonts.AddFont("NotoKufiArabic-VariableFont_wght.ttf", "Noto");
                 });
 
 #if DEBUG

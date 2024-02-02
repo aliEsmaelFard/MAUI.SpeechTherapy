@@ -1,16 +1,16 @@
-﻿namespace MAUI.SpeechTherapy
+﻿using MAUI.SpeechTherapy.Views.Pages.Voice_Teach;
+
+namespace MAUI.SpeechTherapy
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
+      
         public MainPage()
         {
             InitializeComponent();
-            
         }
 
-       
+
     }
 
 }

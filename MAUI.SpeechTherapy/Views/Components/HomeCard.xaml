@@ -6,19 +6,13 @@
     <Border   WidthRequest="156"
               HeightRequest="156"
               StrokeShape="RoundRectangle 16"
-              Style="{StaticResource  BorderItem}"
+              Style="{StaticResource  border-shadow-dark}"
              >
 
         <Border.GestureRecognizers>
             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
         </Border.GestureRecognizers>
 
-        <Border.Shadow>
-            <Shadow Brush="#000000"
-                    Offset="0, 8"
-                    Radius="16"
-                    Opacity="0.3" />
-        </Border.Shadow>
             <VerticalStackLayout  BackgroundColor="White"
                                   x:Name="myLayout">
 
@@ -32,8 +26,9 @@
                    FontSize="14"
                    HorizontalTextAlignment="Center"
                    Margin="5, 0"
-                   FontFamily="NotoKufiArabic-VariableFont_wght"
-                   FontAttributes="Bold" />
+                   FontFamily="Noto"
+                   FontAttributes="Bold" 
+                   TextColor="{StaticResource xTextPrimry}"/>
         </VerticalStackLayout>
     </Border>
 </ContentView>

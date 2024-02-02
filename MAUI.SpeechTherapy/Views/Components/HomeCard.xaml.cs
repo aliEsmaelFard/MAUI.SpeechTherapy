@@ -27,6 +27,16 @@
             set => SetValue(TextProperty, value);
         }
 
+        public static readonly BindableProperty PageRouteProperty =
+         BindableProperty.Create(nameof(PageRoute), typeof(string), typeof(HomeCard), default(string));
+
+        public string PageRoute
+        {
+            get => (string)GetValue(PageRouteProperty);
+            set => SetValue(PageRouteProperty, value);
+        }
+
+
         private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
         {
             try
@@ -35,7 +45,11 @@
                 myLayout.BackgroundColor = Color.FromHex("#E8FDFF");
                 await Task.Delay(100);
                 myLayout.BackgroundColor = Colors.White;
-            } catch(Exception ex) { string message = ex.Message; }
+
+                await Shell.Current.GoToAsync(PageRoute);
+
+            }
+            catch (Exception ex) { string message = ex.Message; }
            
         }
     }

@@ -448,4 +448,29 @@
         </Setter>
     </Style>
 
+    <!--App Style-->
+    <Style x:Key="border-shadow-dark"
+           TargetType="Border">
+        <Setter Property="Shadow">
+            <Setter.Value>
+                <Shadow Brush="#000000"
+                        Offset="0, 8"
+                        Radius="16"
+                        Opacity="0.3" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="border-shadow-light"
+           TargetType="Border">
+        <Setter Property="Shadow">
+            <Setter.Value>
+                <Shadow Brush="#000000"
+                        Opacity=".25"
+                        Radius="4"
+                        Offset="0,1" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
