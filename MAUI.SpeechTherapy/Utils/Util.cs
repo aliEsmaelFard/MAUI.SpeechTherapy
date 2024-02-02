@@ -26,11 +26,11 @@ namespace MAUI.SpeechTherapy.Utils
 
 
                 border.BackgroundColor = Color.FromHex("#E8FDFF");
-                await Task.Delay(200);
+                await Task.Delay(300);
 
                 label.TextColor = Colors.White;
                 border.BackgroundColor = Color.FromHex("#0F7F8C");
-                await Task.Delay(200);
+                await Task.Delay(300);
 
 
                 border.BackgroundColor = Colors.White;

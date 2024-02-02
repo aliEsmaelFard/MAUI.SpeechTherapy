@@ -114,6 +114,9 @@
 	  <MauiXaml Update="Views\Pages\Voice Teach\AlphbetOptionsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Voice Teach\AlphbetVideoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

@@ -21,6 +21,6 @@ public partial class AlphbetListPage : ContentPage
 		ContentView contentView = (ContentView)sender ;
 		Util.ChangeItemListBackGround(contentView);
 
-		//await Shell.Current.GoToAsync(nameof(AlphbetOptionsPage));
+		await Shell.Current.GoToAsync(nameof(AlphbetOptionsPage));
     }
 }

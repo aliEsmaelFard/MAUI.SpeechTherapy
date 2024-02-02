@@ -21,20 +21,28 @@ public partial class AlphbetOptionsPage : ContentPage
         WordItem.Text = $"تعليم صوت {Letter} في الكلمة";
         SentenceItem.Text = $"تعليم صوت {Letter} في الجملة";
     }
-    private void VideoGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    private async void VideoGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
+        ContentView contentView = (ContentView)sender;
+        Util.ChangeItemListBackGround(contentView);
 
+        AlphbetVideoPage.Letter = Letter;
+        await Shell.Current.GoToAsync(nameof(AlphbetVideoPage));
     }
 
     private void WordGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
+        ContentView contentView = (ContentView)sender;
+        Util.ChangeItemListBackGround(contentView);
 
 
     }
 
     private void SentenceGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-     
+        ContentView contentView = (ContentView)sender;
+        Util.ChangeItemListBackGround(contentView);
+
     }
 
 
