@@ -1,4 +1,6 @@
-﻿namespace MAUI.SpeechTherapy.Views.Pages.Voice_Teach;
+﻿using MAUI.SpeechTherapy.Utils;
+
+namespace MAUI.SpeechTherapy.Views.Pages.Voice_Teach;
 
 public partial class AlphbetListPage : ContentPage
 {
@@ -13,7 +15,6 @@ public partial class AlphbetListPage : ContentPage
 
     private void ListItemGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        var tapEventArgs = (TappedEventArgs)e;
-        string section = (string)tapEventArgs.Parameter;
+		string value = Util.GetValueFromTapped<string>(e);
     }
 }

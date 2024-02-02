@@ -8,5 +8,10 @@ namespace MAUI.SpeechTherapy.Utils
 {
     public class Util
     {
+        public static T GetValueFromTapped<T>(TappedEventArgs e)
+        {
+            var tapEventArgs = (TappedEventArgs)e;
+            return (T)tapEventArgs.Parameter;
+        }
     }
 }
