@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.SpeechTherapy.Views.Pages.Voice_Teach.AlphbetWordPage"
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components">
+
+    <!--toolbar section-->
+    <Shell.TitleView>
+        <local:ToolBarContent x:Name="Toolbar" />
+    </Shell.TitleView>
+
+
+
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="Transparent" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+
+    <Grid RowDefinitions="48, 2,*">
+
+        <HorizontalStackLayout HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               FlowDirection="RightToLeft">
+
+            <!--First Letter-->
+
+            <Grid RowDefinitions="*, 3"
+                  WidthRequest="120"
+                  HeightRequest="48">
+
+                <Label Text="فى أول الكلمة"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       TextColor="{x:StaticResource xPrimry}"
+                       FontFamily="Noto"
+                      />
+
+                <BoxView Grid.Row="1"
+                         CornerRadius="20"
+                         HeightRequest="3"
+                         WidthRequest="98"
+                         Color="{StaticResource xPrimry}"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="End" />
+
+            </Grid>
+
+            <!--Middel Letter-->
+
+            <Grid RowDefinitions="*, 3"
+                  WidthRequest="120"
+                  HeightRequest="48">
+
+                <Label Text="فى وسط الكلمة"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       TextColor="{x:StaticResource xTabText}"
+                       FontFamily="Noto" />
+
+                <BoxView Grid.Row="1"
+                         CornerRadius="20"
+                         HeightRequest="3"
+                         WidthRequest="98"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="End" />
+
+            </Grid>
+
+            <!--Last Letter-->
+
+            <Grid RowDefinitions="*, 3"
+                  WidthRequest="120"
+                  HeightRequest="48">
+
+                <Label Text="فى أخر الكلمة"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       TextColor="{x:StaticResource xTabText}"
+                       FontFamily="Noto" />
+
+                <BoxView Grid.Row="1"
+                         CornerRadius="20"
+                         HeightRequest="3"
+                         WidthRequest="98"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="End" />
+
+            </Grid>
+
+        </HorizontalStackLayout>
+
+
+        <HorizontalStackLayout Grid.Row="1" BackgroundColor="LightGray"></HorizontalStackLayout>
+        <ScrollView Grid.Row="2">
+
+            <CollectionView x:Name="myCollection"
+                            Margin="16,20,16,150"
+                            SelectionMode="Single"
+                            ItemsSource="{Binding fakeData}">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="4"
+                                     HorizontalItemSpacing="0"
+                                     VerticalItemSpacing="0" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Border Stroke="{StaticResource xWordBox}"
+                                StrokeThickness="1"
+                                Margin="0"
+                                HeightRequest="48">
+
+                            <Label FontSize="18"
+                                   Text="{Binding .}"
+                                   TextColor="{StaticResource xTextPrimry}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   FontFamily="Noto" />
+                        </Border>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </ScrollView>
+
+    </Grid>
+</ContentPage>

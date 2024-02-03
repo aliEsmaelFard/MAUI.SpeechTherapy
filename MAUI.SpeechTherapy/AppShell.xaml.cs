@@ -10,6 +10,7 @@ namespace MAUI.SpeechTherapy
             Routing.RegisterRoute(nameof(AlphbetListPage) , typeof(AlphbetListPage));
             Routing.RegisterRoute(nameof(AlphbetOptionsPage) , typeof(AlphbetOptionsPage));
             Routing.RegisterRoute(nameof(AlphbetVideoPage) , typeof(AlphbetVideoPage));
+            Routing.RegisterRoute(nameof(AlphbetWordPage) , typeof(AlphbetWordPage));
         }
     }
 }
