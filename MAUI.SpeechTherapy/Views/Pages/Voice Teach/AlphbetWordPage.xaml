@@ -34,21 +34,22 @@
 
         <HorizontalStackLayout HorizontalOptions="Center"
                                VerticalOptions="Center"
-                               FlowDirection="RightToLeft">
+                               FlowDirection="RightToLeft"
+                               
+                                >
 
             <!--First Letter-->
-
             <Grid RowDefinitions="*, 3"
                   WidthRequest="120"
-                  HeightRequest="48">
+                  HeightRequest="48"
+                  x:Name="tab1">
 
                 <Label Text="فى أول الكلمة"
                        VerticalOptions="Center"
                        HorizontalOptions="Center"
                        FontAttributes="Bold"
                        TextColor="{x:StaticResource xPrimry}"
-                       FontFamily="Noto"
-                      />
+                       FontFamily="Noto" />
 
                 <BoxView Grid.Row="1"
                          CornerRadius="20"
@@ -57,14 +58,18 @@
                          Color="{StaticResource xPrimry}"
                          BackgroundColor="Transparent"
                          VerticalOptions="End" />
-
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                          CommandParameter="First" />
+                </Grid.GestureRecognizers>
             </Grid>
-
+            
+            
             <!--Middel Letter-->
-
             <Grid RowDefinitions="*, 3"
                   WidthRequest="120"
-                  HeightRequest="48">
+                  HeightRequest="48"
+                  x:Name="tab2">
 
                 <Label Text="فى وسط الكلمة"
                        VerticalOptions="Center"
@@ -79,14 +84,17 @@
                          WidthRequest="98"
                          BackgroundColor="Transparent"
                          VerticalOptions="End" />
-
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                          CommandParameter="Second" />
+                </Grid.GestureRecognizers>
             </Grid>
 
             <!--Last Letter-->
-
             <Grid RowDefinitions="*, 3"
                   WidthRequest="120"
-                  HeightRequest="48">
+                  HeightRequest="48"
+                  x:Name="tab3">
 
                 <Label Text="فى أخر الكلمة"
                        VerticalOptions="Center"
@@ -101,19 +109,24 @@
                          WidthRequest="98"
                          BackgroundColor="Transparent"
                          VerticalOptions="End" />
-
+                
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                          CommandParameter="Third" />
+                </Grid.GestureRecognizers>
             </Grid>
 
         </HorizontalStackLayout>
 
 
-        <HorizontalStackLayout Grid.Row="1" BackgroundColor="LightGray"></HorizontalStackLayout>
+        <HorizontalStackLayout Grid.Row="1"
+                               BackgroundColor="LightGray"></HorizontalStackLayout>
         <ScrollView Grid.Row="2">
 
             <CollectionView x:Name="myCollection"
                             Margin="16,20,16,150"
                             SelectionMode="Single"
-                            ItemsSource="{Binding fakeData}">
+                            >
 
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical"

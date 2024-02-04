@@ -39,5 +39,12 @@ namespace MAUI.SpeechTherapy.Utils
             catch (Exception e) { string msg = e.Message; }
 
         }
+
+        public static Color GetColorFromResourse(string  resourse)
+        {
+            if (App.Current.Resources.TryGetValue(resourse, out var colorvalue))
+                return (Color)colorvalue;
+            return null;
+        }
     }
 }
