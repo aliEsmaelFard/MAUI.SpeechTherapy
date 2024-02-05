@@ -58,6 +58,8 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\NotoKufiArabic-VariableFont_wght.ttf" />
+	  <None Remove="Resources\Images\arrow.png" />
+	  <None Remove="Resources\Images\example.png" />
 	  <None Remove="Resources\Images\HomeIcon\aboutus.png" />
 	  <None Remove="Resources\Images\HomeIcon\aboutus.svg" />
 	  <None Remove="Resources\Images\HomeIcon\asvat.png" />
@@ -106,13 +108,22 @@
 	  <MauiXaml Update="Views\Components\ListItem.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Components\PaginationCmp.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Components\ToolBarContent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Sentence Makng\SentenceMakeingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\Voice Teach\AlphbetListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\Voice Teach\AlphbetOptionsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Voice Teach\AlphbetSentencePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\Voice Teach\AlphbetVideoPage.xaml">

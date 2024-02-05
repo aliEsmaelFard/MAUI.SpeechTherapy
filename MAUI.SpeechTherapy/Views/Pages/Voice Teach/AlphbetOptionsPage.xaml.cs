@@ -39,10 +39,13 @@ public partial class AlphbetOptionsPage : ContentPage
         await Shell.Current.GoToAsync(nameof(AlphbetWordPage));
     }
 
-    private void SentenceGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    private async void SentenceGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         ContentView contentView = (ContentView)sender;
         Util.ChangeItemListBackGround(contentView);
+
+        AlphbetSentencePage.Letter = Letter;
+        await Shell.Current.GoToAsync(nameof(AlphbetSentencePage));
 
     }
 
