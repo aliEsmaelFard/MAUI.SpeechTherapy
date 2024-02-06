@@ -1,4 +1,5 @@
-﻿using MAUI.SpeechTherapy.Views.Pages.Voice_Teach;
+﻿using MAUI.SpeechTherapy.Views.Pages.Sentence_Makng;
+using MAUI.SpeechTherapy.Views.Pages.Voice_Teach;
 
 namespace MAUI.SpeechTherapy
 {
@@ -12,6 +13,11 @@ namespace MAUI.SpeechTherapy
             Routing.RegisterRoute(nameof(AlphbetVideoPage) , typeof(AlphbetVideoPage));
             Routing.RegisterRoute(nameof(AlphbetWordPage) , typeof(AlphbetWordPage));
             Routing.RegisterRoute(nameof(AlphbetSentencePage) , typeof(AlphbetSentencePage));
+            
+            
+            Routing.RegisterRoute(nameof(SentenceMakingPage) , typeof(SentenceMakingPage));
+
+
         }
     }
 }

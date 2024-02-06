@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using UraniumUI;
 
 namespace MAUI.SpeechTherapy
 {
@@ -9,9 +10,11 @@ namespace MAUI.SpeechTherapy
         {
             var builder = MauiApp.CreateBuilder();
             builder
-                .UseMauiApp<App>()
+               .UseMauiApp<App>()
                .UseMauiCommunityToolkit()
                .UseMauiCommunityToolkitMediaElement()
+               .UseUraniumUI()
+               .UseUraniumUIMaterial()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

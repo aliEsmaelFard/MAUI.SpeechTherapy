@@ -54,6 +54,7 @@
     <Color x:Key="xWrongAnswer">#B3261E</Color>
     <Color x:Key="xWordBox">#4EA75D</Color>
     <Color x:Key="xTabText">#565656</Color>
+    <Color x:Key="xPickerBorder">#D6D6D6</Color>
     
     <Color x:Key="xVerb">#EAEF00</Color>
     <Color x:Key="xObject">#B3261E</Color>

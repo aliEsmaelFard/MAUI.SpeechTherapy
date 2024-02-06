@@ -63,6 +63,7 @@ public partial class PaginationCmp : ContentView
     }
 
 
+
     private async void BackwardGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         try

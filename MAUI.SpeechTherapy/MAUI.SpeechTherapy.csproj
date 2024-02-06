@@ -59,6 +59,8 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\NotoKufiArabic-VariableFont_wght.ttf" />
 	  <None Remove="Resources\Images\arrow.png" />
+	  <None Remove="Resources\Images\dropdown.png" />
+	  <None Remove="Resources\Images\dropdown2.jpg" />
 	  <None Remove="Resources\Images\example.png" />
 	  <None Remove="Resources\Images\HomeIcon\aboutus.png" />
 	  <None Remove="Resources\Images\HomeIcon\aboutus.svg" />
@@ -96,6 +98,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\Pages\Sentence Makng\SentenceMakingPage.xaml.cs">
+	    <DependentUpon>SentenceMakingPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\Pages\Voice Teach\AlphbetOptionsPage.xaml.cs">
 	    <DependentUpon>AlphbetOptionsPage.xaml</DependentUpon>
 	  </Compile>
@@ -114,7 +119,7 @@
 	  <MauiXaml Update="Views\Components\ToolBarContent.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Pages\Sentence Makng\SentenceMakeingPage.xaml">
+	  <MauiXaml Update="Views\Pages\Sentence Makng\SentenceMakingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\Voice Teach\AlphbetListPage.xaml">

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.SpeechTherapy.Views.Pages.Sentence_Makng.SentenceMakingPage"
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material">
+    <!--toolbar section-->
+    <Shell.TitleView>
+        <local:ToolBarContent tTittle="صیاغة الجملة"
+                              x:Name="Toolbar" />
+    </Shell.TitleView>
+
+    <VerticalStackLayout>
+    
+        <Grid>
+            <Label Text="تصویر اول فاعل است، تصویر دوم مربوط به فعل است و تصویر سوم مربوط به مفعول از منوی زیر هر تصویر فاعل و فعل و مفعول مناسب و مرتبط را انتخاب کنید و برای بررسی جمله از نظر قواعد ساختاری بر روی دکمه «بررسی» کلیک کنید."
+                   FontFamily="Noto"
+                   FontSize="13"
+                   TextColor="{StaticResource xTabText}"
+                   Margin="24"
+                   FlowDirection="RightToLeft" />
+        </Grid>
+
+
+        <Border BackgroundColor="White"
+                Style="{StaticResource border-shadow-light}"
+                StrokeShape="RoundRectangle 16"
+                Margin="16,0">
+
+            <VerticalStackLayout >
+
+                <Grid RowDefinitions="Auto, *"
+                      ColumnDefinitions="*,*,*"
+                      ColumnSpacing="0"
+                      RowSpacing="16"
+                      Margin="8, 16">
+
+                    <Border Stroke="Gray"
+                            StrokeShape="RoundRectangle 8"
+                            WidthRequest="98"
+                            HeightRequest="98"
+                            Padding="2">
+                        <Image Source="example"
+                               x:Name="objectImg" />
+                    </Border>
+
+                    <Border Grid.Row="1"
+                            WidthRequest="98"
+                            HeightRequest="48"
+                            Stroke="{x:StaticResource xPickerBorder}"
+                            StrokeShape="RoundRectangle 8">
+
+                        <HorizontalStackLayout Spacing="6">
+
+                            <Image Source="dropdown" WidthRequest="14" HeightRequest="7" Margin="8,0,0,0" />
+                            <Picker Title="مفعول"
+                                    TextColor="Black"
+                                    FontFamily="Noto"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    x:Name="objectPicker"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    ItemsSource="{Binding fakeData}" />
+                        </HorizontalStackLayout>   
+                    </Border >
+                    <!--<material:PickerField Title="مفعول "
+                                          Grid.Row="1"
+                                          WidthRequest="98"
+                                          HeightRequest="60"
+                                          Icon="dropdown2"
+                                          CornerRadius="8"
+                                          x:Name="objectPicker"
+                                          AccentColor="LightGray"
+                                          ItemsSource="{Binding fakeData}"
+                                          TextColor="{StaticResource xTextPrimry}"
+                                          AllowClear="False"
+                                          FontSize="12"
+                                          
+                                          BorderColor="LightGray" />-->
+
+
+                    <Border Grid.Column="1"
+                            Stroke="Gray"
+                            StrokeShape="RoundRectangle 8"
+                            WidthRequest="98"
+                            HeightRequest="98"
+                            Padding="2">
+                        <Image Source="example"
+                               x:Name="verbImg" />
+
+                    </Border>
+
+                    <Border Grid.Row="1"
+                            WidthRequest="98"
+                            Grid.Column="1"
+                            HeightRequest="48"
+                            Stroke="{x:StaticResource xPickerBorder}"
+                            StrokeShape="RoundRectangle 8">
+
+                        <HorizontalStackLayout Spacing="6">
+
+                            <Image Source="dropdown"
+                                   WidthRequest="14"
+                                   HeightRequest="7"
+                                   Margin="8,0,0,0" />
+                            <Picker Title="فعل"
+                                    TextColor="Black"
+                                    FontFamily="Noto"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    x:Name="verbPicker"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    ItemsSource="{Binding fakeData}" />
+                        </HorizontalStackLayout>
+                    </Border >
+                    
+                    
+                    <!--<material:PickerField Title="فعل "
+                                          Grid.Row="1"
+                                          Grid.Column="1"
+                                          WidthRequest="98"
+                                          HeightRequest="60"
+                                          Icon="dropdown2"
+                                          CornerRadius="8"
+                                          x:Name="verbPicker"
+                                          FontAttributes="Bold"
+                                          FontFamily="Noto"
+                                          AccentColor="LightGray"
+                                          ItemsSource="{Binding fakeData}"
+                                          TextColor="{StaticResource xTextPrimry}"
+                                          AllowClear="False"
+                                          FontSize="12" />-->
+
+                    <Border Grid.Column="2"
+                            Stroke="Gray"
+                            StrokeShape="RoundRectangle 8"
+                            WidthRequest="98"
+                            HeightRequest="98"
+                            Padding="2">
+                        <Image Source="example"
+                               x:Name="subjectImg" />
+
+                    </Border>
+
+                    <Border Grid.Row="1"
+                            WidthRequest="98"
+                            Grid.Column="2"
+                            HeightRequest="48"
+                            Stroke="{x:StaticResource xPickerBorder}"
+                            StrokeShape="RoundRectangle 8">
+
+                        <HorizontalStackLayout Spacing="6">
+
+                            <Image Source="dropdown"
+                                   WidthRequest="14"
+                                   HeightRequest="7"
+                                   Margin="8,0,0,0" />
+                            <Picker Title="فاعل"
+                                    TextColor="Black"
+                                    FontFamily="Noto"
+                                    FontSize="12"
+                                    FontAttributes="Bold"
+                                    x:Name="subjectPicker"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    ItemsSource="{Binding fakeData}" />
+                        </HorizontalStackLayout>
+                    </Border >
+
+                    <!--<material:PickerField Title="فاعل "
+                                          Grid.Row="1"
+                                          Grid.Column="2"
+                                          WidthRequest="98"
+                                          HeightRequest="60"
+                                          Icon="dropdown2"
+                                          BorderColor="LightGray"
+                                          x:Name="subjectPicker"
+                                          FontAttributes="Bold"
+                                          FontFamily="Noto"
+                                          AccentColor="LightGray"
+                                          ItemsSource="{Binding fakeData}"
+                                          TextColor="{StaticResource xTextPrimry}"
+                                          AllowClear="False"
+                                          CornerRadius="8"
+                                          FontSize="12" />-->
+
+                </Grid>
+
+                <Button WidthRequest="280"
+                        HeightRequest="48" 
+                        CornerRadius="8"
+                        BackgroundColor="#13A4B5"
+                        TextColor="White"
+                        Text="بررسی"
+                        FontFamily="Noto"
+                        FontSize="16"
+                        Grid.Row="1"
+                        FontAttributes="Bold"
+                        Margin="0, 24"
+                        Clicked="Button_Clicked"
+                        />
+
+                <Label    TextColor="{StaticResource xTabText}"
+                          Text="آیتم ۱ از ۳۲"
+                          FontFamily="Noto"
+                          FontSize="12" 
+                          HorizontalOptions="Center"
+                          Margin="0,0,0,8"/>
+
+            </VerticalStackLayout>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

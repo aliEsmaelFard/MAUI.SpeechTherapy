@@ -61,7 +61,7 @@
         <local:HomeCard  Grid.Column="1"
                          Grid.Row="1"
                          ImageSource="jomle.png"
-                         
+                         PageRoute="SentenceMakingPage"
                          Text="صیاغة الجملة" />
 
         <local:HomeCard  Grid.Column="0"
