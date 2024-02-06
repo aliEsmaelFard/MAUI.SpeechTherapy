@@ -16,6 +16,7 @@ namespace MAUI.SpeechTherapy
             
             
             Routing.RegisterRoute(nameof(SentenceMakingPage) , typeof(SentenceMakingPage));
+            Routing.RegisterRoute(nameof(SentenceCheckPage) , typeof(SentenceCheckPage));
 
 
         }

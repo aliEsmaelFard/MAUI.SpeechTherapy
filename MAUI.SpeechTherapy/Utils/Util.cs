@@ -45,6 +45,15 @@ namespace MAUI.SpeechTherapy.Utils
             if (App.Current.Resources.TryGetValue(resourse, out var colorvalue))
                 return (Color)colorvalue;
             return null;
+
         }
+
+        public static async 
+        Task
+NavigateTo(string pagePath)
+        {
+            await Shell.Current.GoToAsync(pagePath);
+        }
+        
     }
 }

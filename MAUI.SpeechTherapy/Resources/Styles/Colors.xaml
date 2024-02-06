@@ -55,6 +55,11 @@
     <Color x:Key="xWordBox">#4EA75D</Color>
     <Color x:Key="xTabText">#565656</Color>
     <Color x:Key="xPickerBorder">#D6D6D6</Color>
+    <Color x:Key="xSentenceWrongBG">#F7E9E9</Color>
+    <Color x:Key="xSentenceWrongBorder">#B3261E</Color>
+    <Color x:Key="xSentenceRightBG">#F1FDF3</Color>
+    <Color x:Key="xSentenceRightBorder">#3D8148</Color>
+    
     
     <Color x:Key="xVerb">#EAEF00</Color>
     <Color x:Key="xObject">#B3261E</Color>

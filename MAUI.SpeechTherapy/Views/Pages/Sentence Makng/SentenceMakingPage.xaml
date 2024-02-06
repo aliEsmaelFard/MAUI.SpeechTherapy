@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.SpeechTherapy.Views.Pages.Sentence_Makng.SentenceMakingPage"
              xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components"
-             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material">
+            >
     <!--toolbar section-->
     <Shell.TitleView>
         <local:ToolBarContent tTittle="صیاغة الجملة"
@@ -54,7 +54,7 @@
 
                             <Image Source="dropdown" WidthRequest="14" HeightRequest="7" Margin="8,0,0,0" />
                             <Picker Title="مفعول"
-                                    TextColor="Black"
+                                 TextColor="{StaticResource xTextPrimry}"
                                     FontFamily="Noto"
                                     FontSize="12"
                                     FontAttributes="Bold"
@@ -105,7 +105,7 @@
                                    HeightRequest="7"
                                    Margin="8,0,0,0" />
                             <Picker Title="فعل"
-                                    TextColor="Black"
+                                 TextColor="{StaticResource xTextPrimry}"
                                     FontFamily="Noto"
                                     FontSize="12"
                                     FontAttributes="Bold"
@@ -158,7 +158,7 @@
                                    HeightRequest="7"
                                    Margin="8,0,0,0" />
                             <Picker Title="فاعل"
-                                    TextColor="Black"
+                                 TextColor="{StaticResource xTextPrimry}"
                                     FontFamily="Noto"
                                     FontSize="12"
                                     FontAttributes="Bold"

@@ -1,4 +1,6 @@
-﻿namespace MAUI.SpeechTherapy.Views.Pages.Sentence_Makng;
+﻿using MAUI.SpeechTherapy.Utils;
+
+namespace MAUI.SpeechTherapy.Views.Pages.Sentence_Makng;
 #if ANDROID
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 #endif
@@ -25,8 +27,8 @@ public partial class SentenceMakingPage : ContentPage
     
 }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
-
+        await Util.NavigateTo(nameof(SentenceCheckPage));
     }
 }
