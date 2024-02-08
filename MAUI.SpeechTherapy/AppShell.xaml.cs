@@ -1,4 +1,5 @@
-﻿using MAUI.SpeechTherapy.Views.Pages.Sentence_Makng;
+﻿using MAUI.SpeechTherapy.Views.Pages.FlashCards;
+using MAUI.SpeechTherapy.Views.Pages.Sentence_Makng;
 using MAUI.SpeechTherapy.Views.Pages.Voice_Teach;
 
 namespace MAUI.SpeechTherapy
@@ -17,6 +18,9 @@ namespace MAUI.SpeechTherapy
             
             Routing.RegisterRoute(nameof(SentenceMakingPage) , typeof(SentenceMakingPage));
             Routing.RegisterRoute(nameof(SentenceCheckPage) , typeof(SentenceCheckPage));
+
+            Routing.RegisterRoute(nameof(FlashCardListPage) , typeof(FlashCardListPage));
+            Routing.RegisterRoute(nameof(FlashCardsTopicPage), typeof(FlashCardsTopicPage));
 
 
         }

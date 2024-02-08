@@ -6,10 +6,13 @@
 
     <Grid >
         
-        <Border Margin="16, 0"
+        <Frame
+            
+            Margin="16, 0"
             HeightRequest="56"
-            Style="{StaticResource border-shadow-light}"
-            StrokeShape="RoundRectangle 8"
+            BackgroundColor="White"
+            BorderColor="LightGray"
+            Padding="0"
             BindingContext="{Binding Source={x:Reference MyView}}">
 
         <HorizontalStackLayout FlowDirection="RightToLeft"
@@ -24,7 +27,7 @@
 
         </HorizontalStackLayout>
 
-    </Border>
+    </Frame>
     </Grid>
     
 </ContentView>
