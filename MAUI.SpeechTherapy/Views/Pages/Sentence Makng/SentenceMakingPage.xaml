@@ -191,7 +191,7 @@
                 <Button WidthRequest="280"
                         HeightRequest="48" 
                         CornerRadius="8"
-                        BackgroundColor="#13A4B5"
+                        BackgroundColor="{StaticResource xButtonColor}"
                         TextColor="White"
                         Text="بررسی"
                         FontFamily="Noto"
@@ -202,7 +202,7 @@
                         Clicked="Button_Clicked"
                         />
 
-                <Label    TextColor="{StaticResource xTabText}"
+                <Label    TextColor="{StaticResource xPagenationColor}"
                           Text="آیتم ۱ از ۳۲"
                           FontFamily="Noto"
                           FontSize="12" 

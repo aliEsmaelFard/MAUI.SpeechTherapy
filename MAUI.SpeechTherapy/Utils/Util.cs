@@ -21,7 +21,7 @@ namespace MAUI.SpeechTherapy.Utils
                 Grid grid = contentView.Children[0] as Grid;
                 Border border = grid.Children[0] as Border;
                 HorizontalStackLayout hStack = border.GetVisualTreeDescendants().
-                    Where(x => x.GetType() == typeof(HorizontalStackLayout)).First() as HorizontalStackLayout ;
+                    Where(x => x.GetType() == typeof(HorizontalStackLayout)).First() as HorizontalStackLayout;
                 Label label = hStack.Children[0] as Label;
 
 
@@ -40,7 +40,7 @@ namespace MAUI.SpeechTherapy.Utils
 
         }
 
-        public static Color GetColorFromResourse(string  resourse)
+        public static Color GetColorFromResourse(string resourse)
         {
             if (App.Current.Resources.TryGetValue(resourse, out var colorvalue))
                 return (Color)colorvalue;
@@ -48,12 +48,18 @@ namespace MAUI.SpeechTherapy.Utils
 
         }
 
-        public static async 
-        Task
-NavigateTo(string pagePath)
+        public static async Task NavigateTo(string pagePath)
         {
-            await Shell.Current.GoToAsync(pagePath);
+            try
+            {
+                await Shell.Current.GoToAsync(pagePath);
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+            }
+
         }
-        
+
     }
 }

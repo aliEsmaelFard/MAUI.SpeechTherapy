@@ -4,13 +4,13 @@ namespace MAUI.SpeechTherapy.Views.Components;
 
 public partial class SentenceCard : ContentView
 {
-	public SentenceCard()
-	{
-		InitializeComponent();
+    public SentenceCard()
+    {
+        InitializeComponent();
         BindingContext = this;
 
-        bool x = (bool)GetValue(IsRightAnswerProperty);
-	}
+
+    }
 
 
     public static readonly BindableProperty TextProperty =
@@ -24,27 +24,34 @@ public partial class SentenceCard : ContentView
 
 
     public static readonly BindableProperty IsRightAnswerProperty =
-BindableProperty.Create(nameof(IsRightAnswer), typeof(bool), typeof(SentenceCard), default(bool));
+BindableProperty.Create(nameof(IsRightAnswer), typeof(string), typeof(SentenceCard), default(string),propertyChanged: ChangeValue);
 
-    public bool IsRightAnswer
+    public string IsRightAnswer
     {
-        get => (bool)GetValue(IsRightAnswerProperty);
-        set
-        {
-             SetValue(IsRightAnswerProperty, value);
-
-            if (value)
-            {
-                myBorder.BackgroundColor = Util.GetColorFromResourse("xSentenceRightBG");
-                myBorder.Stroke = Util.GetColorFromResourse("xSentenceRightBorder");
-            }
-            else
-            {
-                myBorder.BackgroundColor = Util.GetColorFromResourse("xSentenceWrongBG");
-                myBorder.Stroke = Util.GetColorFromResourse("xSentenceWrongBorder");
-            }
-        }
+        get => (string)GetValue(IsRightAnswerProperty);
+        set => SetValue(IsRightAnswerProperty, value);
     }
 
+    private static void ChangeValue(BindableObject bindable, object oldValue, object newValue)
+    {
+        var customComponent = (SentenceCard)bindable;
+        string isRight = (string)newValue;
 
+        customComponent.ChangeBoxColors(isRight);
+
+    }
+
+    private void ChangeBoxColors(string isRight)
+    {
+   if (isRight == "1")
+        {
+            myBorder.BackgroundColor = Util.GetColorFromResourse("xSentenceRightBG");
+            myBorder.Stroke = Util.GetColorFromResourse("xSentenceRightBorder");
+        }
+        else
+        {
+            myBorder.BackgroundColor = Util.GetColorFromResourse("xSentenceWrongBG");
+            myBorder.Stroke = Util.GetColorFromResourse("xSentenceWrongBorder");
+        }
+    }
 }

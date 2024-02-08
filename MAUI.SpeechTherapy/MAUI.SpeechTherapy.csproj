@@ -75,6 +75,7 @@
 	  <None Remove="Resources\Images\HomeIcon\mafahim.svg" />
 	  <None Remove="Resources\Images\HomeIcon\soalst.png" />
 	  <None Remove="Resources\Images\HomeIcon\soalst.svg" />
+	  <None Remove="Resources\Images\lamp.png" />
 	</ItemGroup>
 
 	<ItemGroup>

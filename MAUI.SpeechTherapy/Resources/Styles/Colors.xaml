@@ -59,6 +59,12 @@
     <Color x:Key="xSentenceWrongBorder">#B3261E</Color>
     <Color x:Key="xSentenceRightBG">#F1FDF3</Color>
     <Color x:Key="xSentenceRightBorder">#3D8148</Color>
+    <Color x:Key="xHintTextColor">#A5790E</Color>
+    <Color x:Key="xHintBorderColor">#D9D103</Color>
+    <Color x:Key="xButtonColor">#13A4B5</Color>
+    <Color x:Key="xButtonColorPressed">#19D2E8</Color>
+    <Color x:Key="xPagenationColor">#919191</Color>
+    
     
     
     <Color x:Key="xVerb">#EAEF00</Color>
