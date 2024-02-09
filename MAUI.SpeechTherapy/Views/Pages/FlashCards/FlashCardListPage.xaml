@@ -2,11 +2,99 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.SpeechTherapy.Views.Pages.FlashCards.FlashCardListPage"
-             Title="FlashCardListPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components"
+             xmlns:converter="clr-namespace:MAUI.SpeechTherapy.Utils">
+
+
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="Transparent" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+        <ResourceDictionary>
+            <converter:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+        </ResourceDictionary>
+
+
+    </ContentPage.Resources>
+
+    <!--toolbar section-->
+    <Shell.TitleView>
+        <local:ToolBarContent x:Name="Toolbar" />
+    </Shell.TitleView>
+
+
+    <Grid>
+
+        <ScrollView>
+
+            <CollectionView x:Name="myCollection"
+                            Margin="16,20,16,150"
+                            SelectionMode="None"
+                            ItemsSource="{Binding list}">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2"
+                                     VerticalItemSpacing="20"
+                                     HorizontalItemSpacing="0" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Border StrokeShape="RoundRectangle 8"
+                                HorizontalOptions="Center"
+                                Padding="0"
+                                Stroke="{StaticResource xFCcolor}"
+                                WidthRequest="156"
+                                HeightRequest="156">
+
+                            <Grid>
+                                <Image x:Name="FlashImage"
+                                       Source="{Binding Path}"
+                                       IsVisible="True" />
+
+                                <Grid BackgroundColor="LightBlue"
+                                      IsVisible="{Binding Source={x:Reference FlashImage}, Path=IsVisible, Converter={StaticResource InverseBooleanConverter}}">
+
+                                    <Label Text="{Binding Name}"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           FontAttributes="Bold"
+                                           FontSize="24"
+                                           FontFamily="Noto" />
+                                </Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                          CommandParameter="{Binding .}" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+
+
+                        </Border>
+
+
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </ScrollView>
+
+    </Grid>
+
 </ContentPage>

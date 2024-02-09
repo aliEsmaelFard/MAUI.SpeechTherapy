@@ -62,6 +62,9 @@
 	  <None Remove="Resources\Images\dropdown.png" />
 	  <None Remove="Resources\Images\dropdown2.jpg" />
 	  <None Remove="Resources\Images\example.png" />
+	  <None Remove="Resources\Images\flash1.png" />
+	  <None Remove="Resources\Images\flash2.png" />
+	  <None Remove="Resources\Images\flash3.png" />
 	  <None Remove="Resources\Images\HomeIcon\aboutus.png" />
 	  <None Remove="Resources\Images\HomeIcon\aboutus.svg" />
 	  <None Remove="Resources\Images\HomeIcon\asvat.png" />

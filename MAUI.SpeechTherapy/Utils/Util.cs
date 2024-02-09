@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MAUI.SpeechTherapy.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,11 @@ namespace MAUI.SpeechTherapy.Utils
         {
             var tapEventArgs = (TappedEventArgs)e;
             return (T)tapEventArgs.Parameter;
+        }
+
+        public static T GetValueFromCollectionView<T>(SelectionChangedEventArgs e)
+        {
+           return  (T) e.CurrentSelection.FirstOrDefault();
         }
 
         public static async void ChangeItemListBackGround(ContentView contentView)

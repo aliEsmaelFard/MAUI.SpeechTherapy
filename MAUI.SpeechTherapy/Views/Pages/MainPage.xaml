@@ -40,7 +40,9 @@
 
         <local:HomeCard  Grid.Column="0" Grid.Row="0"
                          ImageSource="mafahim.svg"
-                         Text="تعلیم المفاهیم" />
+                         Text="تعلیم المفاهیم"
+                         PageRoute="FlashCardsTopicPage"
+                         />
 
         <local:HomeCard  Grid.Column="1"
                          Grid.Row="0"

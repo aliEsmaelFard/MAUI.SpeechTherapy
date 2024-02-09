@@ -12,6 +12,8 @@ namespace MAUI.SpeechTherapy.Models
         [PrimaryKey , AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Path { get; set; }
+        public bool isImageShow { get; set; } = true;
         public byte[] Data { get; set; }
     }
 }

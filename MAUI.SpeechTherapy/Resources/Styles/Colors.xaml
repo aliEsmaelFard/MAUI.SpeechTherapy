@@ -64,6 +64,7 @@
     <Color x:Key="xButtonColor">#13A4B5</Color>
     <Color x:Key="xButtonColorPressed">#19D2E8</Color>
     <Color x:Key="xPagenationColor">#919191</Color>
+    <Color x:Key="xFCcolor">#E8E8E8</Color>
     
     
     
