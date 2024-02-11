@@ -79,6 +79,7 @@
 	  <None Remove="Resources\Images\HomeIcon\soalst.png" />
 	  <None Remove="Resources\Images\HomeIcon\soalst.svg" />
 	  <None Remove="Resources\Images\lamp.png" />
+	  <None Remove="Resources\Raw\book.pdf" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -124,6 +125,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Components\ToolBarContent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Comprehension\ComprehensionTopicPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\FlashCards\FlashCardListPage.xaml">

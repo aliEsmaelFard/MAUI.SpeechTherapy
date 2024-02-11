@@ -69,6 +69,7 @@
         <local:HomeCard  Grid.Column="0"
                          Grid.Row="2"
                          ImageSource="darksoal.png"
+                         PageRoute="ComprehensionTopicPage"
                          Text=" فهم الاسئلة و الإجابة على الأسئلة" />
 
         <local:HomeCard  Grid.Column="1"
