@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.SpeechTherapy.Views.Components.QuestionBox">
+
+    <Frame Grid.Row="1"
+           Padding="8"
+           Margin="10, 0"
+           x:Name="myBorder">
+        <Grid FlowDirection="RightToLeft"
+              ColumnDefinitions="50, *"
+              RowDefinitions="30,*">
+
+            <Image
+                x:Name="box"
+                Source="box"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   WidthRequest="24"
+                   HeightRequest="24" />
+            <Label Grid.Column="1"
+                   Grid.Row="0"
+                   Grid.RowSpan="2"
+                   Text="{Binding Text} "
+                   FontFamily="Noto"
+                   FontSize="16"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="Center"
+                   LineBreakMode="WordWrap" />
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Grid.GestureRecognizers>
+        </Grid>
+        
+
+    </Frame >
+
+
+</ContentView>

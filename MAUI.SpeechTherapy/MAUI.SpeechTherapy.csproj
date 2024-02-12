@@ -59,6 +59,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\NotoKufiArabic-VariableFont_wght.ttf" />
 	  <None Remove="Resources\Images\arrow.png" />
+	  <None Remove="Resources\Images\box.png" />
 	  <None Remove="Resources\Images\dropdown.png" />
 	  <None Remove="Resources\Images\dropdown2.jpg" />
 	  <None Remove="Resources\Images\example.png" />
@@ -79,6 +80,8 @@
 	  <None Remove="Resources\Images\HomeIcon\soalst.png" />
 	  <None Remove="Resources\Images\HomeIcon\soalst.svg" />
 	  <None Remove="Resources\Images\lamp.png" />
+	  <None Remove="Resources\Images\rightbox.png" />
+	  <None Remove="Resources\Images\wrongbox.png" />
 	  <None Remove="Resources\Raw\book.pdf" />
 	</ItemGroup>
 
@@ -89,6 +92,9 @@
 	  <MauiImage Include="Resources\Images\HomeIcon\jomle.svg" />
 	  <MauiImage Include="Resources\Images\HomeIcon\mafahim.svg" />
 	  <MauiImage Include="Resources\Images\HomeIcon\soalst.svg" />
+	  <MauiImage Include="Resources\Images\QuestionIcon\box.png" />
+	  <MauiImage Include="Resources\Images\QuestionIcon\rightbox.png" />
+	  <MauiImage Include="Resources\Images\QuestionIcon\wrongbox.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -121,6 +127,9 @@
 	  <MauiXaml Update="Views\Components\PaginationCmp.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Components\QuestionBox.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Components\SentenceCard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -134,6 +143,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\FlashCards\FlashCardsTopicPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Questions\QuestionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\Sentence Makng\SentenceCheckPage.xaml">

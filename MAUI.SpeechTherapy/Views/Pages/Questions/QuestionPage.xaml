@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.SpeechTherapy.Views.Pages.Questions.QuestionPage"
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components">
+
+    <!--toolbar section-->
+    <Shell.TitleView>
+        <local:ToolBarContent x:Name="Toolbar"
+                              tTittle="تعلیم افعال الامر و النهی"/>
+    </Shell.TitleView>
+
+    <Grid RowDefinitions="*,*">
+        <!--<Border WidthRequest="250"
+              HeightRequest="300"
+                Stroke="White"
+                StrokeThickness=".0"
+                StrokeShape="RoundRectangle 8"
+                Style="{x:StaticResource border-shadow-light}"
+              >
+        </Border>-->
+        <Frame Background="White"
+               BorderColor="LightGray"
+               HasShadow="True"
+               CornerRadius="16"
+               MaximumHeightRequest="500"
+               VerticalOptions="Start"
+               Margin="16,24">
+
+
+            <Grid RowDefinitions="Auto, Auto, Auto"  >
+
+                <Frame CornerRadius="16"
+                       HorizontalOptions="Center"
+                       IsClippedToBounds="True"
+                       Padding="1"
+                       WidthRequest="300"
+                       HeightRequest="300"
+                       BorderColor="LightGray"
+                       Margin="16, 24"
+                       VerticalOptions="Start"
+                       >
+
+                    <Image x:Name="Image"
+                           Source="example.png"  />
+
+                </Frame>
+
+                <local:QuestionBox Text="جمله درست این تصویر"
+                                   IsRightAnswer="1"
+                                   Grid.Row="1"/>
+
+
+                <local:QuestionBox Text="جمله غلط این تصویر"
+                                   IsRightAnswer="0"
+                                   Margin="0,8"
+                                   Grid.Row="2" />
+            
+            </Grid>
+            
+            
+        </Frame>
+
+        <local:PaginationCmp Grid.Row="1"  Margin="0,230"/>
+    </Grid>
+    
+</ContentPage>

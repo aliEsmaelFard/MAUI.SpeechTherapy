@@ -58,7 +58,8 @@
         <local:HomeCard  Grid.Column="0"
                          Grid.Row="1"
                          ImageSource="soalst.png"
-                         Text="تعلیم افعال الامر و الهی " />
+                         Text="تعلیم افعال الامر و الهی " 
+                         PageRoute="QuestionPage"/>
 
         <local:HomeCard  Grid.Column="1"
                          Grid.Row="1"
