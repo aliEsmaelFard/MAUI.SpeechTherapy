@@ -1,4 +1,5 @@
-﻿using MAUI.SpeechTherapy.Views.Pages.Comprehension;
+﻿using MAUI.SpeechTherapy.Views.Pages.AboutUs;
+using MAUI.SpeechTherapy.Views.Pages.Comprehension;
 using MAUI.SpeechTherapy.Views.Pages.FlashCards;
 using MAUI.SpeechTherapy.Views.Pages.Questions;
 using MAUI.SpeechTherapy.Views.Pages.Sentence_Makng;
@@ -27,6 +28,10 @@ namespace MAUI.SpeechTherapy
             Routing.RegisterRoute(nameof(ComprehensionTopicPage), typeof(ComprehensionTopicPage));
             
             Routing.RegisterRoute(nameof(QuestionPage), typeof(QuestionPage));
+          
+            Routing.RegisterRoute(nameof(AboutUsHubPage), typeof(AboutUsHubPage));
+            Routing.RegisterRoute(nameof(AboutAuthorPage), typeof(AboutAuthorPage));
+            Routing.RegisterRoute(nameof(AboutProgrammerPage), typeof(AboutProgrammerPage));
 
         }
     }

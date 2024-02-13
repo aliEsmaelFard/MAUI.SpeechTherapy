@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.SpeechTherapy.Views.Pages.AboutUs.AboutAuthorPage"
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components">
+
+    <!--toolbar section-->
+    <Shell.TitleView>
+        <local:ToolBarContent x:Name="Toolbar"
+                              tTittle="معلومات عنا" />
+    </Shell.TitleView>
+
+    <ScrollView>
+
+        <VerticalStackLayout Margin="16, 24"
+                             Spacing="16">
+
+
+            <local:CardComp Text="adkf"
+                            ImageSource="mobile_programming"
+                            ColorP="{StaticResource xPrimry}"
+                            HeightRequest="300"
+                            >
+
+                <local:CardComp.Content>
+                    <Label Text="Dynamic Content" />
+                </local:CardComp.Content>
+            </local:CardComp>
+            
+        </VerticalStackLayout>
+
+
+    </ScrollView>
+
+</ContentPage>

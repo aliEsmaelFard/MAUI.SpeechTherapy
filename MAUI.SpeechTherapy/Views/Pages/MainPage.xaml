@@ -76,6 +76,7 @@
         <local:HomeCard  Grid.Column="1"
                          Grid.Row="2"
                          ImageSource="aboutus.png"
+                         PageRoute="AboutUsHubPage"
                          Text="معلومات عنا" />
 
         
