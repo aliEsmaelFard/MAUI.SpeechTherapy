@@ -17,7 +17,7 @@
                 <Image Source="call.png"
                        WidthRequest="24" />
 
-                <Label  Text="{Binding Text}"
+                <Label  Text="{Binding Text}" 
                         FontSize="14"
                         FontFamily="Noto"
                         FontAttributes="Bold" />
