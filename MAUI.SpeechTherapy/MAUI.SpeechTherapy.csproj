@@ -58,6 +58,16 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\NotoKufiArabic-VariableFont_wght.ttf" />
+	  <None Remove="Resources\Images\AboutUs\book_saved.png" />
+	  <None Remove="Resources\Images\AboutUs\call.png" />
+	  <None Remove="Resources\Images\AboutUs\fxemoji_email.png" />
+	  <None Remove="Resources\Images\AboutUs\logos_telegram.png" />
+	  <None Remove="Resources\Images\AboutUs\logos_whatsapp_icon.png" />
+	  <None Remove="Resources\Images\AboutUs\mobile_programming.png" />
+	  <None Remove="Resources\Images\AboutUs\people.png" />
+	  <None Remove="Resources\Images\AboutUs\profile_2user.png" />
+	  <None Remove="Resources\Images\AboutUs\sms.png" />
+	  <None Remove="Resources\Images\AboutUs\user_edit.png" />
 	  <None Remove="Resources\Images\arrow.png" />
 	  <None Remove="Resources\Images\box.png" />
 	  <None Remove="Resources\Images\dropdown.png" />
@@ -86,6 +96,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Include="Resources\Images\AboutUs\book_saved.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\call.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\fxemoji_email.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\logos_telegram.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\logos_whatsapp_icon.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\mobile_programming.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\people.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\profile_2user.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\sms.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\user_edit.png" />
 	  <MauiImage Include="Resources\Images\HomeIcon\aboutus.svg" />
 	  <MauiImage Include="Resources\Images\HomeIcon\asvat.svg" />
 	  <MauiImage Include="Resources\Images\HomeIcon\darksoal.svg" />
@@ -118,6 +138,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\Components\CardComp.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Components\HomeCard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -134,6 +157,15 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Components\ToolBarContent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\AboutUs\AboutAuthorPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\AboutUs\AboutProgrammerPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\AboutUs\AboutUsHubPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\Comprehension\ComprehensionTopicPage.xaml">

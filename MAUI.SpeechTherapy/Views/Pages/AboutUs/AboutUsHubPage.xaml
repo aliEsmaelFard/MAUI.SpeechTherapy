@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.SpeechTherapy.Views.Pages.AboutUs.AboutUsHubPage"
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components">
+
+    <!--toolbar section-->
+    <Shell.TitleView>
+        <local:ToolBarContent x:Name="Toolbar"
+                              tTittle="معلومات عنا" />
+    </Shell.TitleView>
+
+
+    <VerticalStackLayout Spacing="8" Margin="0, 24">
+        
+          <Grid>
+
+        <Border Margin="16, 0"
+                HeightRequest="56"
+                Stroke="LightGray"
+                StrokeThickness=".5"
+                Style="{StaticResource border-shadow-light}"
+                StrokeShape="RoundRectangle 8"
+                >
+
+            <HorizontalStackLayout FlowDirection="RightToLeft"
+                                   HorizontalOptions="End"
+                                   VerticalOptions="Center"
+                                   Spacing="8"
+                                   Padding="16,0">
+              
+                <Image Source="user_edit"
+                           WidthRequest="24" 
+                       />
+                
+                    <Label  Text="درباره نویسنده"
+                        FontSize="16"
+                        FontFamily="Noto"
+                        Margin="16,0"
+                        FontAttributes="Bold" />
+
+            </HorizontalStackLayout>
+
+        </Border>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="AuthorGestureRecognizer_Tapped" />
+            </Grid.GestureRecognizers>
+    </Grid>
+
+        <Grid>
+
+            <Border Margin="16, 0"
+                    HeightRequest="56"
+                    Stroke="LightGray"
+                    StrokeThickness=".5"
+                    Style="{StaticResource border-shadow-light}"
+                    StrokeShape="RoundRectangle 8">
+
+                <HorizontalStackLayout FlowDirection="RightToLeft"
+                                       HorizontalOptions="End"
+                                       VerticalOptions="Center"
+                                       Spacing="8"
+                                       Padding="16,0">
+
+                    <Image Source="profile_2user"
+                           WidthRequest="24" />
+
+                    <Label  Text="پشتیبان اپ"
+                            FontSize="16"
+                            FontFamily="Noto"
+                            Margin="16,0"
+                            FontAttributes="Bold" />
+
+                </HorizontalStackLayout>
+
+            </Border>
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ProgrammerGestureRecognizer_Tapped" />
+            </Grid.GestureRecognizers>
+        </Grid>
+
+
+
+    </VerticalStackLayout>
+  
+</ContentPage>
