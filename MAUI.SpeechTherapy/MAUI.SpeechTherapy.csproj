@@ -203,8 +203,4 @@
 	  </MauiXaml>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Services\SentenceMaking\" />
-	</ItemGroup>
-
 </Project>
