@@ -1,18 +1,15 @@
-﻿using SQLite;
-
+﻿
 namespace MAUI.SpeechTherapy.Models.FlashCard
 {
     public class FlashCardModel
     {
-        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        public string Name { get; set; }= string.Empty;
 
-        public int FileId { get; set; }
+        public byte[]? Data { get; set; }
 
-        [Column("CategoryId")]
-        public int FlashCardCategoryId { get; set; }
+        public string FileType { get; set; } = string.Empty;
 
     }
 }

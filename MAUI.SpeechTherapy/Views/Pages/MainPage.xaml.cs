@@ -1,4 +1,5 @@
-﻿using MAUI.SpeechTherapy.Views.Pages.Voice_Teach;
+﻿using MAUI.SpeechTherapy.Services.Alphba;
+using MAUI.SpeechTherapy.Services.FlashCard;
 
 namespace MAUI.SpeechTherapy
 {
@@ -7,6 +8,9 @@ namespace MAUI.SpeechTherapy
       
         public MainPage()
         {
+           FlashCardService alphbaService = new FlashCardService();
+            var x= alphbaService.GetPageByPage(1,1,1);
+
             InitializeComponent();
         }
 

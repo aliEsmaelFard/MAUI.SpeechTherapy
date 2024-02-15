@@ -57,15 +57,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <AndroidResource Remove="Models\NewFolder\**" />
-	  <Compile Remove="Models\NewFolder\**" />
-	  <EmbeddedResource Remove="Models\NewFolder\**" />
-	  <MauiCss Remove="Models\NewFolder\**" />
-	  <MauiXaml Remove="Models\NewFolder\**" />
-	  <None Remove="Models\NewFolder\**" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="Resources\Fonts\NotoKufiArabic-VariableFont_wght.ttf" />
 	  <None Remove="Resources\Images\arrow.png" />
 	  <None Remove="Resources\Images\box.png" />
@@ -178,6 +169,10 @@
 	  <MauiXaml Update="Views\Pages\Voice Teach\AlphbetWordPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Services\SentenceMaking\" />
 	</ItemGroup>
 
 </Project>
