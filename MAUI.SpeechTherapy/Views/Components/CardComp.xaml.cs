@@ -8,15 +8,6 @@ public partial class CardComp : ContentView
         BindingContext = this;
 	}
 
-    public static readonly BindableProperty ContentProperty =
-         BindableProperty.Create(nameof(Content), typeof(View), typeof(CardComp));
-
-    public View Content
-    {
-        get => (View)GetValue(ContentProperty);
-        set => SetValue(ContentProperty, value);
-    }
-
     public static readonly BindableProperty TextProperty =
            BindableProperty.Create(nameof(Text), typeof(string), typeof(CardComp), default(string));
 

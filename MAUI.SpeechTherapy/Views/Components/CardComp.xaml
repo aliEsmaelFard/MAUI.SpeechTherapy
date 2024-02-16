@@ -2,10 +2,6 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.SpeechTherapy.Views.Components.CardComp">
-    <Border Stroke="LightGray"
-            StrokeThickness=".6"
-            Style="{StaticResource border-shadow-light}"
-            StrokeShape="RoundRectangle 12">
 
         <VerticalStackLayout>
             <HorizontalStackLayout FlowDirection="RightToLeft"
@@ -14,22 +10,23 @@
                                    Spacing="8"
                                    Margin="16">
 
-                <Image Source="call.png"
+                <Image Source="{Binding ImageSource}"
                        WidthRequest="24" />
 
                 <Label  Text="{Binding Text}" 
                         FontSize="14"
                         FontFamily="Noto"
-                        FontAttributes="Bold" />
-
+                        FontAttributes="Bold" 
+                        TextColor="{Binding ColorP}"/>
+                
+            
             </HorizontalStackLayout>
 
             <BoxView HeightRequest="2"
-                     BackgroundColor="{Binding ColorP}" />
+                     BackgroundColor="{Binding ColorP}" 
+                     />
 
-            <ContentPresenter Content="{Binding Content, Source={x:Reference this}}" />
-
+        
         </VerticalStackLayout>
 
-    </Border>
 </ContentView>

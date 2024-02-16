@@ -67,8 +67,10 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\NotoKufiArabic-VariableFont_wght.ttf" />
+	  <None Remove="Resources\Images\AboutUs\booksection.svg" />
 	  <None Remove="Resources\Images\AboutUs\book_saved.png" />
 	  <None Remove="Resources\Images\AboutUs\call.png" />
+	  <None Remove="Resources\Images\AboutUs\flashcardsection.svg" />
 	  <None Remove="Resources\Images\AboutUs\fxemoji_email.png" />
 	  <None Remove="Resources\Images\AboutUs\logos_telegram.png" />
 	  <None Remove="Resources\Images\AboutUs\logos_whatsapp_icon.png" />
@@ -105,8 +107,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Include="Resources\Images\AboutUs\booksection.svg" />
 	  <MauiImage Include="Resources\Images\AboutUs\book_saved.png" />
 	  <MauiImage Include="Resources\Images\AboutUs\call.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\flashcardsection.svg" />
 	  <MauiImage Include="Resources\Images\AboutUs\fxemoji_email.png" />
 	  <MauiImage Include="Resources\Images\AboutUs\logos_telegram.png" />
 	  <MauiImage Include="Resources\Images\AboutUs\logos_whatsapp_icon.png" />
