@@ -57,15 +57,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <AndroidResource Remove="Models\NewFolder\**" />
-	  <Compile Remove="Models\NewFolder\**" />
-	  <EmbeddedResource Remove="Models\NewFolder\**" />
-	  <MauiCss Remove="Models\NewFolder\**" />
-	  <MauiXaml Remove="Models\NewFolder\**" />
-	  <None Remove="Models\NewFolder\**" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="Resources\Fonts\NotoKufiArabic-VariableFont_wght.ttf" />
 	  <None Remove="Resources\Images\AboutUs\booksection.svg" />
 	  <None Remove="Resources\Images\AboutUs\book_saved.png" />

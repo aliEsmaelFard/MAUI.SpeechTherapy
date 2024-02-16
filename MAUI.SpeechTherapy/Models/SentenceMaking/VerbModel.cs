@@ -1,15 +1,15 @@
-﻿using SQLite;
-
+﻿
 namespace MAUI.SpeechTherapy.Models.SentenceMaking
 {
     public class VerbModel
     {
-        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
-        public int FileId { get; set; }
+        public byte[]? Data { get; set; }
+
+        public string? FileType { get; set; }
 
     }
 }
