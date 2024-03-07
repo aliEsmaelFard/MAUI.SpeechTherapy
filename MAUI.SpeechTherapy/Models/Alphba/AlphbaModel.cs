@@ -8,7 +8,5 @@ namespace MAUI.SpeechTherapy.Models.Alphba
 
         public string Name { get; set; }=string.Empty;
 
-        public int FileId { get; set; }
-
     }
 }

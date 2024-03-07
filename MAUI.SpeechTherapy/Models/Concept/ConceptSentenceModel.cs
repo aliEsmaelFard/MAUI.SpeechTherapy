@@ -5,10 +5,11 @@
         
         public int Id { get; set; }
 
-        public int CategoryId { get; set; }
-
         public string? Text { get; set; }
 
-        public int FileId { get; set; }
+        public byte[]? Data { get; set; }
+
+        public string? FileType { get; set; }
+
     }
 }

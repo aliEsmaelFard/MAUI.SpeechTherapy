@@ -51,7 +51,7 @@ namespace MAUI.SpeechTherapy.Services
         /// <param name="PageNumber">Start Record</param>
         /// <param name="AlphbaId">Id table Alphba</param>
         /// <returns></returns>
-        public async Task<GenericPageByPage<AlphbaBookModel>> AlphbaBookListAsync(int PageSize, int PageNumber, int AlphbaId)
+        public async Task<GenericPageByPage<AlphbaBookModel>> AlphbaBookListAsync(int AlphbaId, int PageNumber,int PageSize)
         {
             GenericPageByPage<AlphbaBookModel> Book = new GenericPageByPage<AlphbaBookModel>();
             string query = "Select AlphbaBookModel.Id,Text,Data,FileType" +
@@ -64,22 +64,23 @@ namespace MAUI.SpeechTherapy.Services
             return Book;
         }
         /// <summary>
-        /// Get Info Alphba Words
+        /// Get Info AlphbaBook
         /// </summary>
-        /// <param name="AlphbaId">Id Table Alphba</param>
-        /// <param name="Position">Position letter in word</param>
-        /// <returns></returns>
-        public async Task<GenericPageByPage<AlphbaWordModel>> AlphbaBookListAsync(int AlphbaId, int Position)
+        /// <param name="AlphbaId">Id table Alphba</param>
+        /// <returns>All Record</returns>
+        public async Task<GenericPageByPage<AlphbaBookModel>> AlphbaBookListAsync(int AlphbaId)
         {
-            GenericPageByPage<AlphbaWordModel> wordDto = new GenericPageByPage<AlphbaWordModel>();
-            string query = "Select Id,Word,Type,AlphbaId" +
-                " From AlphbaWordModel" +
-                " where AlphbaId=" + AlphbaId + " and Type=" + Position;
-
-            wordDto.Items = await db.QueryGetEntityList<AlphbaWordModel>(query);
-            wordDto.RowCount = wordDto.Items.Count;
-            return wordDto;
+            GenericPageByPage<AlphbaBookModel> Book = new GenericPageByPage<AlphbaBookModel>();
+            string query = "Select AlphbaBookModel.Id,Text,Data,FileType" +
+                " From AlphbaBookModel,FileModel" +
+                " where AlphbaBookModel.FileId=FileModel.Id" +
+                " and AlphbaId=" + AlphbaId ;
+            
+            Book.Items = await db.QueryGetEntityList<AlphbaBookModel>(query);
+            Book.RowCount = Book.Items.Count;
+            return Book;
         }
+       
 
 
 
@@ -100,12 +101,12 @@ namespace MAUI.SpeechTherapy.Services
         /// GetAll info CategoryConceptQuestion
         /// </summary>
         /// <returns> All Record</returns>
-        public async Task<GenericPageByPage<CategoryConceptQuestionModel>> CategoryConceptQuestionListAsync()
+        public async Task<GenericPageByPage<CategoryQuestionModel>> CategoryQuestionListAsync()
         {
-            GenericPageByPage<CategoryConceptQuestionModel> Category = new GenericPageByPage<CategoryConceptQuestionModel>();
+            GenericPageByPage<CategoryQuestionModel> Category = new GenericPageByPage<CategoryQuestionModel>();
 
 
-            Category.Items = await db.GetEntityList<CategoryConceptQuestionModel>();
+            Category.Items = await db.GetEntityList<CategoryQuestionModel>();
             Category.RowCount = Category.Items.Count;
             return Category;
         }
@@ -116,7 +117,7 @@ namespace MAUI.SpeechTherapy.Services
         /// <param name="PageNumber">Start Record</param>
         /// <param name="CategoryId">Id table CategorySentence</param>
         /// <returns></returns>
-        public async Task<GenericPageByPage<ConceptSentenceModel>> ConceptSentenceListAsync( int CategoryId,int PageSize, int PageNumber)
+        public async Task<GenericPageByPage<ConceptSentenceModel>> ConceptSentenceListAsync( int CategoryId, int PageNumber,int PageSize)
         {
             GenericPageByPage<ConceptSentenceModel> Page = new GenericPageByPage<ConceptSentenceModel>();
             string query = "Select ConceptSentenceModel.Id,Text,Data,FileType" +
@@ -152,15 +153,15 @@ namespace MAUI.SpeechTherapy.Services
         /// <param name="PageSize">Count Records</param>
         /// <param name="PageNumber">Start Record</param>
         /// <returns>Get Limit Record</returns>
-        public async Task<GenericPageByPage<ConceptQuestionModel>> ConceptQuestionListAsync(int CategoryId, int PageSize, int PageNumber)
+        public async Task<GenericPageByPage<ConceptQuestionModel>> ConceptQuestionListAsync(int CategoryId ,int PageNumber, int PageSize)
         {
             GenericPageByPage<ConceptQuestionModel> Pages = new GenericPageByPage<ConceptQuestionModel>();
             string query = "Select ConceptQuestionModel.Id,RightAnswer,WrongAnswer,Data,FileType" +
                " From ConceptQuestionModel,FileModel" +
                " where ConceptQuestionModel.FileId=FileModel.Id" +
-               "and CategoryId = " + CategoryId + "  LIMIT " + PageSize + " OFFSET " + (PageNumber - 1);
+               " and CategoryId = " + CategoryId + "  LIMIT " + PageSize + " OFFSET " + (PageNumber - 1);
             string queryCount = "Select Count(Id) From ConceptQuestionModel" +
-                " where and CategoryId =" + CategoryId;
+                " where CategoryId =" + CategoryId;
             Pages.Items = await db.QueryGetEntityList<ConceptQuestionModel>(query);
             Pages.RowCount = await db.GetCount(queryCount);
             return Pages;
@@ -173,10 +174,10 @@ namespace MAUI.SpeechTherapy.Services
         public async Task<GenericPageByPage<ConceptQuestionModel>> ConceptQuestionListAsync(int CategoryId)
         {
             GenericPageByPage<ConceptQuestionModel> Pages = new GenericPageByPage<ConceptQuestionModel>();
-            string query = "Select ConceptQuestionModel.Id,RightAnswer,WrongAnswer,Data,FileType" +
+            string query = "Select ConceptQuestionModel.Id,CategoryId,FileId,RightAnswer,WrongAnswer,Data,FileType" +
                " From ConceptQuestionModel,FileModel" +
                " where ConceptQuestionModel.FileId=FileModel.Id" +
-               "and CategoryId = " + CategoryId ;
+               " and CategoryId = " + CategoryId ;
             
             Pages.Items = await db.QueryGetEntityList<ConceptQuestionModel>(query);
             Pages.RowCount = Pages.Items.Count;
@@ -192,7 +193,7 @@ namespace MAUI.SpeechTherapy.Services
         /// <param name="PageSize">Count Record</param>
         /// <param name="PageNumber">Start Record</param>
         /// <returns></returns>
-        public async Task<GenericPageByPage<FlashCardCategory>> GetPageByPageFlashCardCategoryAsync(int PageSize, int PageNumber)
+        public async Task<GenericPageByPage<FlashCardCategory>> FlashCardCategoryListAsync( int PageNumber,int PageSize)
         {
             GenericPageByPage<FlashCardCategory> Book = new GenericPageByPage<FlashCardCategory>();
             string query = "Select Id,Name" +
@@ -207,7 +208,7 @@ namespace MAUI.SpeechTherapy.Services
         /// Get Info Category Flash card
         /// </summary>
         /// <returns>GetAll Category FlashCard</returns>
-        public async Task<GenericPageByPage<FlashCardCategory>> GetPageByPageFlashCardCategoryAsync()
+        public async Task<GenericPageByPage<FlashCardCategory>> FlashCardCategoryListAsync()
         {
             GenericPageByPage<FlashCardCategory> Book = new GenericPageByPage<FlashCardCategory>();
             string query = "Select Id,Name From FlashCardCategory";
@@ -222,7 +223,7 @@ namespace MAUI.SpeechTherapy.Services
         /// <param name="PageNumber">Start Record</param>
         /// <param name="CategoryId">Id From Table FlashCategory</param>
         /// <returns>Get Limit Record</returns>
-        public async Task<GenericPageByPage<FlashCardModel>> FlashCardListAsync(int PageSize, int PageNumber, int CategoryId)
+        public async Task<GenericPageByPage<FlashCardModel>> FlashCardListAsync(int CategoryId, int PageNumber,int PageSize )
         {
             GenericPageByPage<FlashCardModel> Pages = new GenericPageByPage<FlashCardModel>();
             string query = "Select FlashCardModel.Id,Name,Data,FileType" +
@@ -273,15 +274,15 @@ namespace MAUI.SpeechTherapy.Services
         /// <param name="PageSize">Count Records</param>
         /// <param name="PageNumber">Start Record</param>
         /// <returns>Get Limit Record</returns>
-        public async Task<GenericPageByPage<QuestionModel>> QuestionListAsync(int CategoryId, int PageSize, int PageNumber)
+        public async Task<GenericPageByPage<QuestionModel>> QuestionListAsync(int CategoryId, int PageNumber, int PageSize)
         {
             GenericPageByPage<QuestionModel> Pages = new GenericPageByPage<QuestionModel>();
-            string query = "Select QuestionModel.Id,RightAnswer,WrongAnswer,Data,FileType" +
+            string query = "Select QuestionModel.Id,RightAnswer,WrongAnswer,Data,FileType,FileId" +
                " From QuestionModel,FileModel" +
                " where QuestionModel.FileId=FileModel.Id" +
-               "and CategoryId = " + CategoryId + "  LIMIT " + PageSize + " OFFSET " + (PageNumber - 1);
+               " and CategoryId=" + CategoryId + "  LIMIT " + PageSize + " OFFSET " + (PageNumber - 1);
             string queryCount = "Select Count(Id) From QuestionModel" +
-                " where and CategoryId =" + CategoryId;
+                " where  CategoryId=" + CategoryId;
             Pages.Items = await db.QueryGetEntityList<QuestionModel>(query);
             Pages.RowCount = await db.GetCount(queryCount);
             return Pages;
@@ -294,10 +295,10 @@ namespace MAUI.SpeechTherapy.Services
         public async Task<GenericPageByPage<QuestionModel>> QuestionListAsync(int CategoryId)
         {
             GenericPageByPage<QuestionModel> Pages = new GenericPageByPage<QuestionModel>();
-            string query = "Select QuestionModel.Id,RightAnswer,WrongAnswer,Data,FileType" +
+            string query = "Select QuestionModel.Id,RightAnswer,WrongAnswer,Data,FileType,FileId" +
                " From QuestionModel,FileModel" +
                " where QuestionModel.FileId=FileModel.Id" +
-               "and CategoryId = " + CategoryId;
+               " and CategoryId = " + CategoryId;
 
             Pages.Items = await db.QueryGetEntityList<QuestionModel>(query);
             Pages.RowCount = Pages.Items.Count;
@@ -311,7 +312,7 @@ namespace MAUI.SpeechTherapy.Services
         /// <param name="PageSize">Count Record</param>
         /// <param name="PageNumber">Start Record</param>
         /// <returns>Get Limit Record</returns>
-        public async Task<GenericPageByPage<ObjectModel>> ObjectListAsync(int PageSize, int PageNumber)
+        public async Task<GenericPageByPage<ObjectModel>> ObjectListAsync(int PageNumber,int PageSize)
         {
             GenericPageByPage<ObjectModel> Pages = new GenericPageByPage<ObjectModel>();
             string query = "Select ObjectModel.Id,Name,Data,FileType" +
@@ -344,7 +345,7 @@ namespace MAUI.SpeechTherapy.Services
         /// <param name="PageSize">Count Records</param>
         /// <param name="PageNumber">Start Record</param>
         /// <returns>Get Limit Record</returns>
-        public async Task<GenericPageByPage<SentenceMakingModel>> SentenceMakingListAsync(int PageSize, int PageNumber)
+        public async Task<GenericPageByPage<SentenceMakingModel>> SentenceMakingListAsync(int PageNumber,int PageSize)
         {
             GenericPageByPage<SentenceMakingModel> Pages = new GenericPageByPage<SentenceMakingModel>();
             string query = "Select SentenceMakingModel.Id,SubjectId,ObjectId,VerbId," +
@@ -392,7 +393,7 @@ namespace MAUI.SpeechTherapy.Services
         /// <param name="PageSize">Count Records</param>
         /// <param name="PageNumber">Start Record</param>
         /// <returns>Get Limit Record</returns>
-        public async Task<GenericPageByPage<SubjectModel>> SubjectListAsync(int PageSize, int PageNumber)
+        public async Task<GenericPageByPage<SubjectModel>> SubjectListAsync(int PageNumber,int PageSize)
         {
             GenericPageByPage<SubjectModel> Pages = new GenericPageByPage<SubjectModel>();
             string query = "Select SubjectModel.Id,Name,Data,FileType" +
@@ -424,7 +425,7 @@ namespace MAUI.SpeechTherapy.Services
         /// <param name="PageSize">Count Records</param>
         /// <param name="PageNumber">Start Record</param>
         /// <returns>Get Limit Record</returns>
-        public async Task<GenericPageByPage<VerbModel>> VerbListAsync(int PageSize, int PageNumber)
+        public async Task<GenericPageByPage<VerbModel>> VerbListAsync( int PageNumber,int PageSize)
         {
             GenericPageByPage<VerbModel> Pages = new GenericPageByPage<VerbModel>();
             string query = "Select VerbModel.Id,Name,Data,FileType" +
