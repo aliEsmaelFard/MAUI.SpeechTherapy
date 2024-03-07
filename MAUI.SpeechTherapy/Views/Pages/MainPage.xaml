@@ -21,7 +21,6 @@
                                FlowDirection="RightToLeft"
                                Margin="50, 0"
                                >
-             <Button  Text="Test" Clicked="Button_Clicked"/>
             <Label
                    Text="نام اپ "
                    TextColor="White"
