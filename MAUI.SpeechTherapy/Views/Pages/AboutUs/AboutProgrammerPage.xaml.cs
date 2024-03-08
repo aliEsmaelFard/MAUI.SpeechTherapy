@@ -8,7 +8,7 @@ public partial class AboutProgrammerPage : ContentPage
     {
         InitializeComponent();
     }
-
+     
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         string value = Util.GetValueFromTapped<string>(e);
