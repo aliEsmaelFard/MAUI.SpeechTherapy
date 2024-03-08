@@ -16,7 +16,7 @@
     <!--toolbar section-->
     <Shell.TitleView >
 
-   
+       
         <HorizontalStackLayout VerticalOptions="Fill"
                                FlowDirection="RightToLeft"
                                Margin="50, 0"
