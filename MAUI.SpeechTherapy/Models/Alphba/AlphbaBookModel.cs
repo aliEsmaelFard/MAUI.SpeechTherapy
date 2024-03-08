@@ -11,5 +11,7 @@ namespace MAUI.SpeechTherapy.Models.Alphba
         public byte[] Data { get; set; }
 
         public string FileType { get; set; }
+
+      //  public ImageSource Source { get; set; }
     }
 }

@@ -71,7 +71,7 @@ namespace MAUI.SpeechTherapy.Services
         public async Task<GenericPageByPage<AlphbaBookModel>> AlphbaBookListAsync(int AlphbaId)
         {
             GenericPageByPage<AlphbaBookModel> Book = new GenericPageByPage<AlphbaBookModel>();
-            string query = "Select AlphbaBookModel.Id,Text,Data,FileType" +
+            string query = "Select AlphbaBookModel.Id,Text,FileModel.FileType,FileModel.Data" +
                 " From AlphbaBookModel,FileModel" +
                 " where AlphbaBookModel.FileId=FileModel.Id" +
                 " and AlphbaId=" + AlphbaId ;

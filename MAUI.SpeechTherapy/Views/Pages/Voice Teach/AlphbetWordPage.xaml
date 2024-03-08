@@ -152,6 +152,7 @@
                             <Label FontSize="18"
                                    VerticalOptions="Center"
                                    HorizontalOptions="Center"
+                                   Text="{Binding Word}"
                                   >
 
                                 <!--FormattedText="{Binding Word, Converter={StaticResource StringConverter}}"-->

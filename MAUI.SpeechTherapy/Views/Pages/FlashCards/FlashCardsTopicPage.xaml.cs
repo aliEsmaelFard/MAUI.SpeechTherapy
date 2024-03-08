@@ -1,16 +1,22 @@
-﻿using MAUI.SpeechTherapy.Utils;
+﻿using MAUI.SpeechTherapy.Models.FlashCard;
+using MAUI.SpeechTherapy.Utils;
+using System.Collections.ObjectModel;
 
 namespace MAUI.SpeechTherapy.Views.Pages.FlashCards;
 
 public partial class FlashCardsTopicPage : ContentPage
 {
-	public FlashCardsTopicPage()
+    public ObservableCollection<FlashCardCategory> DataList { get; set; } = new ObservableCollection<FlashCardCategory>();
+
+    public FlashCardsTopicPage()
 	{
 		InitializeComponent();
         BindingContext = this;
 	}
 
-    public string[] fakeData { get; set; } = { "ملابس", "الفاكهة", "طعام", "بندق", "الخضروات", "الحيوانات" };
+    
+ 
+
 
     private async void ListItemGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {

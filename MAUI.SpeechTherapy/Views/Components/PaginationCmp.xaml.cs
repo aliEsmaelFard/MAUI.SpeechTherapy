@@ -76,6 +76,7 @@ public partial class PaginationCmp : ContentView
 
         }
     }
+
     private static async Task ChangeArrowBtnColor(object sender)
     {
         Frame frame = sender as Frame;

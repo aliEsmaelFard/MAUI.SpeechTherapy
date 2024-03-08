@@ -29,7 +29,6 @@ public partial class AlphbetListPage : ContentPage
 			model.Name = model.Name.Replace("/", "");
 			DataList.Add(model);
 		}
-
     }
 
     private async void ListItemGestureRecognizer_Tapped(object sender, TappedEventArgs e)

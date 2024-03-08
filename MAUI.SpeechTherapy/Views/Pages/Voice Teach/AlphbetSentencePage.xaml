@@ -40,27 +40,30 @@
                        VerticalOptions="Start">
 
                     <Image x:Name="Image"
-                           Source="example.png" />
+                           Source="{Binding DataImageSource}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
 
                 </Frame>
 
                 <Label Grid.Row="1"
                        x:Name="label"
                        FontFamily="Noto"
-                       FontSize="12"
+                       FontSize="14"
                        Margin="20, -10,16,0"
                        HorizontalTextAlignment="End"
                        TextColor="{StaticResource xTextPrimry}"
-                       Text="منذر تلمیذ ذکي و حصل علی المدالیة الذهبية
-منذر تلمیذ ذکي و حصل
-حصل علی المدالیة الذهبية
-منذر تلمیذ ذکي و حصل علی المدالیة الذهبية" />
+                       Text="{Binding DataText}"
+                       IsVisible="False"
+                        />
 
 
             </Grid>
         </Frame>
 
-        <local:PaginationCmp Grid.Row="1" />
+        <!--<local:PaginationCmp Grid.Row="1"   PageCount="{Binding ItemCount}"/>-->
 
 
     </Grid>
