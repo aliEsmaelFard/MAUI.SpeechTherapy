@@ -16,6 +16,6 @@ public partial class AboutUsHubPage : ContentPage
 
     private async void ProgrammerGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        await Util.NavigateTo(nameof(AboutAuthorPage));
+        await Util.NavigateTo(nameof(AboutProgrammerPage));
     }
 }

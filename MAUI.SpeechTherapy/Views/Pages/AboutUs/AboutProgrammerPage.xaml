@@ -2,11 +2,128 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.SpeechTherapy.Views.Pages.AboutUs.AboutProgrammerPage"
-             Title="AboutProgrammerPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components">
+
+    <!--toolbar section-->
+    <Shell.TitleView>
+        <local:ToolBarContent x:Name="Toolbar"
+                              tTittle="معلومات عنا" />
+    </Shell.TitleView>
+
+    <VerticalStackLayout >
+            <Border Stroke="LightGray"
+            StrokeThickness=".6"
+            Style="{StaticResource border-shadow-light}"
+            StrokeShape="RoundRectangle 12"
+            Margin="16,24"
+             >
+
+        <VerticalStackLayout>
+            <local:CardComp Text="راه‌های ارتباطی"
+                            ImageSource="call"
+                            ColorP="#13A4B5" />
+
+            <Grid 
+                  RowDefinitions="*,*,*"
+                  RowSpacing="8"
+                  Margin="24">
+
+                <Grid Grid.Column="0"
+                                       Grid.Row="0"
+                                             ColumnDefinitions="50,2*,*">
+                    <Image Source="sms"
+                           WidthRequest="24" />
+
+                    <Label Text="AliEsmaelFard@gmail.com"
+                           FontFamily="Noto"
+                           FontSize="14"
+                           TextColor="#212121"
+                           VerticalOptions="Center" 
+                           Grid.Column="1"/>
+
+
+                    <Label Text="programer"
+                           FontFamily="Noto"
+                           FontSize="12"
+                           TextColor="#919191"
+                           VerticalOptions="Center" 
+                           HorizontalOptions="End"
+                           Grid.Column="2"
+                          />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                  CommandParameter="AliEsmaelFard@gmail.com" />
+                    </Grid.GestureRecognizers>
+                    
+                </Grid>
+
+                <Grid Grid.Column="0"
+                      Grid.Row="1"
+                      ColumnDefinitions="50,2*,*">
+                    <Image Source="sms"
+                           WidthRequest="24" />
+
+                        <Label Text="mohsen@gmail.com@gmail.com"
+                           FontFamily="Noto"
+                           FontSize="14"
+                           TextColor="#212121"
+                           VerticalOptions="Center"
+                           Grid.Column="1" />
+
+
+                    <Label Text="programer"
+                           FontFamily="Noto"
+                           FontSize="12"
+                           TextColor="#919191"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Column="2" />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                  CommandParameter="mohsen@gmail.com" />
+                    </Grid.GestureRecognizers>
+
+                </Grid>
+
+                <Grid 
+                      Grid.Row="2"
+                      ColumnDefinitions="50,2*,*">
+                    <Image Source="sms"
+                           WidthRequest="24" />
+
+                    <Label Text="narges.uiux@gmail.com"
+                           FontFamily="Noto"
+                           FontSize="14"
+                           TextColor="#212121"
+                           VerticalOptions="Center"
+                           Grid.Column="1" />
+
+
+                    <Label Text="ui/ux"
+                           FontFamily="Noto"
+                           FontSize="12"
+                           TextColor="#919191"
+                           VerticalOptions="Center"
+                           HorizontalOptions="End"
+                           Grid.Column="2" />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                  CommandParameter="narges.uiux@gmail.com" />
+                    </Grid.GestureRecognizers>
+
+                </Grid>
+                
+                
+            </Grid>
+        </VerticalStackLayout>
+    </Border>
+    
+        
+        
     </VerticalStackLayout>
+
+    
 </ContentPage>
