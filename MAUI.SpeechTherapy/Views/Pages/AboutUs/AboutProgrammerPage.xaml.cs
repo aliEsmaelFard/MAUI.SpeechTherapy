@@ -14,7 +14,7 @@ public partial class AboutProgrammerPage : ContentPage
         string value = Util.GetValueFromTapped<string>(e);
         OpenApp(value);
     }
-     
+      
 
     public void OpenApp(string email)
     {
