@@ -14,9 +14,9 @@ public partial class SentenceCheckPage : ContentPage
         try
         {
             Button btn = sender as Button;
-            btn.BackgroundColor = Util.GetColorFromResourse("xButtonColorPressed");
+            btn.BackgroundColor = MyUtils.GetColorFromResourse("xButtonColorPressed");
             await Task.Delay(100);
-            btn.BackgroundColor = Util.GetColorFromResourse("xButtonColor");
+            btn.BackgroundColor = MyUtils.GetColorFromResourse("xButtonColor");
 
 
         }

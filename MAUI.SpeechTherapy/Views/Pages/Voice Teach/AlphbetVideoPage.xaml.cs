@@ -1,4 +1,6 @@
-﻿namespace MAUI.SpeechTherapy.Views.Pages.Voice_Teach;
+﻿using MAUI.SpeechTherapy.Models.Alphba;
+
+namespace MAUI.SpeechTherapy.Views.Pages.Voice_Teach;
 
 public partial class AlphbetVideoPage : ContentPage
 {
@@ -6,7 +8,7 @@ public partial class AlphbetVideoPage : ContentPage
 	{
 		InitializeComponent();
 	}
-    public static string Letter { get; set; }
+    public static AlphbaModel Letter { get; set; }
 
     protected override void OnAppearing()
     {

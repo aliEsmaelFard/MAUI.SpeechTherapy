@@ -95,6 +95,11 @@
 	  <None Remove="Resources\Images\rightbox.png" />
 	  <None Remove="Resources\Images\wrongbox.png" />
 	  <None Remove="Resources\Raw\book.pdf" />
+	  <None Remove="SpeechDB.db3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="SpeechDB.db3" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -129,6 +134,7 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.7" />
+		<PackageReference Include="System.Reflection" Version="4.3.0" />
 		<PackageReference Include="UraniumUI.Material" Version="2.7.4" />
 	</ItemGroup>
 

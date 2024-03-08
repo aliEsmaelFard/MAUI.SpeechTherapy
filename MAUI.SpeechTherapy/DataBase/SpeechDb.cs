@@ -1,4 +1,10 @@
-﻿using MAUI.SpeechTherapy.Utils;
+﻿using MAUI.SpeechTherapy.Models.Alphba;
+using MAUI.SpeechTherapy.Models.Concept;
+using MAUI.SpeechTherapy.Models.File;
+using MAUI.SpeechTherapy.Models.FlashCard;
+using MAUI.SpeechTherapy.Models.Question;
+using MAUI.SpeechTherapy.Models.SentenceMaking;
+using MAUI.SpeechTherapy.Utils;
 using SQLite;
 
 namespace MAUI.SpeechTherapy.DataBase
@@ -11,7 +17,29 @@ namespace MAUI.SpeechTherapy.DataBase
         {
             if (Database is not null)
                 return;
-            Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+            Database = new SQLiteAsyncConnection(Constants.DbPath, Constants.Flags);
+
+            await Database.CreateTableAsync<AlphbaBookModel>();
+            await Database.CreateTableAsync<AlphbaModel>();
+            await Database.CreateTableAsync<AlphbaWordModel>();
+
+            await Database.CreateTableAsync<FileModel>();
+
+            await Database.CreateTableAsync<FlashCardCategory>();
+            await Database.CreateTableAsync<FlashCardModel>();
+
+            await Database.CreateTableAsync<QuestionModel>();
+            await Database.CreateTableAsync<QuestionCategoryModel>();
+
+            await Database.CreateTableAsync<SentenceMakingModel>();
+            await Database.CreateTableAsync<ObjectModel>();
+            await Database.CreateTableAsync<VerbModel>();
+            await Database.CreateTableAsync<SubjectModel>();
+
+            await Database.CreateTableAsync<CategoryQuestionModel>();
+            await Database.CreateTableAsync<CategorySentenceModel>();
+            await Database.CreateTableAsync<ConceptQuestionModel>();
+            await Database.CreateTableAsync<ConceptSentenceModel>();
         }
 
         public async Task<List<T>> GetEntityList<T>() where T : new()

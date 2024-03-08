@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace MAUI.SpeechTherapy.Utils
 {
-    public  class Constants
+    public class Constants
     {
+        public static string DbPath { get; } = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+         DatabaseFilename);
+
         public const string DatabaseFilename = "SpeechDB.db3";
 
         public const SQLite.SQLiteOpenFlags Flags =
@@ -18,7 +21,6 @@ namespace MAUI.SpeechTherapy.Utils
            // enable multi-threaded database access
            SQLite.SQLiteOpenFlags.SharedCache;
 
-        public static string DatabasePath =>
-            Path.Combine(FileSystem.AppDataDirectory, DatabaseFilename);
+
     }
 }

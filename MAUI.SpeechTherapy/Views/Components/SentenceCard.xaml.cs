@@ -45,13 +45,13 @@ BindableProperty.Create(nameof(IsRightAnswer), typeof(string), typeof(SentenceCa
     {
    if (isRight == "1")
         {
-            myBorder.BackgroundColor = Util.GetColorFromResourse("xSentenceRightBG");
-            myBorder.Stroke = Util.GetColorFromResourse("xSentenceRightBorder");
+            myBorder.BackgroundColor = MyUtils.GetColorFromResourse("xSentenceRightBG");
+            myBorder.Stroke = MyUtils.GetColorFromResourse("xSentenceRightBorder");
         }
         else
         {
-            myBorder.BackgroundColor = Util.GetColorFromResourse("xSentenceWrongBG");
-            myBorder.Stroke = Util.GetColorFromResourse("xSentenceWrongBorder");
+            myBorder.BackgroundColor = MyUtils.GetColorFromResourse("xSentenceWrongBG");
+            myBorder.Stroke = MyUtils.GetColorFromResourse("xSentenceWrongBorder");
         }
     }
 }

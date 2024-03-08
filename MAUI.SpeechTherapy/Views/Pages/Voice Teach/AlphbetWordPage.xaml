@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.SpeechTherapy.Views.Pages.Voice_Teach.AlphbetWordPage"
-             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components">
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components"
+             xmlns:converter="clr-namespace:MAUI.SpeechTherapy.Utils">
 
     <!--toolbar section-->
     <Shell.TitleView>
@@ -27,6 +28,12 @@
                 </VisualStateGroupList>
             </Setter>
         </Style>
+
+
+        <ResourceDictionary>
+            <converter:LabelCharConverter x:Key="StringConverter" />
+        </ResourceDictionary>
+
     </ContentPage.Resources>
 
 
@@ -35,7 +42,6 @@
         <HorizontalStackLayout HorizontalOptions="Center"
                                VerticalOptions="Center"
                                FlowDirection="RightToLeft"
-                               
                                 >
 
             <!--First Letter-->
@@ -59,8 +65,8 @@
                          BackgroundColor="Transparent"
                          VerticalOptions="End" />
                 <Grid.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
-                                          CommandParameter="First" />
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_TappedFirst"
+                                         />
                 </Grid.GestureRecognizers>
             </Grid>
             
@@ -85,8 +91,8 @@
                          BackgroundColor="Transparent"
                          VerticalOptions="End" />
                 <Grid.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
-                                          CommandParameter="Second" />
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_TappedMid"
+                                         />
                 </Grid.GestureRecognizers>
             </Grid>
 
@@ -111,8 +117,8 @@
                          VerticalOptions="End" />
                 
                 <Grid.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
-                                          CommandParameter="Third" />
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_TappedEnd"
+                                       />
                 </Grid.GestureRecognizers>
             </Grid>
 
@@ -144,11 +150,13 @@
                                 HeightRequest="48">
 
                             <Label FontSize="18"
-                                   Text="{Binding .}"
-                                   TextColor="{StaticResource xTextPrimry}"
                                    VerticalOptions="Center"
                                    HorizontalOptions="Center"
-                                   FontFamily="Noto" />
+                                  >
+
+                                <!--FormattedText="{Binding Word, Converter={StaticResource StringConverter}}"-->
+
+                            </Label>
                         </Border>
 
                     </DataTemplate>

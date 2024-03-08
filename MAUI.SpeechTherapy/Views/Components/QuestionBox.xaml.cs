@@ -35,14 +35,14 @@ BindableProperty.Create(nameof(IsRightAnswer), typeof(string), typeof(SentenceCa
     {
         if (isRight == "1")
         {
-            myBorder.BackgroundColor = Util.GetColorFromResourse("xSentenceRightBG");
-            myBorder.BorderColor = Util.GetColorFromResourse("xSentenceRightBorder");
+            myBorder.BackgroundColor = MyUtils.GetColorFromResourse("xSentenceRightBG");
+            myBorder.BorderColor = MyUtils.GetColorFromResourse("xSentenceRightBorder");
             box.Source = "rightbox.png";
         }
         else if (isRight == "0") 
         {
-            myBorder.BackgroundColor = Util.GetColorFromResourse("xSentenceWrongBG");
-            myBorder.BorderColor = Util.GetColorFromResourse("xSentenceWrongBorder");
+            myBorder.BackgroundColor = MyUtils.GetColorFromResourse("xSentenceWrongBG");
+            myBorder.BorderColor = MyUtils.GetColorFromResourse("xSentenceWrongBorder");
             box.Source = "wrongbox.png";
         }
         else

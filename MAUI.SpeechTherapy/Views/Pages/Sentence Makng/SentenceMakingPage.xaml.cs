@@ -29,6 +29,6 @@ public partial class SentenceMakingPage : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
-        await Util.NavigateTo(nameof(SentenceCheckPage));
+        await MyUtils.NavigateTo(nameof(SentenceCheckPage));
     }
 }

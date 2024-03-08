@@ -14,13 +14,13 @@ public partial class FlashCardsTopicPage : ContentPage
 
     private async void ListItemGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        string value = Util.GetValueFromTapped<string>(e);
+        string value = MyUtils.GetValueFromTapped<string>(e);
         FlashCardListPage.Topic = value;
 
         ContentView contentView = (ContentView)sender;
-        Util.ChangeItemListBackGround(contentView);
+        MyUtils.ChangeItemListBackGround(contentView);
 
-        await Util.NavigateTo(nameof(FlashCardListPage));
+        await MyUtils.NavigateTo(nameof(FlashCardListPage));
     }
 
 

@@ -11,11 +11,11 @@ public partial class AboutUsHubPage : ContentPage
 
     private async void AuthorGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        await Util.NavigateTo(nameof(AboutAuthorPage));
+        await MyUtils.NavigateTo(nameof(AboutAuthorPage));
     }
 
     private async void ProgrammerGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        await Util.NavigateTo(nameof(AboutProgrammerPage));
+        await MyUtils.NavigateTo(nameof(AboutProgrammerPage));
     }
 }

@@ -79,7 +79,7 @@ public partial class PaginationCmp : ContentView
     private static async Task ChangeArrowBtnColor(object sender)
     {
         Frame frame = sender as Frame;
-        frame.BackgroundColor = Util.GetColorFromResourse("xPrimry");
+        frame.BackgroundColor = MyUtils.GetColorFromResourse("xPrimry");
         await Task.Delay(100);
         frame.BackgroundColor = Colors.White;
     }

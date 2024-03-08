@@ -11,10 +11,10 @@ public partial class AboutProgrammerPage : ContentPage
      
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        string value = Util.GetValueFromTapped<string>(e);
+        string value = MyUtils.GetValueFromTapped<string>(e);
         OpenApp(value);
     }
-      
+       
 
     public void OpenApp(string email)
     {

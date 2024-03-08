@@ -11,7 +11,7 @@ public partial class AboutAuthorPage : ContentPage
 
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-		string value = Util.GetValueFromTapped<string>(e);
+		string value = MyUtils.GetValueFromTapped<string>(e);
         OpenApp(value);
     }
 
