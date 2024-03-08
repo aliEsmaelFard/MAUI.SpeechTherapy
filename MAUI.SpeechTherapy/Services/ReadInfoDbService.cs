@@ -243,7 +243,7 @@ namespace MAUI.SpeechTherapy.Services
         public async Task<GenericPageByPage<FlashCardModel>> FlashCardListAsync(int CategoryId)
         {
             GenericPageByPage<FlashCardModel> Pages = new GenericPageByPage<FlashCardModel>();
-            string query = "Select FlashCardModel.Id,Name,Data,FileType" +
+            string query = "Select FlashCardModel.Id,Name,FileModel.Data,FileModel.FileType" +
                " From FlashCardModel,FileModel" +
                " where FlashCardModel.FileId=FileModel.Id" +
                " and CategoryId=" + CategoryId;

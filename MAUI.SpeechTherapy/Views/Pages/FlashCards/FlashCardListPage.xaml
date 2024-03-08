@@ -39,12 +39,13 @@
 
     <Grid>
 
+
         <ScrollView>
 
             <CollectionView x:Name="myCollection"
                             Margin="16,20,16,150"
                             SelectionMode="None"
-                            ItemsSource="{Binding list}">
+                            ItemsSource="{Binding DataList}">
 
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical"
@@ -65,18 +66,29 @@
 
                             <Grid>
                                 <Image x:Name="FlashImage"
-                                       Source="{Binding Path}"
+                                       Source="{Binding Source}"
                                        IsVisible="True" />
 
-                                <Grid BackgroundColor="LightBlue"
+                                <Grid BackgroundColor="{Binding Color}"
                                       IsVisible="{Binding Source={x:Reference FlashImage}, Path=IsVisible, Converter={StaticResource InverseBooleanConverter}}">
 
-                                    <Label Text="{Binding Name}"
+                                    <Label Text="{Binding NameAB}"
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center"
                                            FontAttributes="Bold"
-                                           FontSize="24"
+                                           FontSize="22"
+                                           Margin="0,0,0,20"
+                                           TextColor="{x:StaticResource White}"
                                            FontFamily="Noto" />
+
+                                    <Label Text="{Binding NameEN}"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="End"
+                                           FontSize="20"
+                                           Margin="0,30"
+                                           FontFamily="Noto" 
+                                          
+                                           TextColor="{x:StaticResource White}"/>
                                 </Grid>
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"

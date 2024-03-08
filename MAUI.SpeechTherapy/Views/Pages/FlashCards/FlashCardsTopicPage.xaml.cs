@@ -1,4 +1,6 @@
-﻿using MAUI.SpeechTherapy.Models.FlashCard;
+﻿using MAUI.SpeechTherapy.Models;
+using MAUI.SpeechTherapy.Models.FlashCard;
+using MAUI.SpeechTherapy.Services;
 using MAUI.SpeechTherapy.Utils;
 using System.Collections.ObjectModel;
 
@@ -14,14 +16,30 @@ public partial class FlashCardsTopicPage : ContentPage
         BindingContext = this;
 	}
 
-    
- 
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        await LoadData();
+    }
 
+    private async Task LoadData()
+    {
+        ReadInfoDbService service = new ReadInfoDbService();
+
+        DataList.Clear();
+        GenericPageByPage<FlashCardCategory> res = await service.FlashCardCategoryListAsync(); 
+
+        foreach (FlashCardCategory category in res.Items)
+        {
+            DataList.Add(category);
+        }
+       
+    }
 
     private async void ListItemGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        string value = MyUtils.GetValueFromTapped<string>(e);
-        FlashCardListPage.Topic = value;
+        FlashCardCategory value = MyUtils.GetValueFromTapped<FlashCardCategory>(e);
+        FlashCardListPage.FlashCardsTopic = value;
 
         ContentView contentView = (ContentView)sender;
         MyUtils.ChangeItemListBackGround(contentView);

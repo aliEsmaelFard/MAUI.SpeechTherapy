@@ -35,7 +35,7 @@
             <CollectionView x:Name="myCollection"
                             Margin="0,20,0,150"
                             SelectionMode="Single"
-                            ItemsSource="{Binding fakeData}">
+                            ItemsSource="{Binding DataList}">
 
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical"
@@ -45,7 +45,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
 
-                        <local:ListItem Text="{Binding . }">
+                        <local:ListItem Text="{Binding Name}">
                             <local:ListItem.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="ListItemGestureRecognizer_Tapped"
                                                       CommandParameter="{Binding .}" />

@@ -65,17 +65,16 @@
     <Color x:Key="xButtonColorPressed">#19D2E8</Color>
     <Color x:Key="xPagenationColor">#919191</Color>
     <Color x:Key="xFCcolor">#E8E8E8</Color>
-    
-    
-    
-    <Color x:Key="xVerb">#EAEF00</Color>
-    <Color x:Key="xObject">#B3261E</Color>
-    <Color x:Key="xTransfer">#919191</Color>
-    <Color x:Key="xAnimal">#805E0B</Color>
-    <Color x:Key="xVegtebel">##3D8148</Color>
-    <Color x:Key="xFood">#64D677</Color>
-    <Color x:Key="xCloth">#13A4B5</Color>
-    <Color x:Key="xFruit">#A2B512</Color>
+
+
+    <Color x:Key="xVerb">#BA131A</Color>
+    <Color x:Key="xObject">#B15524</Color>
+    <Color x:Key="xTransfer">#822C8F</Color>
+    <Color x:Key="xAnimal">#ED008C</Color>
+    <Color x:Key="xVegtebel">#6C9F42</Color>
+    <Color x:Key="xFood">#2F3490</Color>
+    <Color x:Key="xCloth">#F49320</Color>
+    <Color x:Key="xFruit">#F8EA0D</Color>
     <Color x:Key="xNuts">#E8AA14</Color>
 
 

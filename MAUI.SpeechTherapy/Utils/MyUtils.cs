@@ -11,7 +11,11 @@ namespace MAUI.SpeechTherapy.Utils
     public class MyUtils
     {
 
-  
+        public static ImageSource CreateImageSourceFromByte(byte[] bytes)
+        {
+            Stream imageStream = new MemoryStream(bytes);
+            return ImageSource.FromStream(() => imageStream);
+        }
         public static void FillDataBase()
         {
             try
