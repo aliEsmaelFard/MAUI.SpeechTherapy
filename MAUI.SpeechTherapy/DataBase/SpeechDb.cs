@@ -36,8 +36,8 @@ namespace MAUI.SpeechTherapy.DataBase
             await Database.CreateTableAsync<VerbModel>();
             await Database.CreateTableAsync<SubjectModel>();
 
-            await Database.CreateTableAsync<CategoryQuestionModel>();
-            await Database.CreateTableAsync<CategorySentenceModel>();
+            await Database.CreateTableAsync<ConceptCategoryQuestionModel>();
+            await Database.CreateTableAsync<ConceptCategorySentenceModel>();
             await Database.CreateTableAsync<ConceptQuestionModel>();
             await Database.CreateTableAsync<ConceptSentenceModel>();
         }

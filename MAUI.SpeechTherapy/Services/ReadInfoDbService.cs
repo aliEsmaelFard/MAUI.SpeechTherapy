@@ -89,11 +89,11 @@ namespace MAUI.SpeechTherapy.Services
         /// GetAll info CategorySentence
         /// </summary>
         /// <returns> All Record</returns>
-        public async Task<GenericPageByPage<CategorySentenceModel>> CategorySentenceListAsync()
+        public async Task<GenericPageByPage<ConceptCategorySentenceModel>> CategorySentenceListAsync()
         {
-            GenericPageByPage<CategorySentenceModel> category = new GenericPageByPage<CategorySentenceModel>();
+            GenericPageByPage<ConceptCategorySentenceModel> category = new GenericPageByPage<ConceptCategorySentenceModel>();
 
-            category.Items = await db.GetEntityList<CategorySentenceModel>();
+            category.Items = await db.GetEntityList<ConceptCategorySentenceModel>();
             category.RowCount = category.Items.Count;
             return category;
         }
@@ -101,12 +101,12 @@ namespace MAUI.SpeechTherapy.Services
         /// GetAll info CategoryConceptQuestion
         /// </summary>
         /// <returns> All Record</returns>
-        public async Task<GenericPageByPage<CategoryQuestionModel>> CategoryQuestionListAsync()
+        public async Task<GenericPageByPage<ConceptCategoryQuestionModel>> CategoryQuestionListAsync()
         {
-            GenericPageByPage<CategoryQuestionModel> Category = new GenericPageByPage<CategoryQuestionModel>();
+            GenericPageByPage<ConceptCategoryQuestionModel> Category = new GenericPageByPage<ConceptCategoryQuestionModel>();
 
 
-            Category.Items = await db.GetEntityList<CategoryQuestionModel>();
+            Category.Items = await db.GetEntityList<ConceptCategoryQuestionModel>();
             Category.RowCount = Category.Items.Count;
             return Category;
         }
@@ -295,7 +295,7 @@ namespace MAUI.SpeechTherapy.Services
         public async Task<GenericPageByPage<QuestionModel>> QuestionListAsync(int CategoryId)
         {
             GenericPageByPage<QuestionModel> Pages = new GenericPageByPage<QuestionModel>();
-            string query = "Select QuestionModel.Id,RightAnswer,WrongAnswer,Data,FileType,FileId" +
+            string query = "Select QuestionModel.Id,RightAnswer,WrongAnswer,FileModel.Data,FileModel.FileType,FileId" +
                " From QuestionModel,FileModel" +
                " where QuestionModel.FileId=FileModel.Id" +
                " and CategoryId = " + CategoryId;

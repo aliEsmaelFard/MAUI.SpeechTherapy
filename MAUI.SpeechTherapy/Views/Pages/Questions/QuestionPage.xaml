@@ -7,7 +7,7 @@
     <!--toolbar section-->
     <Shell.TitleView>
         <local:ToolBarContent x:Name="Toolbar"
-                              tTittle="تعلیم افعال الامر و النهی"/>
+                              tTittle="تعلیم افعال الامر و النهی" />
     </Shell.TitleView>
 
     <Grid RowDefinitions="*,*">
@@ -28,7 +28,7 @@
                Margin="16,24">
 
 
-            <Grid RowDefinitions="Auto, Auto, Auto"  >
+            <Grid RowDefinitions="Auto, Auto">
 
                 <Frame CornerRadius="16"
                        HorizontalOptions="Center"
@@ -38,30 +38,33 @@
                        HeightRequest="300"
                        BorderColor="LightGray"
                        Margin="16, 24"
-                       VerticalOptions="Start"
-                       >
+                       VerticalOptions="Start">
 
                     <Image x:Name="Image"
-                           Source="example.png"  />
+                        />
 
                 </Frame>
 
-                <local:QuestionBox Text="جمله درست این تصویر"
-                                   IsRightAnswer="1"
-                                   Grid.Row="1"/>
+                <VerticalStackLayout x:Name="lau_Quetion"
+                                     Spacing="8"
+                                     Grid.Row="1">
+                    <!--<local:QuestionBox x:Name="FirstQ"
+                                       IsRightAnswer="1" />
+
+                    <local:QuestionBox x:Name="SececndQ"
+                                       IsRightAnswer="0"
+                                       Margin="0,8"
+                                       Grid.Row="2" />-->
+                </VerticalStackLayout>
 
 
-                <local:QuestionBox Text="جمله غلط این تصویر"
-                                   IsRightAnswer="0"
-                                   Margin="0,8"
-                                   Grid.Row="2" />
-            
             </Grid>
-            
-            
+
+
         </Frame>
 
-        <local:PaginationCmp Grid.Row="1"  Margin="0,230"/>
+        <local:PaginationCmp Grid.Row="1"
+                             Margin="0,230" />
     </Grid>
-    
+
 </ContentPage>
