@@ -7,7 +7,7 @@
     <!--toolbar section-->
     <Shell.TitleView>
         <local:ToolBarContent x:Name="Toolbar"
-                              tTittle="تعلیم افعال الامر و النهی" />
+                            />
     </Shell.TitleView>
 
     <Grid RowDefinitions="*,*">
@@ -48,13 +48,15 @@
                 <VerticalStackLayout x:Name="lau_Quetion"
                                      Spacing="8"
                                      Grid.Row="1">
-                    <!--<local:QuestionBox x:Name="FirstQ"
-                                       IsRightAnswer="1" />
+
+                    <local:QuestionBox x:Name="FirstQ"
+                                       IsRightAnswer="1"
+                                       CustomData="{Binding ClickedAnswer}" />
 
                     <local:QuestionBox x:Name="SececndQ"
-                                       IsRightAnswer="0"
                                        Margin="0,8"
-                                       Grid.Row="2" />-->
+                                       Grid.Row="2"
+                                       CustomData="{Binding ClickedAnswer}"/>
                 </VerticalStackLayout>
 
 
@@ -63,7 +65,7 @@
 
         </Frame>
 
-        <local:PaginationCmp Grid.Row="1"
+        <local:PaginationCmp x:Name="PaginationCmp" Grid.Row="1"
                              Margin="0,230" />
     </Grid>
 

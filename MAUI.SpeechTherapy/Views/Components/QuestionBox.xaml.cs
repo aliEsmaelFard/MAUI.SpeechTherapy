@@ -12,7 +12,7 @@ public partial class QuestionBox : ContentView
 
 
     public static readonly BindableProperty TextProperty =
-  BindableProperty.Create(nameof(Text), typeof(string), typeof(SentenceCard), default(string));
+  BindableProperty.Create(nameof(Text), typeof(string), typeof(QuestionBox), default(string));
 
     public string Text
     {
@@ -22,7 +22,7 @@ public partial class QuestionBox : ContentView
 
 
     public static readonly BindableProperty IsRightAnswerProperty =
-BindableProperty.Create(nameof(IsRightAnswer), typeof(string), typeof(SentenceCard), default(string));
+BindableProperty.Create(nameof(IsRightAnswer), typeof(string), typeof(QuestionBox), default(string));
 
     public string IsRightAnswer
     {
@@ -30,6 +30,17 @@ BindableProperty.Create(nameof(IsRightAnswer), typeof(string), typeof(SentenceCa
         set => SetValue(IsRightAnswerProperty, value);
     }
 
+    public static readonly BindableProperty CustomDataProperty = BindableProperty.Create(
+        propertyName: "CustomData",
+        returnType: typeof(string),
+        declaringType: typeof(QuestionBox),
+        defaultValue: default(string));
+
+    public string CustomData
+    {
+        get => (string)GetValue(CustomDataProperty);
+        set => SetValue(CustomDataProperty, value);
+    }
 
     private void ChangeBoxColors(string isRight)
     {
@@ -65,6 +76,15 @@ BindableProperty.Create(nameof(IsRightAnswer), typeof(string), typeof(SentenceCa
         {
             ChangeBoxColors("NONE");
             isClicked = false;
+        }
+
+        if(IsRightAnswer == "1")
+        {
+            CustomData = "R";
+        }
+        else if(IsRightAnswer == "0")
+        {
+            CustomData = "W";
         }
     }
 
