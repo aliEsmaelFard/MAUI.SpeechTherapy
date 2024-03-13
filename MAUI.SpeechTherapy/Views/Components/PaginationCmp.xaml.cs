@@ -7,18 +7,19 @@ public partial class PaginationCmp : ContentView
     public PaginationCmp()
     {
         InitializeComponent();
-        PageNumLabel.Text = $"{ PageCount }  /  {CurentPage}";
+        BindingContext =this;
+       
     }
 
 
     public static readonly BindableProperty PageCountProperty =
-    BindableProperty.Create(nameof(PageCount), typeof(int), typeof(PaginationCmp), default(int));
+    BindableProperty.Create(nameof(PageCount), typeof(int), typeof(PaginationCmp), default(int), propertyChanged: PageNumChange);
 
     public int PageCount
     {
         get => (int)GetValue(PageCountProperty);
         set => SetValue(PageCountProperty, value);
-    } 
+    }
 
     public static readonly BindableProperty CurrentPageProperty =
  BindableProperty.Create(nameof(CurentPage), typeof(int), typeof(PaginationCmp), default(int));
@@ -84,4 +85,12 @@ public partial class PaginationCmp : ContentView
         await Task.Delay(100);
         frame.BackgroundColor = Colors.White;
     }
+
+    private static void PageNumChange(BindableObject bindable, object oldValue, object newValue)
+    {
+        var customComponent = (PaginationCmp)bindable;
+        customComponent.ChangeLabelText();
+    }
+
+    public void ChangeLabelText() => PageNumLabel.Text = $"{PageCount}  /  {CurentPage}";
 }

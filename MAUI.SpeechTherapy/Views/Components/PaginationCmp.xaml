@@ -21,15 +21,15 @@
                MaximumHeightRequest="500">
 
             <Image Source="arrow"
-                         WidthRequest="19"
-                         HeightRequest="19" />
+                   WidthRequest="19"
+                   HeightRequest="19" />
 
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="ForwardGestureRecognizer_Tapped" />
             </Frame.GestureRecognizers>
         </Frame>
-        
-        
+
+
 
         <Frame Background="White"
                BorderColor="LightGray"
@@ -41,18 +41,17 @@
                MaximumHeightRequest="500">
 
             <Image Source="arrow"
-                         WidthRequest="19"
-                         HeightRequest="19"
-                         Rotation="180" />
+                   WidthRequest="19"
+                   HeightRequest="19"
+                   Rotation="180" />
 
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="BackwardGestureRecognizer_Tapped" />
             </Frame.GestureRecognizers>
         </Frame>
 
-        <Label 
-            x:Name="PageNumLabel"
-            Text="10 / 1"
+        <Label x:Name="PageNumLabel"
+               Text="10 / 1"
                Grid.Row="1"
                Grid.ColumnSpan="2"
                HorizontalOptions="Center"

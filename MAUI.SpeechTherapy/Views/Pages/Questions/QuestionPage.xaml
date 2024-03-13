@@ -6,11 +6,10 @@
 
     <!--toolbar section-->
     <Shell.TitleView>
-        <local:ToolBarContent x:Name="Toolbar"
-                            />
+        <local:ToolBarContent x:Name="Toolbar" />
     </Shell.TitleView>
 
-    <Grid RowDefinitions="*,*">
+    <VerticalStackLayout>
         <!--<Border WidthRequest="250"
               HeightRequest="300"
                 Stroke="White"
@@ -40,8 +39,7 @@
                        Margin="16, 24"
                        VerticalOptions="Start">
 
-                    <Image x:Name="Image"
-                        />
+                    <Image x:Name="Image" />
 
                 </Frame>
 
@@ -49,14 +47,14 @@
                                      Spacing="8"
                                      Grid.Row="1">
 
-                    <local:QuestionBox x:Name="FirstQ"
+                    <local:QuestionBox x:Name="q_FirstQ"
                                        IsRightAnswer="1"
                                        CustomData="{Binding ClickedAnswer}" />
 
-                    <local:QuestionBox x:Name="SececndQ"
+                    <local:QuestionBox x:Name="q_SececndQ"
                                        Margin="0,8"
                                        Grid.Row="2"
-                                       CustomData="{Binding ClickedAnswer}"/>
+                                       CustomData="{Binding ClickedAnswer}" />
                 </VerticalStackLayout>
 
 
@@ -65,8 +63,9 @@
 
         </Frame>
 
-        <local:PaginationCmp x:Name="PaginationCmp" Grid.Row="1"
-                             Margin="0,230" />
-    </Grid>
+        <local:PaginationCmp x:Name="PaginationCmp"
+                          
+                             />
+    </VerticalStackLayout>
 
 </ContentPage>

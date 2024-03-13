@@ -157,9 +157,6 @@
 	  <MauiXaml Update="Views\Components\ListItem.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Components\PaginationCmp.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\Components\QuestionBox.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
