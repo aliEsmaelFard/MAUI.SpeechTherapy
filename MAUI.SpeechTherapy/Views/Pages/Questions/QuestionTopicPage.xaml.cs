@@ -8,8 +8,8 @@ namespace MAUI.SpeechTherapy.Views.Pages.Questions;
 
 public partial class QuestionTopicPage : ContentPage
 {
-    public ObservableCollection<QuestionCategoryModel> DataList { get; set; } = new ObservableCollection<QuestionCategoryModel>();
 
+    public ObservableCollection<QuestionCategoryModel> DataList { get; set; } = new ObservableCollection<QuestionCategoryModel>();
     public QuestionTopicPage()
 	{
 		InitializeComponent();

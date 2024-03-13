@@ -1,3 +1,5 @@
+﻿using MAUI.SpeechTherapy.Utils;
+
 namespace MAUI.SpeechTherapy.Views.Pages.Comprehension;
 
 public partial class ComprehensionTopicPage : ContentPage
@@ -6,16 +8,16 @@ public partial class ComprehensionTopicPage : ContentPage
     {
         InitializeComponent();
 
-        Toolbar.tTittle = "??? ??????? ? ??????? ??? ???????";
+        Toolbar.tTittle = "فهم الاسئلة و الإجابة على الأسئلة";
     }
 
-    private void QuestionSectionTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    private async void QuestionSectionTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-
+        await MyUtils.NavigateTo(nameof(ConceptQuestionTopicPage));
     }
 
-    private void BookSectionTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    private async void BookSectionTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-
+        await MyUtils.NavigateTo(nameof(ConceptSentenceTopicPage));
     }
 }

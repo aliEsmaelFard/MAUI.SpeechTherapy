@@ -2,6 +2,7 @@
 
 namespace MAUI.SpeechTherapy.Models.Concept
 {
+    [Table("CategoryQuestionModel")]
     public class ConceptCategoryQuestionModel
     {
         public int Id { get; set; }
