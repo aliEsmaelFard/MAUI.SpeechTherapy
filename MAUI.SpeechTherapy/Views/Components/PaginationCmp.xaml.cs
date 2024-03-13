@@ -13,7 +13,7 @@ public partial class PaginationCmp : ContentView
 
 
     public static readonly BindableProperty PageCountProperty =
-    BindableProperty.Create(nameof(PageCount), typeof(int), typeof(PaginationCmp), default(int), propertyChanged: PageNumChange);
+    BindableProperty.Create(nameof(PageCount), typeof(int), typeof(PaginationCmp), default(int));
 
     public int PageCount
     {
@@ -22,7 +22,7 @@ public partial class PaginationCmp : ContentView
     }
 
     public static readonly BindableProperty CurrentPageProperty =
- BindableProperty.Create(nameof(CurentPage), typeof(int), typeof(PaginationCmp), default(int));
+ BindableProperty.Create(nameof(CurentPage), typeof(int), typeof(PaginationCmp), default(int), propertyChanged: PageNumChange);
 
     public int CurentPage
     {

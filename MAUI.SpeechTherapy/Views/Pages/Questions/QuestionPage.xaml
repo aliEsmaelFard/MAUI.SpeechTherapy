@@ -63,7 +63,7 @@
 
         </Frame>
 
-        <local:PaginationCmp x:Name="PaginationCmp"
+        <local:PaginationCmp x:Name="PaginCmp"
                           
                              />
     </VerticalStackLayout>

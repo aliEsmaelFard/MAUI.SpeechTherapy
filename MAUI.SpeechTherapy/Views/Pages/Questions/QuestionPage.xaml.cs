@@ -13,14 +13,14 @@ public partial class QuestionPage : ContentPage
     public ObservableCollection<QuestionModel> DataList { get; set; } = new ObservableCollection<QuestionModel>();
     public static QuestionCategoryModel QuestionCategory { get; set; }
 
-    public string ClickedAnswer { get; set; } 
+    public string ClickedAnswer { get; set; }
 
     public QuestionPage()
     {
         InitializeComponent();
         BindingContext = this;
 
-      
+
     }
 
     protected override async void OnAppearing()
@@ -29,13 +29,13 @@ public partial class QuestionPage : ContentPage
         await LoadData();
         Toolbar.tTittle = QuestionCategory.Name;
 
-        PaginationCmp.ForwardCommand += ForwardWardClick;
-        PaginationCmp.BackWardCommand += BackWardClick;
+        PaginCmp.ForwardCommand += ForwardWardClick;
+        PaginCmp.BackWardCommand += BackWardClick;
     }
     protected override void OnDisappearing()
     {
         base.OnDisappearing();
-      
+
     }
 
     int CurrentPage = 1;
@@ -50,8 +50,8 @@ public partial class QuestionPage : ContentPage
             DataList.Add(item);
         }
 
-        PaginationCmp.CurentPage = CurrentPage;
-        PaginationCmp.PageCount = DataList.Count;
+        PaginCmp.PageCount = DataList.Count;
+        PaginCmp.CurentPage = CurrentPage;
         await SetQuestionBoxData();
     }
 
@@ -62,24 +62,27 @@ public partial class QuestionPage : ContentPage
         {
             if (DataList.Count > 0)
             {
-                QuestionModel model = DataList[CurrentPage - 1 ];
+                //clear question box clicked
+                q_FirstQ.CustomData = null;
+                q_SececndQ.CustomData = null;
+
+                QuestionModel model = DataList[CurrentPage - 1];
                 Random random = new Random();
 
                 int rIndex = random.Next(0, 2);
                 int wIndex = (rIndex == 1) ? 0 : 1;
 
+                (lau_Quetion.Children[rIndex] as QuestionBox).BeReset = "Change" +random.Next(100);
                 (lau_Quetion.Children[rIndex] as QuestionBox).Text = model.RightAnswer;
                 (lau_Quetion.Children[rIndex] as QuestionBox).IsRightAnswer = "1";
 
+                (lau_Quetion.Children[wIndex] as QuestionBox).BeReset = "Change" + random.Next(100);
                 (lau_Quetion.Children[wIndex] as QuestionBox).Text = model.WrongAnswer;
                 (lau_Quetion.Children[wIndex] as QuestionBox).IsRightAnswer = "0";
 
-
                 Image.Source = MyUtils.CreateImageSourceFromByte(model.Data);
 
-                //clear question box clicked
-                q_FirstQ.CustomData = null;
-                q_SececndQ.CustomData = null;
+
             }
         }
         catch (Exception ex) { string msg = ex.Message; }
@@ -88,25 +91,25 @@ public partial class QuestionPage : ContentPage
 
     private async void BackWardClick()
     {
-        if(q_FirstQ.CustomData is null && q_SececndQ.CustomData is null)
+        if (string.IsNullOrEmpty(q_FirstQ.CustomData) && string.IsNullOrEmpty(q_SececndQ.CustomData))
         {
             await Snackbar.Make("الرجاء الإجابة على السؤال.", actionButtonText: "").Show();
 
             return;
         }
 
-        if (CurrentPage > 0)
+        if (CurrentPage > 1)
         {
             CurrentPage--;
-            PaginationCmp.CurentPage = CurrentPage;
-              await SetQuestionBoxData();
+            PaginCmp.CurentPage = CurrentPage;
+            await SetQuestionBoxData();
         }
     }
 
 
     private async void ForwardWardClick()
     {
-        if (q_FirstQ.CustomData is null && q_SececndQ.CustomData is null)
+        if (string.IsNullOrEmpty(q_FirstQ.CustomData) && string.IsNullOrEmpty(q_SececndQ.CustomData))
         {
             await Snackbar.Make("الرجاء الإجابة على السؤال.", actionButtonText: "").Show();
 
@@ -117,7 +120,7 @@ public partial class QuestionPage : ContentPage
         if (CurrentPage < DataList.Count)
         {
             CurrentPage++;
-            PaginationCmp.CurentPage = CurrentPage;
+            PaginCmp.CurentPage = CurrentPage;
             await SetQuestionBoxData();
         }
     }

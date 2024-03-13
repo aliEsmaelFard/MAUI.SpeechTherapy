@@ -26,6 +26,10 @@ namespace MAUI.SpeechTherapy
             Routing.RegisterRoute(nameof(FlashCardsTopicPage), typeof(FlashCardsTopicPage));
           
             Routing.RegisterRoute(nameof(ComprehensionTopicPage), typeof(ComprehensionTopicPage));
+            Routing.RegisterRoute(nameof(ConceptQuestionPage), typeof(ConceptQuestionPage));
+            Routing.RegisterRoute(nameof(ConceptQuestionTopicPage), typeof(ConceptQuestionTopicPage));
+            Routing.RegisterRoute(nameof(ConceptSentencePage), typeof(ConceptSentencePage));
+            Routing.RegisterRoute(nameof(ConceptSentenceTopicPage), typeof(ConceptSentenceTopicPage));
             
             Routing.RegisterRoute(nameof(QuestionPage), typeof(QuestionPage));
             Routing.RegisterRoute(nameof(QuestionTopicPage), typeof(QuestionTopicPage));

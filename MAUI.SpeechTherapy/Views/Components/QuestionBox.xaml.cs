@@ -4,11 +4,11 @@ namespace MAUI.SpeechTherapy.Views.Components;
 
 public partial class QuestionBox : ContentView
 {
-	public QuestionBox()
-	{
-		InitializeComponent();
+    public QuestionBox()
+    {
+        InitializeComponent();
         BindingContext = this;
-	}
+    }
 
 
     public static readonly BindableProperty TextProperty =
@@ -30,6 +30,18 @@ BindableProperty.Create(nameof(IsRightAnswer), typeof(string), typeof(QuestionBo
         set => SetValue(IsRightAnswerProperty, value);
     }
 
+    // Define the BeReset property
+    public static readonly BindableProperty BeResetProperty =
+        BindableProperty.Create(nameof(BeReset), typeof(string), typeof(PaginationCmp), default(string), propertyChanged: ResetChange);
+
+    public string BeReset
+    {
+        get => (string)GetValue(BeResetProperty);
+        set => SetValue(BeResetProperty, value);
+    }
+
+
+
     public static readonly BindableProperty CustomDataProperty = BindableProperty.Create(
         propertyName: "CustomData",
         returnType: typeof(string),
@@ -50,7 +62,7 @@ BindableProperty.Create(nameof(IsRightAnswer), typeof(string), typeof(QuestionBo
             myBorder.BorderColor = MyUtils.GetColorFromResourse("xSentenceRightBorder");
             box.Source = "rightbox.png";
         }
-        else if (isRight == "0") 
+        else if (isRight == "0")
         {
             myBorder.BackgroundColor = MyUtils.GetColorFromResourse("xSentenceWrongBG");
             myBorder.BorderColor = MyUtils.GetColorFromResourse("xSentenceWrongBorder");
@@ -71,22 +83,34 @@ BindableProperty.Create(nameof(IsRightAnswer), typeof(string), typeof(QuestionBo
         {
             ChangeBoxColors(IsRightAnswer);
             isClicked = true;
-        }    
+        }
         else
         {
             ChangeBoxColors("NONE");
             isClicked = false;
         }
 
-        if(IsRightAnswer == "1")
+        if (IsRightAnswer == "1")
         {
             CustomData = "R";
         }
-        else if(IsRightAnswer == "0")
+        else if (IsRightAnswer == "0")
         {
             CustomData = "W";
         }
     }
 
+    private static void ResetChange(BindableObject bindable, object oldValue, object newValue)
+    {
+        var customComponent = (QuestionBox)bindable;
+        customComponent.ChangeLabelText();
+    }
+
+    public void ChangeLabelText()
+    {
+        myBorder.BackgroundColor = Colors.White;
+        myBorder.BorderColor = Colors.LightGray;
+        box.Source = "box.png";
+    }
 
 }

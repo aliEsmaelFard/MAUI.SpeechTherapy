@@ -2,7 +2,32 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.SpeechTherapy.Views.Pages.Comprehension.ComprehensionTopicPage"
-             Title="ComprehensionTopicPage">
+             Title="ComprehensionTopicPage"
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components">
 
-    <WebView Source="book.pdf" />
+
+    <!--toolbar section-->
+    <Shell.TitleView>
+        <local:ToolBarContent x:Name="Toolbar" />
+    </Shell.TitleView>
+
+    <VerticalStackLayout Margin="0, 21"
+                         Spacing="8">
+
+        <local:ListItem  x:Name="QuestionSection">
+            <local:ListItem.GestureRecognizers>
+                <TapGestureRecognizer Tapped="QuestionSectionTapGestureRecognizer_Tapped" />
+            </local:ListItem.GestureRecognizers>
+        </local:ListItem>
+
+
+        <local:ListItem  x:Name="BookSection">
+            <local:ListItem.GestureRecognizers>
+                <TapGestureRecognizer Tapped="BookSectionTapGestureRecognizer_Tapped" />
+            </local:ListItem.GestureRecognizers>
+        </local:ListItem>
+
+
+
+    </VerticalStackLayout>
 </ContentPage>

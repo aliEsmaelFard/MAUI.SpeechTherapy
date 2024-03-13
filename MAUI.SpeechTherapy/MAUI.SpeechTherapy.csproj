@@ -139,7 +139,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\Pages\Sentence Makng\SentenceMakingPage.xaml.cs">
+	  <Compile Update="Views\Pages\Sentence Making\SentenceMakingPage.xaml.cs">
 	    <DependentUpon>SentenceMakingPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\Pages\Voice Teach\AlphbetOptionsPage.xaml.cs">
@@ -178,6 +178,18 @@
 	  <MauiXaml Update="Views\Pages\Comprehension\ComprehensionTopicPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Comprehension\ConceptQuestionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Comprehension\ConceptQuestionTopicPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Comprehension\ConceptSentencePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\Comprehension\ConceptSentenceTopicPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\FlashCards\FlashCardListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -190,10 +202,10 @@
 	  <MauiXaml Update="Views\Pages\Questions\QuestionTopicPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Pages\Sentence Makng\SentenceCheckPage.xaml">
+	  <MauiXaml Update="Views\Pages\Sentence Making\SentenceCheckPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Pages\Sentence Makng\SentenceMakingPage.xaml">
+	  <MauiXaml Update="Views\Pages\Sentence Making\SentenceMakingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pages\Voice Teach\AlphbetListPage.xaml">
