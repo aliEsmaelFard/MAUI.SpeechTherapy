@@ -18,7 +18,7 @@ public partial class AlphbetVideoPage : ContentPage
 
     protected override void OnDisappearing()
     {
-        mediaElement.Stop();
+      //  mediaElement.Stop();
         base.OnDisappearing();
     }
 }

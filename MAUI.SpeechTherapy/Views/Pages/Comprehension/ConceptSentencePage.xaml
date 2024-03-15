@@ -2,11 +2,71 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.SpeechTherapy.Views.Pages.Comprehension.ConceptSentencePage"
-             Title="ConceptSentencePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components"
+             x:Name="Page">
+    <!--toolbar section-->
+    <Shell.TitleView>
+        <local:ToolBarContent 
+                              x:Name="Toolbar" />
+    </Shell.TitleView>
+    
+    <Grid RowDefinitions="*,*" >
+        <!--<Border WidthRequest="250"
+              HeightRequest="300"
+                Stroke="White"
+                StrokeThickness=".0"
+                StrokeShape="RoundRectangle 8"
+                Style="{x:StaticResource border-shadow-light}"
+              >
+        </Border>-->
+        <Frame Background="White"
+               BorderColor="LightGray"
+               HasShadow="True"
+               CornerRadius="16"
+               MaximumHeightRequest="500"
+               VerticalOptions="Start"
+               Margin="16,24">
+
+
+            <Grid RowDefinitions="Auto, Auto">
+
+                <Frame
+                    CornerRadius="16"
+                       HorizontalOptions="Center"
+                       IsClippedToBounds="True"
+                       Padding="0"
+                       WidthRequest="300"
+                       HeightRequest="300"
+                       BorderColor="Transparent"
+                       Margin="16, 24"
+                       VerticalOptions="Start">
+
+                    <Image x:Name="Image"
+                           Source="{Binding DataImageSource}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </Frame>
+
+                <Label
+                    Grid.Row="1"
+                       x:Name="label"
+                       FontFamily="Noto"
+                       FontSize="14"
+                       Margin="20, -10,16,0"
+                       HorizontalTextAlignment="End"
+                       TextColor="{StaticResource xTextPrimry}"
+                       Text="{Binding DataText}"
+                       IsVisible="False" />
+
+
+            </Grid>
+        </Frame>
+
+        <local:PaginationCmp x:Name="PaginCmp" Margin="0,30" Grid.Row="1"/>
+
+
+    </Grid>
 </ContentPage>

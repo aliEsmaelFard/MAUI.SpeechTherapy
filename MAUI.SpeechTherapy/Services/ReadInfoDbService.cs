@@ -137,7 +137,7 @@ namespace MAUI.SpeechTherapy.Services
         public async Task<GenericPageByPage<ConceptSentenceModel>> ConceptSentenceListAsync( int CategoryId)
         {
             GenericPageByPage<ConceptSentenceModel> Page = new GenericPageByPage<ConceptSentenceModel>();
-            string query = "Select ConceptSentenceModel.Id,Text,Data,FileType" +
+            string query = "Select ConceptSentenceModel.Id,Text,FileModel.Data,FileModel.FileType" +
                 " From ConceptSentenceModel,FileModel" +
                 " where ConceptSentenceModel.FileId=FileModel.Id" +
                 " and CategoryId=" + CategoryId;
@@ -174,7 +174,7 @@ namespace MAUI.SpeechTherapy.Services
         public async Task<GenericPageByPage<ConceptQuestionModel>> ConceptQuestionListAsync(int CategoryId)
         {
             GenericPageByPage<ConceptQuestionModel> Pages = new GenericPageByPage<ConceptQuestionModel>();
-            string query = "Select ConceptQuestionModel.Id,CategoryId,FileId,RightAnswer,WrongAnswer,Data,FileType" +
+            string query = "Select ConceptQuestionModel.Id,CategoryId,FileId,RightAnswer,WrongAnswer,FileModel.Data,FileModel.FileType" +
                " From ConceptQuestionModel,FileModel" +
                " where ConceptQuestionModel.FileId=FileModel.Id" +
                " and CategoryId = " + CategoryId ;

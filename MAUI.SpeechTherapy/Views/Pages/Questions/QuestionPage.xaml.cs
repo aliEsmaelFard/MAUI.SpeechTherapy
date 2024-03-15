@@ -91,13 +91,14 @@ public partial class QuestionPage : ContentPage
 
     private async void BackWardClick()
     {
+        /*
         if (string.IsNullOrEmpty(q_FirstQ.CustomData) && string.IsNullOrEmpty(q_SececndQ.CustomData))
         {
             await Snackbar.Make("الرجاء الإجابة على السؤال.", actionButtonText: "").Show();
 
             return;
         }
-
+        */
         if (CurrentPage > 1)
         {
             CurrentPage--;

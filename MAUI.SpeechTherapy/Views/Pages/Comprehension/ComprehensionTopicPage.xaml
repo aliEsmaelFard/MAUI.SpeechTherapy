@@ -14,14 +14,16 @@
     <VerticalStackLayout Margin="0, 21"
                          Spacing="8">
 
-        <local:ListItem  x:Name="QuestionSection" Text="Question">
+        <local:ListItem  x:Name="QuestionSection"
+                         Text="الاسئله">
             <local:ListItem.GestureRecognizers>
                 <TapGestureRecognizer Tapped="QuestionSectionTapGestureRecognizer_Tapped" />
             </local:ListItem.GestureRecognizers>
         </local:ListItem>
 
 
-        <local:ListItem  x:Name="BookSection" Text="Senetence">
+        <local:ListItem  x:Name="BookSection"
+                         Text="قواعد">
             <local:ListItem.GestureRecognizers>
                 <TapGestureRecognizer Tapped="BookSectionTapGestureRecognizer_Tapped" />
             </local:ListItem.GestureRecognizers>

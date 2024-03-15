@@ -11,16 +11,18 @@
     </Shell.TitleView>
 
     <VerticalStackLayout >
-        <toolkit:MediaElement x:Name="mediaElement"
+        <!--<toolkit:MediaElement x:Name="mediaElement"
                               
                               ShouldShowPlaybackControls="False"
                               ShouldLoopPlayback="True"
                               ShouldAutoPlay="True"
-                              Source="https://persian14.cdn.asset.aparat.com/aparat-video/83c271dc32a71b62972f0f00e7613ea757095540-360p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjM0NGZjNjYyMWQ3M2E2YzQ5NzBhNDA0YWRlMDgyNTllIiwiZXhwIjoxNzA2OTIyMzA0LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.buOXIAyS7qunlNhwraIrxSguOYeFptCbWdHaBLPA1S8"
+                              Source="https://www.youtube.com/watch?v=_-4RwBTOQqI"
                               Margin="28,-24"
                               HeightRequest="300"
                               WidthRequest="300"
                               
-                      />
+                      />-->
+
+        <WebView Source="https://www.youtube.com/embed/RdFA70cda4U" />
     </VerticalStackLayout>
 </ContentPage>

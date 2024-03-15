@@ -38,12 +38,12 @@ public partial class ConceptQuestionTopicPage : ContentPage
 
     private async void ListItemGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        QuestionCategoryModel value = MyUtils.GetValueFromTapped<QuestionCategoryModel>(e);
-        //QuestionPage.QuestionCategory = value;
+        ConceptCategoryQuestionModel value = MyUtils.GetValueFromTapped<ConceptCategoryQuestionModel>(e);
+        ConceptQuestionPage.QuestionCat = value;
 
-        //ContentView contentView = (ContentView)sender;
-        //MyUtils.ChangeItemListBackGround(contentView);
+        ContentView contentView = (ContentView)sender;
+        MyUtils.ChangeItemListBackGround(contentView);
 
-        //await MyUtils.NavigateTo(nameof(QuestionPage));
+        await MyUtils.NavigateTo(nameof(ConceptQuestionPage));
     }
 }

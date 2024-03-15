@@ -25,7 +25,7 @@
 
     <!--toolbar section-->
     <Shell.TitleView>
-        <local:ToolBarContent tTittle="تعلیم المفاهیم " />
+        <local:ToolBarContent tTittle="الاسئله " />
     </Shell.TitleView>
 
     <Grid>
