@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.SpeechTherapy.Views.Pages.Sentence_Makng.SentenceMakingPage"
-             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components"
-            >
+             xmlns:local="clr-namespace:MAUI.SpeechTherapy.Views.Components">
     <!--toolbar section-->
     <Shell.TitleView>
         <local:ToolBarContent tTittle="صیاغة الجملة"
@@ -11,9 +10,9 @@
     </Shell.TitleView>
 
     <VerticalStackLayout>
-    
+
         <Grid>
-            <Label Text="تصویر اول فاعل است، تصویر دوم مربوط به فعل است و تصویر سوم مربوط به مفعول از منوی زیر هر تصویر فاعل و فعل و مفعول مناسب و مرتبط را انتخاب کنید و برای بررسی جمله از نظر قواعد ساختاری بر روی دکمه «بررسی» کلیک کنید."
+            <Label x:Name="label"
                    FontFamily="Noto"
                    FontSize="13"
                    TextColor="{StaticResource xTabText}"
@@ -27,7 +26,7 @@
                 StrokeShape="RoundRectangle 16"
                 Margin="16,0">
 
-            <VerticalStackLayout >
+            <VerticalStackLayout>
 
                 <Grid RowDefinitions="Auto, *"
                       ColumnDefinitions="*,*,*"
@@ -40,8 +39,7 @@
                             WidthRequest="98"
                             HeightRequest="98"
                             Padding="2">
-                        <Image Source="example"
-                               x:Name="objectImg" />
+                        <Image x:Name="objectImg" />
                     </Border>
 
                     <Border Grid.Row="1"
@@ -52,17 +50,22 @@
 
                         <HorizontalStackLayout Spacing="6">
 
-                            <Image Source="dropdown" WidthRequest="14" HeightRequest="7" Margin="8,0,0,0" />
+                            <Image Source="dropdown"
+                                   WidthRequest="14"
+                                   HeightRequest="7"
+                                   Margin="8,0,0,0" />
+
                             <Picker Title="مفعول"
-                                 TextColor="{StaticResource xTextPrimry}"
+                                    TextColor="{StaticResource xTextPrimry}"
                                     FontFamily="Noto"
-                                    FontSize="12"
+                                    FontSize="10"
                                     FontAttributes="Bold"
                                     x:Name="objectPicker"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
-                                    ItemsSource="{Binding fakeData}" />
-                        </HorizontalStackLayout>   
+                                   />
+
+                        </HorizontalStackLayout>
                     </Border >
                     <!--<material:PickerField Title="مفعول "
                                           Grid.Row="1"
@@ -86,8 +89,7 @@
                             WidthRequest="98"
                             HeightRequest="98"
                             Padding="2">
-                        <Image Source="example"
-                               x:Name="verbImg" />
+                        <Image x:Name="verbImg" />
 
                     </Border>
 
@@ -105,9 +107,9 @@
                                    HeightRequest="7"
                                    Margin="8,0,0,0" />
                             <Picker Title="فعل"
-                                 TextColor="{StaticResource xTextPrimry}"
+                                    TextColor="{StaticResource xTextPrimry}"
                                     FontFamily="Noto"
-                                    FontSize="12"
+                                    FontSize="10"
                                     FontAttributes="Bold"
                                     x:Name="verbPicker"
                                     HorizontalOptions="Center"
@@ -115,8 +117,8 @@
                                     ItemsSource="{Binding fakeData}" />
                         </HorizontalStackLayout>
                     </Border >
-                    
-                    
+
+
                     <!--<material:PickerField Title="فعل "
                                           Grid.Row="1"
                                           Grid.Column="1"
@@ -139,8 +141,7 @@
                             WidthRequest="98"
                             HeightRequest="98"
                             Padding="2">
-                        <Image Source="example"
-                               x:Name="subjectImg" />
+                        <Image x:Name="subjectImg" />
 
                     </Border>
 
@@ -158,9 +159,9 @@
                                    HeightRequest="7"
                                    Margin="8,0,0,0" />
                             <Picker Title="فاعل"
-                                 TextColor="{StaticResource xTextPrimry}"
+                                    TextColor="{StaticResource xTextPrimry}"
                                     FontFamily="Noto"
-                                    FontSize="12"
+                                    FontSize="10"
                                     FontAttributes="Bold"
                                     x:Name="subjectPicker"
                                     HorizontalOptions="Center"
@@ -189,25 +190,24 @@
                 </Grid>
 
                 <Button WidthRequest="280"
-                        HeightRequest="48" 
+                        HeightRequest="48"
                         CornerRadius="8"
                         BackgroundColor="{StaticResource xButtonColor}"
                         TextColor="White"
-                        Text="بررسی"
+                        Text="يفحص"
                         FontFamily="Noto"
                         FontSize="16"
                         Grid.Row="1"
                         FontAttributes="Bold"
                         Margin="0, 24"
-                        Clicked="Button_Clicked"
-                        />
+                        Clicked="Button_Clicked" />
 
-                <Label    TextColor="{StaticResource xPagenationColor}"
-                          Text="آیتم ۱ از ۳۲"
-                          FontFamily="Noto"
-                          FontSize="12" 
-                          HorizontalOptions="Center"
-                          Margin="0,0,0,8"/>
+                <Label x:Name="label_pag"
+                       TextColor="{StaticResource xPagenationColor}"
+                       FontFamily="Noto"
+                       FontSize="12"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,8" />
 
             </VerticalStackLayout>
         </Border>

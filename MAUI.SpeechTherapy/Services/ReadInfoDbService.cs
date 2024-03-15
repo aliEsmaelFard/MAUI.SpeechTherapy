@@ -331,7 +331,7 @@ namespace MAUI.SpeechTherapy.Services
         public async Task<GenericPageByPage<ObjectModel>> ObjectListAsync()
         {
             GenericPageByPage<ObjectModel> Pages = new GenericPageByPage<ObjectModel>();
-            string query = "Select ObjectModel.Id,Name,Data,FileType" +
+            string query = "Select ObjectModel.Id,Name,FileModel.Data,FileModel.FileType" +
                " From ObjectModel,FileModel" +
                " where ObjectModel.FileId=FileModel.Id";
 
@@ -412,7 +412,7 @@ namespace MAUI.SpeechTherapy.Services
         public async Task<GenericPageByPage<SubjectModel>> SubjectListAsync()
         {
             GenericPageByPage<SubjectModel> Pages = new GenericPageByPage<SubjectModel>();
-            string query = "Select SubjectModel.Id,Name,Data,FileType" +
+            string query = "Select SubjectModel.Id,Name,FileModel.Data,FileModel.FileType" +
                " From SubjectModel,FileModel" +
                " where SubjectModel.FileId=FileModel.Id";
             Pages.Items = await db.QueryGetEntityList<SubjectModel>(query);
@@ -444,7 +444,7 @@ namespace MAUI.SpeechTherapy.Services
         public async Task<GenericPageByPage<VerbModel>> VerbListAsync()
         {
             GenericPageByPage<VerbModel> Pages = new GenericPageByPage<VerbModel>();
-            string query = "Select VerbModel.Id,Name,Data,FileType" +
+            string query = "Select VerbModel.Id,Name,FileModel.Data,FileModel.FileType" +
                " From VerbModel,FileModel" +
                " where VerbModel.FileId=FileModel.Id";
             Pages.Items = await db.QueryGetEntityList<VerbModel>(query);
