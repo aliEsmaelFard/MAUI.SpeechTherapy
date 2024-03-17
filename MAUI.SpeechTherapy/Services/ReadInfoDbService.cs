@@ -11,6 +11,21 @@ namespace MAUI.SpeechTherapy.Services
     {
         SpeechDb db = new SpeechDb();
 
+
+        //Read one row By Id
+        public async Task<T> GetEntityById<T>(int EntityID) where T : class, new()
+        {
+            try
+            {
+               return await db.GetEntityById<T>(EntityID);
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+            }
+            return default(T);
+        }
+
         /// <summary>
         /// GetAll info Alphba
         /// </summary>
@@ -324,6 +339,7 @@ namespace MAUI.SpeechTherapy.Services
             Pages.RowCount = await db.GetCount(queryCount);
             return Pages;
         }
+
         /// <summary>
         /// Get Info Objects
         /// </summary>

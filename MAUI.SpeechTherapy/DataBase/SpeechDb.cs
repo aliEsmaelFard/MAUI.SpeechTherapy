@@ -56,6 +56,23 @@ namespace MAUI.SpeechTherapy.DataBase
             return null;
         }
 
+        //Read one row By Id
+        public async Task<T> GetEntityById<T>(int EntityID) where T : class, new()
+        {
+            try
+            {
+                await Init();
+
+                var tblName = typeof(T).Name;
+
+                return await Database.FindWithQueryAsync<T>($"SELECT * FROM {tblName} WHERE Id = {EntityID}");
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+            }
+            return default(T);
+        }
 
         //Query That Return List Of Entity
         public async Task<List<T>> QueryGetEntityList<T>(string query) where T : new()

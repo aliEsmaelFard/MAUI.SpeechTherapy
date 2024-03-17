@@ -41,7 +41,11 @@ public partial class SentenceMakingPage : ContentPage
         label.Text = "الصورة الأولى هي الفاعل، والصورة الثانية مرتبطة بالفعل، والصورة الثالثة مرتبطة بالمفعول به، حدد الموضوع والفعل والمفعول المناسب وذات الصلة من القائمة الموجودة أسفل كل صورة وانقر على \"فحص\" زر للتحقق من الجملة من حيث القواعد الهيكلية.";
         await LoadData();
     }
-
+    protected override bool OnBackButtonPressed()
+    {
+        CurrentPage = 1;
+        return base.OnBackButtonPressed();
+    }
     private async Task LoadData()
     {
         try
@@ -111,9 +115,10 @@ public partial class SentenceMakingPage : ContentPage
 
     }
 
-    Stream imageStream;
+
     public ImageSource CreateImageSourceFromByte(byte[] bytes)
-    {
+    {    
+        Stream imageStream;
         imageStream = new MemoryStream(bytes);
         return ImageSource.FromStream(() => imageStream);
     }
@@ -139,12 +144,5 @@ public partial class SentenceMakingPage : ContentPage
         await MyUtils.NavigateTo(nameof(SentenceCheckPage));
     }
 
-    protected override void OnDisappearing()
-    {
-        base.OnDisappearing();
-
-        //Clear From Ram
-        imageStream.Dispose();
-        imageStream = null;
-    }
+  
 }

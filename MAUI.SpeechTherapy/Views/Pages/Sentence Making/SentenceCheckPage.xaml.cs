@@ -1,4 +1,5 @@
-using MAUI.SpeechTherapy.Models.SentenceMaking;
+﻿using MAUI.SpeechTherapy.Models.SentenceMaking;
+using MAUI.SpeechTherapy.Services;
 using MAUI.SpeechTherapy.Utils;
 
 namespace MAUI.SpeechTherapy.Views.Pages.Sentence_Makng;
@@ -17,32 +18,150 @@ public partial class SentenceCheckPage : ContentPage
     {
         base.OnAppearing();
 
-        await LoadData();
+        try
+        {
+            await LoadData();
+        }
+        catch (Exception ex)
+        {
+
+        }
     }
 
     private async Task LoadData()
     {
-        SetImageData();
+        try
+        {
+            SetImageData();
+            SetCardText();
+            SetDescriptionText();
+            label_pag.Text = $"البند {SentenceMakingPage.CurrentPage} من {SentenceMakingPage.PageNumber}";
+
+        }
+        catch (Exception ex)
+        {
+
+        }
     }
 
+    private void SetDescriptionText() 
+    {
+        string TitelText = "خطأ";
+        string CaptionText = "";
 
-    private async void beforeItem_Clicked(object sender, EventArgs e)
+        // 1- all right
+        if(
+            AnswerSentence.ObjectId == RightSentence.ObjectId
+            && AnswerSentence.VerbId == RightSentence.VerbId
+            && AnswerSentence.SubjectId == RightSentence.SubjectId
+            )
+        {
+            TitelText = "أحسنت، لقد أجبت بشكل صحيح.";
+            CaptionText = "";
+        }
+        //2- all wrong
+        else if (
+            AnswerSentence.ObjectId != RightSentence.ObjectId
+            && AnswerSentence.VerbId != RightSentence.VerbId
+            && AnswerSentence.SubjectId != RightSentence.SubjectId
+            )
+        {
+            TitelText = "حاول مرة أخرى";
+            CaptionText = "";
+        }
+        //3- Fel & Fael wrong
+        else if (
+            AnswerSentence.ObjectId == RightSentence.ObjectId
+            && AnswerSentence.VerbId != RightSentence.VerbId
+            && AnswerSentence.SubjectId != RightSentence.SubjectId
+            )
+        {
+            TitelText = "خطأ في الفاعل و الفعل ";
+            CaptionText = "";
+        }
+
+        //4-Mafol & Fael wrong
+        else if (
+            AnswerSentence.ObjectId != RightSentence.ObjectId
+            && AnswerSentence.VerbId == RightSentence.VerbId
+            && AnswerSentence.SubjectId != RightSentence.SubjectId
+            )
+        {
+            TitelText = "خطأ في الفاعل و المفعول به";
+            CaptionText = "";
+        }
+        //5-Fel & Mafol wrong
+        else if (
+            AnswerSentence.ObjectId != RightSentence.ObjectId
+            && AnswerSentence.VerbId != RightSentence.VerbId
+            && AnswerSentence.SubjectId == RightSentence.SubjectId
+            )
+        {
+            TitelText = "خطأ في  الفعل والمفعول به";
+            CaptionText = "";
+        }
+        //6- Fel  wrong
+        else if (
+            AnswerSentence.ObjectId == RightSentence.ObjectId
+            && AnswerSentence.VerbId != RightSentence.VerbId
+            && AnswerSentence.SubjectId == RightSentence.SubjectId
+            )
+        {
+            TitelText = "خطأ في  الفعل ";
+            CaptionText = "";
+        }
+        //7-  mafol wrong
+        else if (
+            AnswerSentence.ObjectId != RightSentence.ObjectId
+            && AnswerSentence.VerbId == RightSentence.VerbId
+            && AnswerSentence.SubjectId == RightSentence.SubjectId
+            )
+        {
+            TitelText = "خطأ في المفعول به";
+            CaptionText = "";
+        }
+        //8- Fael wrong
+        else if (
+            AnswerSentence.ObjectId == RightSentence.ObjectId
+            && AnswerSentence.VerbId == RightSentence.VerbId
+            && AnswerSentence.SubjectId != RightSentence.SubjectId
+            )
+        {
+            TitelText = "خطأ في الفاعل";
+            CaptionText = "";
+        }
+        label_desTitel.Text = TitelText;
+        label_desCaption.Text = CaptionText;
+
+    }
+    private async void SetCardText()
     {
         try
         {
-            Button btn = sender as Button;
-            btn.BackgroundColor = MyUtils.GetColorFromResourse("xButtonColorPressed");
-            await Task.Delay(100);
-            btn.BackgroundColor = MyUtils.GetColorFromResourse("xButtonColor");
+            if (AnswerSentence != null)
+            {
+                ReadInfoDbService service = new ReadInfoDbService();
+
+                label_sub.Text = (await service.GetEntityById<SubjectModel>(AnswerSentence.SubjectId)).Name;
+                if (RightSentence.SubjectId != AnswerSentence.SubjectId)
+                    label_sub.IsRightAnswer = "0";
+
+                label_obj.Text = (await service.GetEntityById<ObjectModel>(AnswerSentence.ObjectId)).Name;
+                if (RightSentence.ObjectId != AnswerSentence.ObjectId)
+                    label_obj.IsRightAnswer = "0";
+
+                label_vrb.Text = (await service.GetEntityById<VerbModel>(AnswerSentence.VerbId)).Name;
+                if (RightSentence.VerbId != AnswerSentence.VerbId)
+                    label_vrb.IsRightAnswer = "0";
+
+
+            }
         }
-        catch (Exception ex) { string msg = ex.Message; }
+        catch (Exception ex)
+        {
+            string msg = ex.Message;
+        }
     }
-
-    private void nextItem_Clicked(object sender, EventArgs e)
-    {
-
-    }
-
     private void SetImageData()
     {
         try
@@ -61,11 +180,30 @@ public partial class SentenceCheckPage : ContentPage
 
     }
 
-    Stream imageStream;
+    private async void beforeItem_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            Button btn = sender as Button;
+            btn.BackgroundColor = MyUtils.GetColorFromResourse("xButtonColorPressed");
+            await Task.Delay(100);
+            btn.BackgroundColor = MyUtils.GetColorFromResourse("xButtonColor");
+        }
+        catch (Exception ex) { string msg = ex.Message; }
+    }
+
+    private void nextItem_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+
     public ImageSource CreateImageSourceFromByte(byte[] bytes)
     {
         try
         {
+            Stream imageStream;
+
             imageStream = new MemoryStream(bytes);
             return ImageSource.FromStream(() => imageStream);
         }
@@ -80,7 +218,7 @@ public partial class SentenceCheckPage : ContentPage
         base.OnDisappearing();
 
         //Clear From Ram
-        imageStream.Dispose();
-        imageStream = null;
+        //imageStream.Dispose();
+        //imageStream = null;
     }
 }
