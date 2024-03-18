@@ -23,7 +23,7 @@
             </Setter>
         </Style>
     </ContentPage.Resources>
-    
+
     <!--toolbar section-->
     <Shell.TitleView>
         <local:ToolBarContent tTittle="تعليم الاصوات" />
@@ -33,34 +33,44 @@
 
         <ScrollView>
 
-            <CollectionView x:Name="myCollection"
-                            Margin="0,20,0,150"
-                            SelectionMode="Single"
-                            ItemsSource="{Binding DataList}"
->
+           
+                <CollectionView x:Name="myCollection"
+                                Margin="0,20,0,150"
+                                SelectionMode="Single"
+                                ItemsSource="{Binding DataList}"
+                                >
 
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical"
-                                       ItemSpacing="8" />
-                </CollectionView.ItemsLayout>
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"
+                                           ItemSpacing="8" />
+                    </CollectionView.ItemsLayout>
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
 
-                        <local:ListItem Text="{Binding Name}" >
-                            <local:ListItem.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="ListItemGestureRecognizer_Tapped"
-                                                      CommandParameter="{Binding .}" />
-                            </local:ListItem.GestureRecognizers>
+                            <local:ListItem Text="{Binding Name}">
+                                <local:ListItem.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ListItemGestureRecognizer_Tapped"
+                                                          CommandParameter="{Binding .}" />
+                                </local:ListItem.GestureRecognizers>
 
-                        </local:ListItem>
+                            </local:ListItem>
 
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+           
 
         </ScrollView>
 
+        <ActivityIndicator Color="{StaticResource xPrimry}"
+                           IsRunning="True"
+                           VerticalOptions="Center"
+                           x:Name="LoadingBar"
+                           IsVisible="True"
+                           WidthRequest="50"
+                           ZIndex="1" />
     </Grid>
 
 </ContentPage>

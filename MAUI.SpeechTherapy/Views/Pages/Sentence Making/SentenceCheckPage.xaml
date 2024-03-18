@@ -118,6 +118,22 @@
                                    Spacing="8">
               
 
+        
+
+                <Button WidthRequest="152"
+                        HeightRequest="48"
+                        CornerRadius="8"
+                        BackgroundColor="{StaticResource xButtonColor}"
+                        TextColor="White"
+                        Text="العنصر التالي"
+                        FontFamily="Noto"
+                        FontSize="16"
+                        Grid.Row="1"
+                        FontAttributes="Bold"
+                        Margin="0, 24"
+                        x:Name="btn_nextItem"
+                        Clicked="nextItem_Clicked" />
+
                 <Button WidthRequest="152"
                         HeightRequest="48"
                         CornerRadius="8"
@@ -125,32 +141,14 @@
                         BorderColor="{StaticResource xButtonColor}"
                         BorderWidth="1"
                         TextColor="{StaticResource xButtonColor}"
-                        Text="آیتم قبلی"
-                        FontFamily="Noto"
-                        FontSize="16"
-                        Grid.Row="1"
-                        FontAttributes="Bold"
-                        Margin="0, 24" 
-                        x:Name="nextItem"
-                        Clicked="nextItem_Clicked"
-
-                        />
-
-                <Button WidthRequest="152"
-                        HeightRequest="48"
-                        CornerRadius="8"
-                        BackgroundColor="{StaticResource xButtonColor}"
-                        TextColor="White"
-                        Text="آیتم بعدی"
+                        Text="العنصر السابق"
                         FontFamily="Noto"
                         FontSize="16"
                         Grid.Row="1"
                         FontAttributes="Bold"
                         Margin="0, 24"
-                        x:Name="beforeItem"
-                        Clicked="beforeItem_Clicked"
-                        />
-
+                        x:Name="btn_beforeItem"
+                        Clicked="beforeItem_Clicked" />
             </HorizontalStackLayout>
 
             <Label  x:Name="label_pag"   TextColor="{StaticResource xPagenationColor}"

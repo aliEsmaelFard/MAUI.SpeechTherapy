@@ -40,12 +40,19 @@ public partial class SentenceMakingPage : ContentPage
         base.OnAppearing();
         label.Text = "الصورة الأولى هي الفاعل، والصورة الثانية مرتبطة بالفعل، والصورة الثالثة مرتبطة بالمفعول به، حدد الموضوع والفعل والمفعول المناسب وذات الصلة من القائمة الموجودة أسفل كل صورة وانقر على \"فحص\" زر للتحقق من الجملة من حيث القواعد الهيكلية.";
         await LoadData();
+        //this.OnBackButtonPressed += SentenceMakingPage_BackButtonPressed;
     }
+
     protected override bool OnBackButtonPressed()
     {
+        Dispatcher.Dispatch(async () =>
+        {
+            await MyUtils.NavigateTo(nameof(MainPage));
+        });
         CurrentPage = 1;
-        return base.OnBackButtonPressed();
+        return true;
     }
+
     private async Task LoadData()
     {
         try
@@ -117,7 +124,7 @@ public partial class SentenceMakingPage : ContentPage
 
 
     public ImageSource CreateImageSourceFromByte(byte[] bytes)
-    {    
+    {
         Stream imageStream;
         imageStream = new MemoryStream(bytes);
         return ImageSource.FromStream(() => imageStream);
@@ -125,7 +132,7 @@ public partial class SentenceMakingPage : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
-        if(objectPicker.SelectedIndex == -1 ||  verbPicker.SelectedIndex == -1 || subjectPicker.SelectedIndex == -1)
+        if (objectPicker.SelectedIndex == -1 || verbPicker.SelectedIndex == -1 || subjectPicker.SelectedIndex == -1)
         {
             await Snackbar.Make("أولا، حدد كافة الخيارات ذات الصلة.", actionButtonText: "").Show();
             return;
@@ -133,9 +140,9 @@ public partial class SentenceMakingPage : ContentPage
 
         SentenceMakingModel sentenceMaking = new SentenceMakingModel()
         {
-            ObjectId = (objectPicker.SelectedItem as ObjectModel).Id, 
-            SubjectId = (subjectPicker.SelectedItem as SubjectModel).Id, 
-            VerbId = (verbPicker.SelectedItem as VerbModel).Id, 
+            ObjectId = (objectPicker.SelectedItem as ObjectModel).Id,
+            SubjectId = (subjectPicker.SelectedItem as SubjectModel).Id,
+            VerbId = (verbPicker.SelectedItem as VerbModel).Id,
         };
 
         SentenceCheckPage.RightSentence = sentence;
@@ -144,5 +151,5 @@ public partial class SentenceMakingPage : ContentPage
         await MyUtils.NavigateTo(nameof(SentenceCheckPage));
     }
 
-  
+
 }

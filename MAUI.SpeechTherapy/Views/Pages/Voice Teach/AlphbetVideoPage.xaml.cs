@@ -1,4 +1,5 @@
-﻿using MAUI.SpeechTherapy.Models.Alphba;
+﻿using CommunityToolkit.Maui.Views;
+using MAUI.SpeechTherapy.Models.Alphba;
 
 namespace MAUI.SpeechTherapy.Views.Pages.Voice_Teach;
 
@@ -13,12 +14,13 @@ public partial class AlphbetVideoPage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        Toolbar.tTittle = " صوت " + Letter;
+        Toolbar.tTittle = " صوت " + Letter.Name;
+        mediaElement.Source = MediaSource.FromResource(Letter.VideoPath);
     }
 
     protected override void OnDisappearing()
     {
-      //  mediaElement.Stop();
+        mediaElement.Stop();
         base.OnDisappearing();
     }
 }

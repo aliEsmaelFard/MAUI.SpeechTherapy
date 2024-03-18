@@ -11,18 +11,16 @@
     </Shell.TitleView>
 
     <VerticalStackLayout >
-        <!--<toolkit:MediaElement x:Name="mediaElement"
+        <toolkit:MediaElement x:Name="mediaElement"
                               
-                              ShouldShowPlaybackControls="False"
+                              ShouldShowPlaybackControls="True"
                               ShouldLoopPlayback="True"
                               ShouldAutoPlay="True"
-                              Source="https://www.youtube.com/watch?v=_-4RwBTOQqI"
                               Margin="28,-24"
                               HeightRequest="300"
                               WidthRequest="300"
                               
-                      />-->
+                      />
 
-        <WebView Source="https://www.youtube.com/embed/RdFA70cda4U" />
     </VerticalStackLayout>
 </ContentPage>

@@ -39,5 +39,7 @@ namespace MAUI.SpeechTherapy
             Routing.RegisterRoute(nameof(AboutProgrammerPage), typeof(AboutProgrammerPage));
 
         }
+
+
     }
 }

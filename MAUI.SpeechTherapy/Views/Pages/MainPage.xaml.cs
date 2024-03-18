@@ -1,6 +1,7 @@
 ﻿using Bumptech.Glide.Util;
 using MAUI.SpeechTherapy.Services;
 using MAUI.SpeechTherapy.Utils;
+using MAUI.SpeechTherapy.Views.Pages.Sentence_Makng;
 
 namespace MAUI.SpeechTherapy
 {
@@ -12,7 +13,6 @@ namespace MAUI.SpeechTherapy
 
             InitializeComponent();
 
-            
         }
 
 
@@ -25,7 +25,7 @@ namespace MAUI.SpeechTherapy
                 MyUtils.FillDataBase();
                 MyUtils.FirstRun = false;
             }
-
+            SentenceMakingPage.CurrentPage = 1;
         }
     }
 

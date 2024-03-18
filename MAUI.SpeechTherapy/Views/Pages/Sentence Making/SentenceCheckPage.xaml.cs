@@ -21,6 +21,11 @@ public partial class SentenceCheckPage : ContentPage
         try
         {
             await LoadData();
+
+            if(SentenceMakingPage.CurrentPage == 1)
+               btn_beforeItem.IsVisible = false;
+            if(SentenceMakingPage.CurrentPage == SentenceMakingPage.PageNumber) 
+                btn_nextItem.IsVisible = false; 
         }
         catch (Exception ex)
         {
@@ -44,13 +49,13 @@ public partial class SentenceCheckPage : ContentPage
         }
     }
 
-    private void SetDescriptionText() 
+    private void SetDescriptionText()
     {
         string TitelText = "خطأ";
         string CaptionText = "";
 
         // 1- all right
-        if(
+        if (
             AnswerSentence.ObjectId == RightSentence.ObjectId
             && AnswerSentence.VerbId == RightSentence.VerbId
             && AnswerSentence.SubjectId == RightSentence.SubjectId
@@ -188,13 +193,29 @@ public partial class SentenceCheckPage : ContentPage
             btn.BackgroundColor = MyUtils.GetColorFromResourse("xButtonColorPressed");
             await Task.Delay(100);
             btn.BackgroundColor = MyUtils.GetColorFromResourse("xButtonColor");
+
+            SentenceMakingPage.CurrentPage--;
+          //  await MyUtils.NavigateTo(nameof(SentenceMakingPage));
+          await Navigation.PopAsync();
         }
         catch (Exception ex) { string msg = ex.Message; }
     }
 
-    private void nextItem_Clicked(object sender, EventArgs e)
+    private async void nextItem_Clicked(object sender, EventArgs e)
     {
+        try
+        {
+            Button btn = sender as Button;
+            btn.BackgroundColor = MyUtils.GetColorFromResourse("xButtonColorPressed");
+            await Task.Delay(100);
+            btn.BackgroundColor = Colors.White;
 
+            SentenceMakingPage.CurrentPage++;
+            //await MyUtils.NavigateTo(nameof(SentenceMakingPage));
+            await Navigation.PopAsync();
+
+        }
+        catch (Exception ex) { string msg = ex.Message; }
     }
 
 

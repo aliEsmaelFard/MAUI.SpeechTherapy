@@ -94,7 +94,35 @@
 	  <None Remove="Resources\Images\lamp.png" />
 	  <None Remove="Resources\Images\rightbox.png" />
 	  <None Remove="Resources\Images\wrongbox.png" />
+	  <None Remove="Resources\Raw\a-ain.mp4" />
+	  <None Remove="Resources\Raw\alif.mp4" />
+	  <None Remove="Resources\Raw\Baa.mp4" />
 	  <None Remove="Resources\Raw\book.pdf" />
+	  <None Remove="Resources\Raw\D aal.mp4" />
+	  <None Remove="Resources\Raw\Dd-aad.mp4" />
+	  <None Remove="Resources\Raw\f-aa.mp4" />
+	  <None Remove="Resources\Raw\gh-ain.mp4" />
+	  <None Remove="Resources\Raw\H aa.mp4" />
+	  <None Remove="Resources\Raw\h-a.mp4" />
+	  <None Remove="Resources\Raw\j eem.mp4" />
+	  <None Remove="Resources\Raw\k-aaf.mp4" />
+	  <None Remove="Resources\Raw\Kh aa.mp4" />
+	  <None Remove="Resources\Raw\l-aam.mp4" />
+	  <None Remove="Resources\Raw\m-eem.mp4" />
+	  <None Remove="Resources\Raw\n-oon.mp4" />
+	  <None Remove="Resources\Raw\q-aaf.mp4" />
+	  <None Remove="Resources\Raw\R aa.mp4" />
+	  <None Remove="Resources\Raw\S een.mp4" />
+	  <None Remove="Resources\Raw\Sh een.mp4" />
+	  <None Remove="Resources\Raw\ss aad.mp4" />
+	  <None Remove="Resources\Raw\Taa.mp4" />
+	  <None Remove="Resources\Raw\th aa.mp4" />
+	  <None Remove="Resources\Raw\th aal.mp4" />
+	  <None Remove="Resources\Raw\Th-aa.mp4" />
+	  <None Remove="Resources\Raw\Tt-aa.mp4" />
+	  <None Remove="Resources\Raw\w-aaw.mp4" />
+	  <None Remove="Resources\Raw\y-aa.mp4" />
+	  <None Remove="Resources\Raw\z aa.mp4" />
 	  <None Remove="SpeechDB.db3" />
 	</ItemGroup>
 
