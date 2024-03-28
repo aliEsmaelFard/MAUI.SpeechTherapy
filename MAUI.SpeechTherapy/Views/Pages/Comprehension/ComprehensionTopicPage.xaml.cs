@@ -8,7 +8,7 @@ public partial class ComprehensionTopicPage : ContentPage
     {
         InitializeComponent();
 
-        Toolbar.tTittle = "فهم الاسئلة و الإجابة على الأسئلة";
+        Toolbar.tTittle = "فهم الاسئلة ";
     }
 
     private async void QuestionSectionTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)

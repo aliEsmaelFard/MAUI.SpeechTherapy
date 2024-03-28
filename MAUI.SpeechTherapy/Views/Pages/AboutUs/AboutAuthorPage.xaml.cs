@@ -18,6 +18,11 @@ public partial class AboutAuthorPage : ContentPage
 
     public void OpenApp(string appName)
     {
+
+        // Assuming you have the LinkedIn URL
+        string linkedInUrl = "https://www.linkedin.com/in/wafa-delphi-a4b3b7aa/"; 
+        string facebookUrl = "https://www.facebook.com/AlSubtainAcademy"; 
+
         switch (appName)
         {
             case "Telegram":
@@ -28,6 +33,12 @@ public partial class AboutAuthorPage : ContentPage
                 break;
             case "Email":
                 Launcher.OpenAsync($"mailto:vafa.delphi@gmail.com");
+                break;
+            case "link":
+                Launcher.OpenAsync(new Uri(linkedInUrl));
+                break;
+            case "facebook":
+                Launcher.OpenAsync(new Uri(facebookUrl));
                 break;
             default:
                 // Handle unsupported app name or fallback behavior

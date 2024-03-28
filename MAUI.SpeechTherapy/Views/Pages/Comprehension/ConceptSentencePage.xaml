@@ -10,15 +10,8 @@
                               x:Name="Toolbar" />
     </Shell.TitleView>
     
-    <Grid RowDefinitions="*,*" >
-        <!--<Border WidthRequest="250"
-              HeightRequest="300"
-                Stroke="White"
-                StrokeThickness=".0"
-                StrokeShape="RoundRectangle 8"
-                Style="{x:StaticResource border-shadow-light}"
-              >
-        </Border>-->
+    <Grid RowDefinitions="*,Auto" >
+
         <Frame Background="White"
                BorderColor="LightGray"
                HasShadow="True"

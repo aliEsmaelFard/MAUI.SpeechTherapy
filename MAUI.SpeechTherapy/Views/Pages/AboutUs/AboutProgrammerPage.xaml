@@ -19,13 +19,13 @@
              >
 
         <VerticalStackLayout>
-            <local:CardComp Text="راه‌های ارتباطی"
+                <local:CardComp Text="طرق التواصل"
                             ImageSource="call"
                             ColorP="#13A4B5" />
 
             <Grid 
-                  RowDefinitions="*,*,*"
-                  RowSpacing="8"
+                  RowDefinitions="*,*,*,*"
+                  RowSpacing="16"
                   Margin="24">
 
                 <Grid Grid.Column="0"
@@ -58,13 +58,37 @@
                     
                 </Grid>
 
-                <Grid Grid.Column="0"
-                      Grid.Row="1"
+
+                    <Grid Grid.Column="0"
+                          Grid.Row="1"
+                          ColumnDefinitions="50,2*,*"
+                          Margin="0,0,0,20">
+                        <Image Source="link.png"
+                               WidthRequest="24" />
+
+                        <Label Text="ali-esmael-fard-404a99280"
+                               FontFamily="Noto"
+                               FontSize="14"
+                               TextColor="#212121"
+                               VerticalOptions="Center"
+                               Grid.Column="1" />
+
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"
+                                                  CommandParameter="link" />
+                        </Grid.GestureRecognizers>
+
+                    </Grid>
+                
+                
+                    <Grid Grid.Column="0"
+                      Grid.Row="2"
                       ColumnDefinitions="50,2*,*">
                     <Image Source="sms"
                            WidthRequest="24" />
 
-                        <Label Text="mohsen@gmail.com@gmail.com"
+                        <Label Text="pg.shafiee@gmail.com"
                            FontFamily="Noto"
                            FontSize="14"
                            TextColor="#212121"
@@ -88,7 +112,7 @@
                 </Grid>
 
                 <Grid 
-                      Grid.Row="2"
+                      Grid.Row="3"
                       ColumnDefinitions="50,2*,*">
                     <Image Source="sms"
                            WidthRequest="24" />

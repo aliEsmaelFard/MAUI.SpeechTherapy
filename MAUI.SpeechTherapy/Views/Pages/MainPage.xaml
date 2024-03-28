@@ -22,7 +22,7 @@
                                Margin="50, 0"
                                >
             <Label
-                   Text="نام اپ "
+                   Text="بیان"
                    TextColor="White"
                    VerticalTextAlignment="Center"
                    VerticalOptions="CenterAndExpand"
@@ -32,11 +32,12 @@
                    FontFamily="Noto"/>
         </HorizontalStackLayout>
     </Shell.TitleView>
-    
-    
-    <Grid RowDefinitions="*, *, *, *"
+
+    <VerticalStackLayout Margin="0,20,0,0">
+         <Grid RowDefinitions="*, *, *, *"
           ColumnDefinitions="*,*"
-          Margin="16,8,16,16">
+          Margin="16,8,16,16"
+          RowSpacing="8">
 
         <local:HomeCard  Grid.Column="0" Grid.Row="0"
                          ImageSource="mafahim.svg"
@@ -58,7 +59,7 @@
         <local:HomeCard  Grid.Column="0"
                          Grid.Row="1"
                          ImageSource="soalst.png"
-                         Text="تعلیم افعال الامر و الهی " 
+                         Text="ادراك و التحلیل " 
                          PageRoute="QuestionTopicPage"/>
 
         <local:HomeCard  Grid.Column="1"
@@ -71,7 +72,7 @@
                          Grid.Row="2"
                          ImageSource="darksoal.png"
                          PageRoute="ComprehensionTopicPage"
-                         Text=" فهم الاسئلة و الإجابة على الأسئلة" />
+                         Text=" فهم الاسئلة " />
 
         <local:HomeCard  Grid.Column="1"
                          Grid.Row="2"
@@ -82,6 +83,8 @@
         
     </Grid>
 
+    </VerticalStackLayout>
+   
 
 
 </ContentPage>

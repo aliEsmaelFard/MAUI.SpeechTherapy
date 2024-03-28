@@ -85,7 +85,7 @@
                                            HorizontalOptions="Center"
                                            VerticalOptions="End"
                                            FontSize="20"
-                                           Margin="0,30"
+                                           Margin="0,30, 0 , 20"
                                            FontFamily="Noto" 
                                           
                                            TextColor="{x:StaticResource White}"/>

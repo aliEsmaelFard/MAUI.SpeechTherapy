@@ -22,21 +22,36 @@
                     StrokeShape="RoundRectangle 12">
 
                 <VerticalStackLayout>
-                    <local:CardComp Text="درباره اپلیکیشن و هدفش"
+                    <local:CardComp Text="مَلَفّ"
                                     ImageSource="mobile_programming"
                                     ColorP="{StaticResource xPrimry}" />
                     <Label Text="تطبيق بیان عبارة عن برنامج لتسهيل النطق واللغة للأطفال الذين يعانون من اضطرابات النطق واللغة وتأخر النطق. يتكون هذا البرنامج من خمسة أجزاء من المستوى البسيط إلى المستوى المعقد. 
-الجزء الأول يتضمن مفاهيم تعليمية تتضمن ۸ مجموعات من الحيوانات والفواكه والأفعال والملابس والأشياء ووسائل النقل والخضروات والأطعمة. 
-الجزء الثاني يتضمن استخدام أفعال الأمر والنهي في الكلام اليومي. 
-الجزء الثالث يتكون من تكوين الجمل باستخدام القواعد الصحيحة. 
-الجزء الرابع هو الجزء الفهمي للأسئلة. 
-الجزء الخامس: تصحيح أصوات الكلام وتعميم أصوات الكلام على مستوى الكلمات والجمل "
+الجزء الأول يتضمن مفاهيم تعليمية تتضمن ۸ مجموعات من الحيوانات والفواكه والأفعال والملابس ومسميات الأشياء ووسائل النقل والخضروات والأطعمة. 
+الجزء الثاني يتضمن استخدام أفعال الأمر والنهي في الكلام اليومي  
+الجزء الثالث يتكون من صياغة الجمل باستخدام القواعد الصحيحة. 
+الجزء الرابع هو الجزء الخاص بالمفاهيم المعرفية و الإدراكية و ايضا الاجابة عن الأسئلة .
+الجزء الخامس: تصحيح مخارج الأصوات وتعميمها على مستوى الكلمات والجمل 
+"
                            FlowDirection="RightToLeft"
                            Margin="16"
                            FontSize="14"
                            FontFamily="Noto"
                            TextColor="#212121"
                            LineHeight="1.1" />
+
+                    <Label Text="Adapting the program statement to facilitate speech and language for children with speech and language disorders and speech delays. This program consists of five parts from simple to complex level.
+The first part includes educational concepts including 8 groups of animals, fruits, verbs, clothes, names of objects, means of transportation, vegetables and foods.
+The second part includes the use of imperative and prohibitive verbs in everyday speech
+The third part consists of formulating the sentence using the correct grammar.
+The fourth part is the cognitive and perceptual concepts part, as well as the response to the questions.
+Part Five: Correcting pronunciation(speech sound) and generalizations at the level of words and sentences"
+                           Margin="16"
+                           FontSize="13"
+                           FontFamily="Noto"
+                           TextColor="#212121"
+                           LineHeight="1.1"
+                           HorizontalOptions="Start"
+                           HorizontalTextAlignment="Start" />
                 </VerticalStackLayout>
             </Border>
 
@@ -48,21 +63,21 @@
                     StrokeShape="RoundRectangle 12">
 
                 <VerticalStackLayout>
-                    <local:CardComp Text="درباره اپلیکیشن و هدفش"
+                    <local:CardComp Text="نبذة عن التطبيق والغرض منه"
                                     ImageSource="book_saved"
                                     ColorP="#D39B12" />
 
-                    <Label Text="کتاب ها"
+                    <Label Text="كتب"
                            TextColor="#757575"
                            FontFamily="Noto"
                            FontSize="14"
                            HorizontalOptions="End"
                            Margin="24,8" />
 
-                    <Image Source="booksection.svg"
+                    <Image Source="booksec.png"
                            Margin="14" />
 
-                    <Label Text="فلش‌کارت‌ها"
+                    <Label Text="البطاقات التعليمية"
                            TextColor="#757575"
                            FontFamily="Noto"
                            FontSize="14"
@@ -74,6 +89,109 @@
                 </VerticalStackLayout>
             </Border>
 
+
+
+            <Border Stroke="LightGray"
+                    StrokeThickness=".6"
+                    Style="{StaticResource border-shadow-light}"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="0,0,0,8">
+
+                <VerticalStackLayout>
+
+                    <local:CardComp Text="المؤلفون"
+                                    ImageSource="edit.png"
+                                    ColorP="#FB1E90FF" />
+
+
+                    <VerticalStackLayout>
+
+
+                        <HorizontalStackLayout VerticalOptions="Center"
+                                               HorizontalOptions="Center"
+                                               Spacing="70"
+                                               Margin="24">
+                            <Image Source="academi_logo.png"
+                                   WidthRequest="100"
+                                   Scale="2" />
+                            <Image Source="wafadelphi.png"
+                                   WidthRequest="46"
+                                   HeightRequest="40"
+                                   Scale="1.8" />
+
+                        </HorizontalStackLayout>
+
+                        <VerticalStackLayout Margin="24, 8"
+                                             Spacing="0">
+
+                            <Label Text="Speech language pathologist :"
+                                   FontFamily="Noto"
+                                   FontSize="14"
+                                   TextColor="Gray"
+                                   VerticalOptions="Start"
+                                   Margin="0,10,0,5" />
+
+                            <Label Text="وفا دلفي"
+                                   FontFamily="Noto"
+                                   FontSize="14"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+
+                            <Label Text="Speech language Coach :"
+                                   FontFamily="Noto"
+                                   FontSize="14"
+                                   TextColor="Gray"
+                                   VerticalOptions="Start"
+                                   Margin="0,10,0,5" />
+
+                            <Label Text="أنسام محمد التميمي"
+                                   FontFamily="Noto"
+                                   FontSize="14"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+
+                            <Label Text="Director of autism centers in Iraq :"
+                                   FontFamily="Noto"
+                                   FontSize="14"
+                                   TextColor="Gray"
+                                   VerticalOptions="Start"
+                                   Margin="0,10,0,5" />
+
+                            <Label Text="دكتور أسامة الساعدي"
+                                   FontFamily="Noto"
+                                   FontSize="14"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+
+                            <Label Text="Director of alsebtain academy :"
+                                   FontFamily="Noto"
+                                   FontSize="14"
+                                   TextColor="Gray"
+                                   VerticalOptions="Start"
+                                   Margin="0,10,0,5" />
+
+                            <Label Text="دکتورة شذى العوادي"
+                                   FontFamily="Noto"
+                                   FontSize="14"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+
+
+
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+
+
+
+
+
+
+            </Border>
+
+
             <Border Stroke="LightGray"
                     StrokeThickness=".6"
                     Style="{StaticResource border-shadow-light}"
@@ -81,89 +199,108 @@
                     Margin="0,0,0,150">
 
                 <VerticalStackLayout>
-                    <local:CardComp Text="راه‌های ارتباطی"
+                    <local:CardComp Text="طرق التواصل"
                                     ImageSource="call"
                                     ColorP="#4EA75D" />
 
-                    <Grid ColumnDefinitions="3*, *"
-                          RowDefinitions="*,*,*"
-                          RowSpacing="8"
-                          Margin="24">
+                    <VerticalStackLayout>
 
-                        <HorizontalStackLayout Grid.Column="0"
-                                               Grid.Row="0"
-                                               Spacing="8">
-                            <Image Source="fxemoji_email"
-                                   WidthRequest="20" />
 
-                            <Label Text="vafa.delphi@gmail.com"
-                                   FontFamily="Noto"
-                                   FontSize="14"
-                                   TextColor="#212121" 
-                                   VerticalOptions="Center"/>
+                        <Grid ColumnDefinitions="3*, *"
+                              RowDefinitions="*,*,*,*,*"
+                              RowSpacing="8"
+                              Margin="24">
 
-                            <HorizontalStackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
-                                                      CommandParameter="Email" />
-                            </HorizontalStackLayout.GestureRecognizers>
-                        </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="0"
+                                                   Grid.Row="0"
+                                                   Spacing="8">
+                                <Image Source="fxemoji_email"
+                                       WidthRequest="20" />
 
-                        <HorizontalStackLayout Grid.Column="0"
-                                               Grid.Row="1"
-                                               Spacing="8">
-                            <Image Source="logos_whatsapp_icon"
-                                   WidthRequest="20" />
+                                <Label Text="vafa.delphi@gmail.com"
+                                       FontFamily="Noto"
+                                       FontSize="14"
+                                       TextColor="#212121"
+                                       VerticalOptions="Center" />
 
-                            <Label Text=" +9647852445121"
-                                   FontFamily="Noto"
-                                   FontSize="14"
-                                   VerticalOptions="Center"
-                                   TextColor="#212121" />
+                                <HorizontalStackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                          CommandParameter="Email" />
+                                </HorizontalStackLayout.GestureRecognizers>
+                            </HorizontalStackLayout>
 
-                            <HorizontalStackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
-                                                      CommandParameter="WhatsApp" />
-                            </HorizontalStackLayout.GestureRecognizers>
-                        </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Row="1"
+                                                   Spacing="8">
+                                <Image Source="logos_whatsapp_icon"
+                                       WidthRequest="20" />
 
-                        <HorizontalStackLayout Grid.Column="0"
-                                               Grid.Row="2"
-                                               Spacing="8">
-                            <Image Source="logos_telegram"
-                                   WidthRequest="20" />
+                                <Label Text="+989167292494"
+                                       FontFamily="Noto"
+                                       FontSize="14"
+                                       VerticalOptions="Center"
+                                       TextColor="#212121" />
 
-                            <Label Text="@vafadelphi"
-                                   FontFamily="Noto"
-                                   FontSize="14"
-                                   VerticalOptions="Center"
-                                   TextColor="#212121" />
+                                <HorizontalStackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                          CommandParameter="WhatsApp" />
+                                </HorizontalStackLayout.GestureRecognizers>
+                            </HorizontalStackLayout>
 
-                            <HorizontalStackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
-                                                      CommandParameter="Telegram" />
-                            </HorizontalStackLayout.GestureRecognizers>
-                        </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Row="2"
+                                                   Spacing="8">
+                                <Image Source="logos_telegram"
+                                       WidthRequest="20" />
 
-                        <VerticalStackLayout Grid.Column="1" Grid.RowSpan="3">
-                            <Image Source="user_edit"
-                                   WidthRequest="46" />
+                                <Label Text="@vafadelphi"
+                                       FontFamily="Noto"
+                                       FontSize="14"
+                                       VerticalOptions="Center"
+                                       TextColor="#212121" />
 
-                            <Label Text="وفا دلفی"
-                                   FontSize="14"
-                                   FontFamily="Noto"
-                                   TextColor="#212121" 
-                                   FontAttributes="Bold"
-                                   HorizontalOptions="Center"
-                                   Margin="0,8,0,0"/>
+                                <HorizontalStackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                          CommandParameter="Telegram" />
+                                </HorizontalStackLayout.GestureRecognizers>
+                            </HorizontalStackLayout>
 
-                            <Label Text="نویسنده"
-                                   FontSize="12"
-                                   FontFamily="Noto"
-                                   TextColor="#919191"
-                                   HorizontalOptions="Center" />
+                            <HorizontalStackLayout Grid.Row="3"
+                                                   Spacing="8">
+                                <Image Source="link.png"
+                                       WidthRequest="20" />
 
-                        </VerticalStackLayout>
-                    </Grid>
+                                <Label Text="wafa-delphi-a4b3b7aa/"
+                                       FontFamily="Noto"
+                                       FontSize="14"
+                                       VerticalOptions="Center"
+                                       TextColor="#212121" />
+
+                                <HorizontalStackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                          CommandParameter="link" />
+                                </HorizontalStackLayout.GestureRecognizers>
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Grid.Row="4"
+                                                   Spacing="8">
+                                <Image Source="facebook.png"
+                                       WidthRequest="20" />
+
+                                <Label Text="AlSubtainAcademy"
+                                       FontFamily="Noto"
+                                       FontSize="14"
+                                       VerticalOptions="Center"
+                                       TextColor="#212121" />
+
+                                <HorizontalStackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                          CommandParameter="facebook" />
+                                </HorizontalStackLayout.GestureRecognizers>
+                            </HorizontalStackLayout>
+
+                        </Grid>
+
+                    </VerticalStackLayout>
+
                 </VerticalStackLayout>
             </Border>
 

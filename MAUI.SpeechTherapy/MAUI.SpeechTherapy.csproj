@@ -21,7 +21,7 @@
 		<Nullable>enable</Nullable>
  
 		<!-- Display name -->
-		<ApplicationTitle>MAUI.SpeechTherapy</ApplicationTitle>
+		<ApplicationTitle>بیان</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.maui.speechtherapy</ApplicationId>
@@ -29,7 +29,6 @@
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
-
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
@@ -38,12 +37,20 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\appicon.jpg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#FFFFFF" />
+		<MauiIcon Include="Resources\Images\icon.jpg">
+		  <Color>#FFFFFF</Color>
+		  <ForegroundFile>Resources\AppIcon\appiconfg.svg</ForegroundFile>
+		</MauiIcon>
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\icon.jpg" Color="#FFFFFF" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -57,12 +64,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\icon.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Fonts\NotoKufiArabic-VariableFont_wght.ttf" />
-	  <None Remove="Resources\Images\AboutUs\booksection.svg" />
+	  <None Remove="Resources\Images\AboutUs\booksec.png" />
 	  <None Remove="Resources\Images\AboutUs\book_saved.png" />
 	  <None Remove="Resources\Images\AboutUs\call.png" />
+	  <None Remove="Resources\Images\AboutUs\edit.svg" />
 	  <None Remove="Resources\Images\AboutUs\flashcardsection.svg" />
 	  <None Remove="Resources\Images\AboutUs\fxemoji_email.png" />
+	  <None Remove="Resources\Images\AboutUs\link.png" />
 	  <None Remove="Resources\Images\AboutUs\logos_telegram.png" />
 	  <None Remove="Resources\Images\AboutUs\logos_whatsapp_icon.png" />
 	  <None Remove="Resources\Images\AboutUs\mobile_programming.png" />
@@ -70,7 +83,9 @@
 	  <None Remove="Resources\Images\AboutUs\profile_2user.png" />
 	  <None Remove="Resources\Images\AboutUs\sms.png" />
 	  <None Remove="Resources\Images\AboutUs\user_edit.png" />
+	  <None Remove="Resources\Images\academi_logo.png" />
 	  <None Remove="Resources\Images\arrow.png" />
+	  <None Remove="Resources\Images\booksec.png" />
 	  <None Remove="Resources\Images\box.png" />
 	  <None Remove="Resources\Images\dropdown.png" />
 	  <None Remove="Resources\Images\dropdown2.jpg" />
@@ -91,8 +106,10 @@
 	  <None Remove="Resources\Images\HomeIcon\mafahim.svg" />
 	  <None Remove="Resources\Images\HomeIcon\soalst.png" />
 	  <None Remove="Resources\Images\HomeIcon\soalst.svg" />
+	  <None Remove="Resources\Images\icon.jpg" />
 	  <None Remove="Resources\Images\lamp.png" />
 	  <None Remove="Resources\Images\rightbox.png" />
+	  <None Remove="Resources\Images\wafadelphi.png" />
 	  <None Remove="Resources\Images\wrongbox.png" />
 	  <None Remove="Resources\Raw\a-ain.mp4" />
 	  <None Remove="Resources\Raw\alif.mp4" />
@@ -115,6 +132,7 @@
 	  <None Remove="Resources\Raw\S een.mp4" />
 	  <None Remove="Resources\Raw\Sh een.mp4" />
 	  <None Remove="Resources\Raw\ss aad.mp4" />
+	  <None Remove="Resources\Raw\ta.mp4" />
 	  <None Remove="Resources\Raw\Taa.mp4" />
 	  <None Remove="Resources\Raw\th aa.mp4" />
 	  <None Remove="Resources\Raw\th aal.mp4" />
@@ -131,11 +149,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiImage Include="Resources\Images\AboutUs\booksection.svg" />
 	  <MauiImage Include="Resources\Images\AboutUs\book_saved.png" />
 	  <MauiImage Include="Resources\Images\AboutUs\call.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\edit.svg" />
 	  <MauiImage Include="Resources\Images\AboutUs\flashcardsection.svg" />
 	  <MauiImage Include="Resources\Images\AboutUs\fxemoji_email.png" />
+	  <MauiImage Include="Resources\Images\AboutUs\link.png" />
 	  <MauiImage Include="Resources\Images\AboutUs\logos_telegram.png" />
 	  <MauiImage Include="Resources\Images\AboutUs\logos_whatsapp_icon.png" />
 	  <MauiImage Include="Resources\Images\AboutUs\mobile_programming.png" />
@@ -164,6 +183,10 @@
 		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.7" />
 		<PackageReference Include="System.Reflection" Version="4.3.0" />
 		<PackageReference Include="UraniumUI.Material" Version="2.7.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\AboutUs\booksec.png" />
 	</ItemGroup>
 
 	<ItemGroup>

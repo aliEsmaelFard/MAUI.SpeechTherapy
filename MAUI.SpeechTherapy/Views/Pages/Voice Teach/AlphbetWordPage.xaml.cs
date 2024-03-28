@@ -1,6 +1,4 @@
-﻿using Android.Runtime;
-using Kotlin.Properties;
-using MAUI.SpeechTherapy.Models;
+﻿using MAUI.SpeechTherapy.Models;
 using MAUI.SpeechTherapy.Models.Alphba;
 using MAUI.SpeechTherapy.Services;
 using MAUI.SpeechTherapy.Utils;

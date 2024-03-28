@@ -15,7 +15,10 @@
                HeightRequest="50"
                FontSize="18"
                FontAttributes="Bold"
-               FontFamily="Noto" />
+               WidthRequest="250"
+               FontFamily="Noto"
+               LineBreakMode="TailTruncation"
+ />
     </StackLayout>
     
 </ContentView>

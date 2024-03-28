@@ -363,6 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # sqlite
-#*.db3
+*.db3
 #Mp4
 .Mp4

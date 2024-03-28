@@ -32,8 +32,8 @@
                 <Image Source="user_edit"
                            WidthRequest="24" 
                        />
-                
-                    <Label  Text="درباره نویسنده"
+
+                    <Label  Text="عن المؤلف"
                         FontSize="16"
                         FontFamily="Noto"
                         Margin="16,0"
@@ -65,11 +65,12 @@
                     <Image Source="profile_2user"
                            WidthRequest="24" />
 
-                    <Label  Text="پشتیبان اپ"
+                    <Label  Text="Develop Team"
                             FontSize="16"
                             FontFamily="Noto"
                             Margin="16,0"
-                            FontAttributes="Bold" />
+                            FontAttributes="Bold"
+                            />
 
                 </HorizontalStackLayout>
 

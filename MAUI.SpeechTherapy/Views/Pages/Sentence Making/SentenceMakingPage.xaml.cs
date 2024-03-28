@@ -38,7 +38,7 @@ public partial class SentenceMakingPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        label.Text = "الصورة الأولى هي الفاعل، والصورة الثانية مرتبطة بالفعل، والصورة الثالثة مرتبطة بالمفعول به، حدد الموضوع والفعل والمفعول المناسب وذات الصلة من القائمة الموجودة أسفل كل صورة وانقر على \"فحص\" زر للتحقق من الجملة من حيث القواعد الهيكلية.";
+        label.Text = "الصورة الأولى هي الفاعل و الصورة الثانية مرتبطة بالفعل و الصورة الثالثة مرتبطة بالمفعول. حدد الفاعل و الفعل و المفعول المناسب حسب الصورة. و اضغط على زر \"الفحص\" لتكون الجملة صحيحة حسب القواعد.";
         await LoadData();
         //this.OnBackButtonPressed += SentenceMakingPage_BackButtonPressed;
     }

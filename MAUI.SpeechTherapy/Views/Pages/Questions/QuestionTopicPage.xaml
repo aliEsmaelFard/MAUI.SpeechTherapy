@@ -25,7 +25,7 @@
 
     <!--toolbar section-->
     <Shell.TitleView>
-        <local:ToolBarContent tTittle="تعلیم المفاهیم " />
+        <local:ToolBarContent tTittle="ادراك و التحلیل " />
     </Shell.TitleView>
 
     <Grid>
